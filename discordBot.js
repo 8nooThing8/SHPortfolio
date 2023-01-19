@@ -6,7 +6,7 @@ const client = new Client({
   ],
 });
 
-client.login('MTA2NTYwNDIyMTI1ODQzNjY4OA.G5h2N9.INrhmdrKylSotQGSlks5vjW9lIU_Z_jg0fdJAI');
+client.login('MTA2NTYwNDIyMTI1ODQzNjY4OA.Gv1IKm.QctljS3yYwNUfUliaXZWuZe' + 'R3XScR8KHzYUcSs');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
