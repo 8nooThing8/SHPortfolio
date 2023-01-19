@@ -913,50 +913,6 @@ Peter Sylvén
 </tbody></table></div>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
-  <script>
-    // Initialize Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyC7Rgt_KPZbQdhffyBWb8H1q3118NIgv2Y",
-  authDomain: "votebutton-4654e.firebaseapp.com",
-  projectId: "votebutton-4654e",
-  storageBucket: "votebutton-4654e.appspot.com",
-  messagingSenderId: "1058993078313",
-  appId: "1:1058993078313:web:809c3fdac693f412721c38",
-  measurementId: "G-BMQ2CKQZQ4"
-};
-    firebase.initializeApp(firebaseConfig);
-  </script>
-</head>
-<body>
-  <div id="vote-count">0</div>
-  <button id="vote-button" onclick="vote()">Is Isak short IRL?</button>
+<button onclick="sendMessage()">send messsage</button>
 
-  <script>
-    // Get a reference to the vote count in the database
-    var voteCountRef = firebase.database().ref("voteCount");
-
-    // Get the current vote count from the database
-    voteCountRef.on("value", function(snapshot) {
-      var voteCount = snapshot.val();
-      document.getElementById("vote-count").innerHTML = voteCount;
-    });
-
-    // Function to handle the button press
-    function vote() {
-      // Increment the vote count
-      voteCountRef.transaction(function(voteCount) {
-        return (voteCount || 0) + 1;
-      });
-
-      // Disable the button
-      document.getElementById("vote-button").disabled = true;
-    }
-  </script>
-</body>
-</html>
 
