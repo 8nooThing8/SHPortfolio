@@ -912,8 +912,14 @@ Peter Sylvén
 <tr class="background schedulerow"></tr>
 </tbody></table></div>
 
+</head>
 
-<button onclick="sendMessage()">send messsage</button>
+
+<html lang="en">
+
+  <body>
+    <button onclick="sendMessage()">Send</button>
+  </body>
 
  function sendMessage() {
       const request = new XMLHttpRequest();
@@ -929,4 +935,4 @@ Peter Sylvén
 
       request.send(JSON.stringify(params));
     }
-
+</html>
