@@ -12,10 +12,11 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
+ <script>
 
 function sendMessage() {
       const request = new XMLHttpRequest();
       request.open("POST", "");
       // replace the url in the "open" method with yours
 }
+ </script>
