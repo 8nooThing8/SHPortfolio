@@ -913,11 +913,50 @@ Peter Sylvén
 </tbody></table></div>
 
 
-<section>
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    var firebaseConfig = {
+      apiKey: "your_api_key",
+      authDomain: "your_auth_domain",
+      databaseURL: "your_database_url",
+      projectId: "your_project_id",
+      storageBucket: "your_storage_bucket",
+      messagingSenderId: "your_messaging_sender_id",
+      appId: "your_app_id"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <div id="vote-count">0</div>
+  <button id="vote-button" onclick="vote()">Is Isak short IRL?</button>
 
-<p>Is Isak short?</p>
-  <form action="Chatting.php" method="POST">  
-     <input type="submit"/>  
-   </form>
+  <script>
+    // Get a reference to the vote count in the database
+    var voteCountRef = firebase.database().ref("voteCount");
 
-</section>
+    // Get the current vote count from the database
+    voteCountRef.on("value", function(snapshot) {
+      var voteCount = snapshot.val();
+      document.getElementById("vote-count").innerHTML = voteCount;
+    });
+
+    // Function to handle the button press
+    function vote() {
+      // Increment the vote count
+      voteCountRef.transaction(function(voteCount) {
+        return (voteCount || 0) + 1;
+      });
+
+      // Disable the button
+      document.getElementById("vote-button").disabled = true;
+    }
+  </script>
+</body>
+</html>
+
