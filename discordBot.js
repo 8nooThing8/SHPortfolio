@@ -1,7 +1,12 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client, GatewayIntentBits } = require('discord.js');
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+  ],
+});
 
-client.login('MTA2NTYwNDIyMTI1ODQzNjY4OA.Gv9Nb7.sprp1KltiUe9BZP9-VU89CDwVMydEQhs1iudEs');
+client.login('MTA2NTYwNDIyMTI1ODQzNjY4OA.G5h2N9.INrhmdrKylSotQGSlks5vjW9lIU_Z_jg0fdJAI');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);

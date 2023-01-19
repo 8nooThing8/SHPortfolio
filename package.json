@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/8nooThing8/RobloxTest#readme",
   "dependencies": {
+    "discord.js": "^14.7.1",
     "express": "^4.18.2",
     "socket.io": "^4.5.4"
   }
