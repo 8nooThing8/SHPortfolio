@@ -912,67 +912,27 @@ Peter Sylvén
 <tr class="background schedulerow"></tr>
 </tbody></table></div>
 
-
-<body>
-    <button id="countdown-button" , onclick="sendMessage()">Send</button>
-</body>
-
-<script>
-    function sendMessage()
-{
-
-        let today = new Date();
-        let Nowminutes = today.getMinutes()
-        let Nowseconds = today.getSeconds();
+</head>
 
 
+<html lang="en">
 
-        const endTimeMinutes = today.getMinutes() += 2
+  <body>
+    <button onclick="sendMessage()">Send</button>
+  </body>
 
-        if (endTimeMinutes == 59) {
-            endTimeMinutes = 1
-        }
-        else if (endTimeMinutes == 58) {
-            endTimeMinutes = 0
-        }
+ function sendMessage() {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1065626237445357658/WcbnzkinuItpY4sDgT4GOPtRRyDXL"+ "v0KdWa4TfBupUZW6aqC0xW5OxBMjdeHM5u82qg2");
 
+      request.setRequestHeader('Content-type', 'application/json');
 
-        const endTimeSeconds = today.getSeconds() += 2
+      const params = {
+        username: "My Webhook Name",
+        avatar_url: "",
+        content: "Isak is the short"
+      }
 
-        if (endTimeSeconds == 59) {
-
-            endTimeSeconds = 1
-        }
-        else if (endTimeSeconds == 58) {
-            endTimeSeconds = 0
-        }
-
-
-        const endTimeSeconds = today.getSeconds() += 2
-
-        if (true) {
-            const request = new XMLHttpRequest();
-            request.open("POST", "https://discord.com/api/webhooks/1065626237445357658/WcbnzkinuItpY4sDgT4GOPtRRyDXL" + "v0KdWa4TfBupUZW6aqC0xW5OxBMjdeHM5u82qg2");
-
-            request.setRequestHeader('Content-type', 'application/json');
-
-            const params = {
-                username: "the truth teller",
-                avatar_url: "https://www.horoscope.com/images-US/games/game-magic-8-ball-no-text.png",
-                content: "Isak is short, IRL"
-            }
-
-            request.send(JSON.stringify(params));
-        }
-        else {
-
-            let currentMin = endTimeMinutes - Nowminutes;
-            let currentSec = endTimeSeconds - NowSeconds;
-
-            document.getElementById("countdown-button").textContent = currentMin;
-
-        }
-
+      request.send(JSON.stringify(params));
     }
-
-</script>
+</html>
