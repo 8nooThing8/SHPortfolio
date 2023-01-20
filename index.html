@@ -1,10 +1,13 @@
 <html lang="en">
 
   <body>
-    <button  style= "font-size:75px; height:100%; width:100%", onclick="sendMessage()">Send the truth out to the world</button>
+    <button id = "button-Now", style= "font-size:75px; height:100%; width:100%", onclick="sendMessage()">Send the truth out to the world</button>
   </body>
 <script>
  function sendMessage() {
+   
+      document.getElementById("button-Now").disabled = true
+   
       const request = new XMLHttpRequest();
       request.open("POST", "https://discord.com/api/webhooks/1065910600066158682/_aAvpJnJGAqZx7aLXE1DZFV3EA4jYAF"+ "-s41OG9GBRNi-6mBvuD2K-VFVSJuk3qL6yqES");
 
