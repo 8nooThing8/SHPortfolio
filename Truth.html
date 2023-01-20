@@ -4,19 +4,44 @@
     <button id = "button-Now", style= "font-size:75px; height:100%; width:100%", onclick="sendMessage()">Send the truth out to the world</button>
   </body>
 <script>
+
+const answers = [
+  "It is certain",
+  "It is decidedly so",
+  "Without a doubt",
+  "Yes, definitely",
+  "You may rely on it",
+  "As I see it, yes",
+  "Most likely",
+  "Outlook good",
+  "Yes",
+  "Signs point to yes",
+  "Reply hazy try again",
+  "Ask again later",
+  "Better not tell you now",
+  "Cannot predict now",
+  "Concentrate and ask again",
+  "Don't count on it",
+  "My reply is no",
+  "My sources say no",
+  "Outlook not so good",
+  "Very doubtful"
+];
+
  function sendMessage() {
    
-      document.getElementById("button-Now").disabled = true
-   
       const request = new XMLHttpRequest();
-      request.open("POST", "https://discord.com/api/webhooks/1065945240139218944/n5mUaYNAk5JIjJ5ptS4BpO43"+ "eR08knL5SFTtzF2JruSUB54gv44AwM_Lwms311NKZYu6");
+      request.open("POST", "https://discord.com/api/webhooks/1065945240139218944/n5mUaYNAk5JIjJ5ptS4BpO43eR08knL"+ "5SFTtzF2JruSUB54gv44AwM_Lwms311NKZYu6");
 
       request.setRequestHeader('Content-type', 'application/json');
+
+  const randomIndex = Math.floor(Math.random() * answers.length);
+  const answer = answers[randomIndex];
 
       const params = {
         username: "Captain truth",
         avatar_url: "https://magic-8ball.com/wp-content/uploads/ball.png",
-        content: "Vtubers are bad, done"
+        content: answer
       }
 
       request.send(JSON.stringify(params));
