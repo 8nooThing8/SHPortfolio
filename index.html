@@ -1,25 +1,929 @@
+<head>
+
+  <title>SchoolSoft - Elev</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#234675">
+<meta name="msapplication-TileColor" content="#234675">
+<meta name="theme-color" content="#234675">
+  <link href="../../style/frameset.css?rev=2.7" rel="styleSheet" type="text/css">
+  
+    <link href="../../style/StyleSheetNew.css?rev=3.10" rel="styleSheet" type="text/css">
+    <link href="../../style/StyleSheetMenu.css?rev=2.5" rel="styleSheet" type="text/css">
+    <link href="../../style/mainSheet.css?rev=6.1" rel="styleSheet" media="all" type="text/css">
+    
+        <link href="../../style/student_sheet.css?rev=2.6" rel="styleSheet" type="text/css">
+        
+    
+  
+  <script src="https://sprakkraft.org/lingvis-sdk/web/1.4.x"></script><style>.translateBox div {
+  margin: 0em;
+  padding: 0em;
+}
+
+.translateBox {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 2147483647;
+  overflow: hidden;
+  background-color: #fff;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  position: relative;
+}
+
+.translateBox.poly-box-default {
+  background-color: #fff;
+  border: 1px solid #686868;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.translateBox.poly-box-web {
+  position: fixed;
+  box-sizing: content-box;
+  min-width: 300px;
+  min-height: 150px;
+  width: 300px;
+  height: 150px;
+  max-height: 60%;
+}
+
+.translateBox.hidden {
+  visibility: hidden !important;
+}
+
+.translateBox.show {
+  visibility: visible !important;
+}
+
+.translateBox .poly-box-switcher {
+  font-size: 16px;
+  color: #333;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+
+.translateBox .poly-box-header {
+  display: flex;
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #b6b6b6;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  cursor: pointer;
+}
+
+.translateBox .poly-box-header > div {
+  height: 100%;
+}
+
+.translateBox .poly-box-header .poly-box-header-color-switcher {
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity .3s ease-in;
+}
+
+
+
+
+
+
+.translateBox .poly-box-header .poly-box-header-color-name {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity .3s ease-in;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.translateBox .poly-box-header.yellow .poly-box-header-color-name {
+  background-color: #fae684;
+}
+
+.translateBox .poly-box-header.red .poly-box-header-color-name {
+  background-color: #ef9f94;
+}
+
+.translateBox .poly-box-header.green .poly-box-header-color-name {
+  background-color: #c3eebb;
+}
+
+.translateBox .poly-box-header.animated .poly-box-header-color-switcher {
+  opacity: 0;
+}
+
+.translateBox .poly-box-header.animated .poly-box-header-color-name {
+  opacity: 1;
+}
+
+.translateBox .poly-box-header .poly-box-header-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 90%;
+  max-height: 40px;
+  padding-top: 10px;
+  border-bottom: none;
+  box-sizing: content-box;
+}
+
+.translateBox .poly-box-header .poly-box-header-word span {
+  position: relative;
+  max-height: 32px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 15px;
+}
+
+.translateBox .poly-box-header.poly-1dot .poly-box-header-word span.poly-box-header-word-lemma,
+.translateBox .poly-box-header.poly-2dots .poly-box-header-word span.poly-box-header-word-lemma {
+  padding-bottom: 4px;
+}
+
+.translateBox .poly-box-header.poly-1dot .poly-box-header-word span.poly-box-header-word-lemma::before,
+.translateBox .poly-box-header.poly-2dots span.poly-box-header-word-lemma::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 2px;
+}
+
+.translateBox .poly-box-header.poly-1dot .poly-box-header-word span.poly-box-header-word-lemma::before {
+  width: 2px;
+  background-size: contain;
+}
+
+.translateBox .poly-box-header.poly-2dots .poly-box-header-word span.poly-box-header-word-lemma::before {
+  width: 6px;
+   background-size: contain;
+}
+
+.translateBox .poly-box-header .poly-tab-grade {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  padding-left: 10px;
+  padding-right: 5px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.translateBox .poly-box-header .poly-box-header-speaker {
+  width: 10%;
+  height: 100%;
+  background-size: 20px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.translateBox .poly-box-header .poly-box-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  box-sizing: content-box;
+   background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.translateBox .poly-box-header .poly-box-close img {
+  width: 15px;
+  height: 15px;
+}
+
+.translateBox.poly-box-web .poly-box-header .poly-box-header-speaker {
+  display: none;
+}
+
+.translateBox .poly-box-translations-wrapper {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.translateBox .poly-box-translations-wrapper .poly-box-idiom {
+  z-index: 1;
+}
+
+.translateBox .poly-box-translations-wrapper .poly-box-list {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.translateBox .poly-box-translations-wrapper .poly-box-list .poly-box-idiom {
+  display: none;
+  width: 100%;
+  padding: 10px 5px;
+  background: #eeeeee;
+  border-bottom: 1px solid #b6b6b6;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.translateBox .poly-box-translations-wrapper .poly-box-list .poly-box-idiom.show {
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.translateBox .poly-box-translations-wrapper .poly-box-list .poly-box-translate {
+  box-sizing: border-box;
+  min-height: 37px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #b6b6b6;
+  line-height: 16px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.translateBox .poly-box-translations-wrapper .poly-box-list .poly-box-translate.poly-box-definition {
+  color: #8d8d8d;
+}
+
+.translateBox .poly-box-translations-wrapper .poly-box-list .poly-box-translate.poly-box-translate-reported::before {
+  content: '';
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  margin-right: 7px;
+  height: 12px;
+  width: 15px;
+   background-size: contain;
+}
+
+.translateBox .poly-box-translations-wrapper .poly-box-list .poly-box-translate.more-btn {
+  border-bottom: none;
+}
+
+.translateBox .poly-box-translations-wrapper .poly-box-list .poly-box-translate.more-btn a {
+  color: #6D7177;
+  font-weight: 500;
+}
+
+.translateBox .poly-box-grammar {
+  height: 35px;
+  visibility: hidden;
+  border-top: 1px solid #686868;
+  background-color: #eeeeee;
+  box-sizing: border-box;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-list-wrapper {
+  display: none;
+  width: auto;
+  height: 35px;
+  overflow: hidden;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-list-wrapper #polyLingVis-list {
+  display: flex;
+  align-items: center;
+  height: 100% !important;
+  flex-direction: row;
+  padding-bottom: 17px;
+  box-sizing: content-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 35px;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-list-wrapper .grammar-construct {
+  display: block;
+  font-size: 11px;
+  padding: 3px 8px;
+  margin-right: 5px;
+  border-radius: 30px;
+  background: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  border: 1px solid #6D7177;
+  color: #6D7177;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-list-wrapper .grammar-construct:last-child {
+  margin-right: 0;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-list-wrapper .grammar-construct.grammar-construct-selected {
+  color: #fff !important;
+  background-color: #6D7177;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page {
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  overflow-y: auto;
+  padding: 10px;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page table, .translateBox .poly-box-grammar #polyLingVis-page th, .translateBox .poly-box-grammar #polyLingVis-page td {
+  border: 1px solid #868686;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page td, .translateBox .poly-box-grammar #polyLingVis-page th {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page h2, .translateBox .poly-box-grammar #polyLingVis-page h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page h2 {
+  font-size: 18px;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page h4 {
+  font-size: 16px;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page .original {
+  display: none;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page table {
+  font-size: 12px;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page .bottom-filler {
+  height: calc(40px + 5px);
+}
+
+.translateBox .poly-box-grammar #polyLingVis-page .grammar-path-selected {
+  background-color: #DFE0E1;
+}
+
+.translateBox .poly-box-grammar #polyLingVis-fab-open-book {
+  display: none;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 35px;
+  margin-bottom: 5px;
+  right: 5px;
+  background-size: contain;
+   cursor: pointer;
+}
+
+.translateBox.poly-box-web.poly-box-has-grammar.show {
+  min-height: 170px;
+}
+
+.translateBox.poly-box-has-grammar.show .poly-box-grammar {
+  visibility: visible;
+}
+
+.translateBox.poly-box-has-grammar.show .poly-box-grammar #polyLingVis-list-wrapper {
+  display: flex;
+}
+
+.translateBox .poly-box-resizeCorner {
+  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid #b6b6b6;
+  cursor: nwse-resize;
+  z-index: 2;
+}
+
+.translateBox.poly-box-web .poly-box-resizeCorner {
+  display: block;
+}
+
+.translateBox.new-popup-design {
+  border-color: #a8a8a8;
+}
+
+.translateBox.new-popup-design .poly-box-header.green {
+  background-color: #c3eebb;
+}
+
+.translateBox.new-popup-design .poly-box-header.yellow {
+  background-color: #fae684;
+}
+
+.translateBox.new-popup-design .poly-box-header.red {
+  background-color: #ef9f94;
+}
+
+.translateBox.new-popup-design .poly-box-header.out-of-vocab {
+  background-color: #fff;
+}
+
+.translateBox.new-popup-design .poly-box-header .poly-box-header-word {
+  width: auto;
+  padding-top: 0;
+}
+
+.translateBox.new-popup-design .poly-box-header .poly-tab-grade {
+  width: auto;
+  height: 40px;
+  top: 0;
+  padding-right: 5px;
+  padding-left: 10px;
+  line-height: 40px;
+}
+
+.translateBox.new-popup-design .poly-box-header .poly-tab-grade .poly-tab-grade-star {
+  width: 20px;
+  height: 20px;
+   background-size: contain;
+}
+
+.translateBox.new-popup-design .poly-box-header .poly-tab-grade.poly-tab-grade-has .poly-tab-grade-star {
+  margin-left: 4px;
+}
+
+.translateBox.new-popup-design .poly-box-header .poly-box-header-speaker {
+  width: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-sizing: content-box;
+  background-size: 20px;
+}
+
+.translateBox.new-popup-design .poly-box-header .poly-box-close {
+  width: 20px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+.translateBox.new-popup-design .poly-box-header .poly-box-close img {
+  width: 20px;
+  height: 20px;
+}
+
+.translateBox.new-popup-design .poly-box-translations-wrapper .poly-box-list .poly-box-idiom {
+  background-color: #fff;
+}
+
+.translateBox.new-popup-design .poly-box-translations-wrapper .poly-box-list .poly-box-translate {
+  background: transparent;
+  border-color: #dadada;
+}
+
+.translateBox.new-popup-design .poly-box-grammar {
+  border-color: #a8a8a8;
+}
+
+.translateBox.new-popup-design.poly-wordlist .poly-box-header .poly-tab-grade .poly-tab-grade-star {
+   background-size: contain;
+}
+</style><style>:root{
+    --dark-mode-cloze-color: white;
+    --dark-mode-cloze-hover: #07677e;
+    --dark-mode-cloze-panel-main: rgb(4, 38, 107);
+    --dark-mode-cloze-panel-word-text: rgba(255,255,255,0.7);
+    --dark-mode-cloze-panel-header-text: #666;
+    --dark-mode-cloze-panel-header-background: black;
+    --dark-mode-cloze-panel-close-color: white;
+
+    --light-mode-cloze-color: black;
+    --light-mode-cloze-hover: #15b3e1;
+    --light-mode-cloze-panel-main: rgb(56, 126, 245);
+    --light-mode-cloze-panel-word-text: white;
+    --light-mode-cloze-panel-header-text: #666;
+    --light-mode-cloze-panel-header-background: white;
+    --light-mode-cloze-panel-close-color: black;
+
+    --mode-cloze-color: var(--light-mode-cloze-color);
+    --mode-cloze-hover: var(--light-mode-cloze-hover);
+    --mode-cloze-panel-main: var(--light-mode-cloze-panel-main);
+    --mode-cloze-panel-word-text: var(--light-mode-cloze-panel-word-text);
+    --mode-cloze-panel-header-text: var(--light-mode-cloze-panel-header-text);
+    --mode-cloze-panel-header-background: var(--light-mode-cloze-panel-header-background);
+    --mode-cloze-panel-close-color: var(--light-mode-cloze-panel-close-color);
+}
+
+.polyLingVis-overlay {
+    --mode-cloze-color: var(--dark-mode-cloze-color);
+    --mode-cloze-hover: var(--dark-mode-cloze-hover);
+    --mode-cloze-panel-main: var(--dark-mode-cloze-panel-main);
+    --mode-cloze-panel-word-text: var(--dark-mode-cloze-panel-word-text);
+    --mode-cloze-panel-header-text: var(--dark-mode-cloze-panel-header-text);
+    --mode-cloze-panel-header-background: var(--dark-mode-cloze-panel-header-background);
+    --mode-cloze-panel-close-color: var(--dark-mode-cloze-panel-close-color);
+}
+
+#polyLingVis-cloze-panel {
+    max-width: 365px;
+    border: 1px solid var(--mode-cloze-panel-main);
+    border-radius: 5px;
+    width: 60%;
+    display: none;
+    position: absolute;
+    background-color: var(--mode-cloze-panel-main);
+    overflow: visible !important;
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    z-index: 5
+}
+
+#polyLingVis-cloze-panel .polyLingVis-panel-heading {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid var(--mode-cloze-panel-main);
+    cursor: move;
+    background-color: var(--mode-cloze-panel-header-background);
+    position: relative;
+}
+
+#polyLingVis-cloze-panel .polyLingVis-panel-heading h6 {
+    margin: 0;
+    font-size: 0.6875rem;
+    color: #777;
+}
+
+#polyLingVis-cloze-panel .polyLingVis-panel-body {
+    padding: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 2;
+    color: var(--mode-cloze-panel-word-text);
+}
+
+#polyLingVis-cloze-panel .polyLingVis-panel-body * {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#polyLingVis-cloze-panel h6.polyLingVis-panel-title.polyLingVis-cloze-panel-title {
+    font-size: 11px;
+    text-align: center;
+    color: var(--mode-cloze-panel-header-text);
+    padding-right: 28px;
+}
+
+
+div.polyLingVis-link-line {
+    position: absolute;
+    width: 2px;
+    background-color: lightgrey;
+    z-index: 4;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+}
+
+div.polyLingVis-label {
+    position: absolute;
+    display: inline-block;
+    max-width:300px;
+    max-height:30px;
+    overflow: hidden;
+    border-style:solid;
+    border-color:lightgrey;
+    border-width:1px;
+    background-color: lightyellow;
+    font-size: 80%;
+    line-height: 14px;
+    cursor: pointer;
+    padding: 5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.polyLingVis-overlay div.polyLingVis-link-line {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.polyLingVis-overlay div.polyLingVis-label {
+    padding: 3px;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.polyLingVis-dark div.polyLingVis-label {
+    background-color: var(--dark-mode-cloze-panel-main);
+}
+
+.polyLingVis-overlay div.polyLingVis-label.label-below {
+    border-top: 1px solid rgba(228, 228, 228, 0.5);
+    border-bottom: initial;
+    border-left: initial;
+    border-right: initial;
+}
+
+.polyLingVis-overlay div.polyLingVis-label.label-above {
+    border-bottom: 1px solid rgba(228, 228, 228, 0.5);
+    border-top: initial;
+    border-left: initial;
+    border-right: initial;
+}
+
+.polyLingVis-tts div.polyLingVis-label {
+    background-color: rgb(0, 0, 0, 0.3);
+    color: white;
+    padding: 0px;
+}
+
+.polyLingVis-overlay .polyLingVis-link-line {
+    z-index: 999;
+}
+
+
+div.polyLingVis-label.polyLingVis-cloze-hover {
+    background-color: var(--mode-cloze-hover);
+    color: var(--mode-cloze-color);
+}
+
+.polyLingVis-cloze-src {
+    background-color: var(--mode-cloze-panel-main);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+#polyLingVis-cloze-close {
+    cursor: default;
+    position: absolute;
+    top: 45%;
+    right: 0;
+    padding: 8px;
+    transform: translate(0%, -50%);
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--mode-cloze-panel-close-color);
+}
+  </style>
+  <script type="text/javascript" src="../../script/sprakkraft.js"></script>
+
+</head>
+
+<div id="schedule_cont_content" class="h2_inner"><script language="JavaScript" src="../../script/boxover.js?rev=1.001" type="text/javascript"></script>
+<table cellspacing="1.5" class="tab_dark"><tbody><tr class="background schedulerow"><td align="center" class="schedulecell"><b>Tid</b></td><td align="center" colspan="4" class="schedulecell"><b>&nbsp;&nbsp;Mån</b>&nbsp;&nbsp;</td><td align="center" colspan="4" class="schedulecell"><b>&nbsp;&nbsp;Tis</b>&nbsp;&nbsp;</td><td align="center" colspan="4" class="schedulecell"><b>&nbsp;&nbsp;Ons</b>&nbsp;&nbsp;</td><td align="center" colspan="4" class="schedulecell"><b>&nbsp;&nbsp;Tor</b>&nbsp;&nbsp;</td><td align="center" colspan="4" class="schedulecell"><b>&nbsp;&nbsp;Fre</b>&nbsp;&nbsp;</td></tr><tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">8:00</td><td nowrap="nowrap" align="center" colspan="4" rowspan="20" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td><td nowrap="nowrap" align="center" colspan="4" rowspan="21" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td><td nowrap="nowrap" align="center" colspan="4" rowspan="3" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td><td nowrap="nowrap" align="center" colspan="4" rowspan="3" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td><td nowrap="nowrap" align="center" colspan="4" rowspan="14" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="15" class=" schedulecell" style="background-color:#ca14e8; color:#000000; "><div title="header=[ 8:15-9:30 DESDES0] body=[Personal: Linus Damm
+<br />Sal/resurs: A501 Bild
+<br />Grupp: DESDES0_IVAL22
+<br />Veckor: 33-43, 46-51, 2-5, 8-9, 11-14, 16-23<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57540&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#ca14e8; color:#000000; ">DESDES0<br>8:15-9:30<br>A501 Bild
+<br>DESDES0_IVAL...</span></a></div></td><td nowrap="nowrap" align="center" colspan="4" rowspan="15" class=" schedulecell" style="background-color:#58dc9b; color:#000000; "><div title="header=[ 8:15-9:30 TIATIL00S] body=[Personal: Andreas Eriksson
+<br />Sal/resurs: A503 ALC
+<br />Grupp: TIATIL0_IVAL22
+<br />Veckor: 33-43, 46-50, 2-5, 8-9, 11-14, 16-19, 21-23<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57377&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#58dc9b; color:#000000; ">TIATIL00S<br>8:15-9:30<br>A503 ALC
+<br>TIATIL0_IVAL...</span></a></div></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">8:30</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">9:00</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="16" class=" schedulecell" style="background-color:#06b58c; color:#000000; "><div title="header=[ 9:10-10:30 SVESVE03] body=[Personal: Sandra  Klefberg
+<br />Sal/resurs: A303
+<br />Grupp: SVESVE03_SU20_SY20
+<br />Veckor: 30, 33-43, 46-50, 2-5, 8-9, 11-13, 16-19, 21-23<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57456&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#06b58c; color:#000000; ">SVESVE03<br>9:10-10:30<br>A303
+<br>SVESVE03_SU2...</span></a></div></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">9:30</td><td nowrap="nowrap" align="center" colspan="4" rowspan="17" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td><td nowrap="nowrap" align="center" colspan="4" rowspan="2" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="5" class=" schedulecell" style="background-color:#fa93d5; color:#000000; "><div title=""><a class="schedule" href="right_student_schedule.jsp?lesson=57538&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#fa93d5; color:#000000; ">Mentorstid<br>9:40-10:05<br>A503 ALC
+<br>SU20
+</span></a></div></td><td nowrap="nowrap" align="center" colspan="4" rowspan="14" class=" schedulecell" style="background-color:#b809ed; color:#E7E7E7; "><div title="header=[ 9:40-10:50 GYARTE] body=[Personal: Anders Bengtsson
+Andreas Eriksson
+Fredrik Sallmén
+<br />Sal/resurs: S401
+S402
+<br />Grupp: GYARTE_SU20_SY20
+<br />Veckor: 33-43, 46-50, 2-5, 8-9, 11-14, 16-19, 21-23<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57589&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#b809ed; color:#E7E7E7; ">GYARTE<br>9:40-10:50<br>S401
+S402
+<br>GYARTE_SU20_...</span></a></div></td></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="13" class=" schedulecell" style="background-color:#b809ed; color:#E7E7E7; "><div title="header=[ 9:45-10:50 GYARTE] body=[Personal: Anders Bengtsson
+Andreas Eriksson
+Fredrik Sallmén
+<br />Sal/resurs: S401
+S402
+<br />Grupp: GYARTE_SU20_SY20
+<br />Veckor: 33-43, 47-51, 3-5, 8-9, 11-14, 16-22<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57367&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#b809ed; color:#E7E7E7; ">GYARTE<br>9:45-10:50<br>S401
+S402
+<br>GYARTE_SU20_...</span></a></div></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">10:00</td></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="1" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="13" class=" schedulecell" style="background-color:#fa93d5; color:#000000; "><div title="header=[ 10:10-11:15 Studietid] body=[Personal: Andreas Eriksson
+<br />Grupp: SU20
+<br />Veckor: 33-43, 46-51, 3-5, 8-9, 11-14, 16-17, 19-22<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57480&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#fa93d5; color:#000000; ">Studietid<br>10:10-11:15<br><br>SU20
+</span></a></div></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">10:30</td><td nowrap="nowrap" align="center" colspan="4" rowspan="2" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="15" class=" schedulecell" style="background-color:#d7fe41; color:#000000; "><div title=""><a class="schedule" href="right_student_schedule.jsp?lesson=57446&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#d7fe41; color:#000000; ">KOTKOS01<br>10:40-11:55<br>S506
+<br>KOTKOS01_SU20
+</span></a></div></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="2" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td><td nowrap="nowrap" align="center" colspan="4" rowspan="2" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="16" class=" schedulecell" style="background-color:#fa55be; color:#000000; "><div title="header=[ 10:55-12:15 HISHIS01a1] body=[Personal: Karin Lydh
+<br />Sal/resurs: S402
+<br />Grupp: HISHIS01a1_SU20_SY20
+<br />Veckor: 33-43, 46-51, 2-5, 8-9, 11-14, 16-23<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57576&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#fa55be; color:#000000; ">HISHIS01a1<br>10:55-12:15<br>S402
+<br>HISHIS01a1_S...</span></a></div></td></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">11:00</td><td nowrap="nowrap" align="center" colspan="4" rowspan="15" class=" schedulecell" style="background-color:#58dc9b; color:#000000; "><div title="header=[ 11:00-12:15 TIATIL00S] body=[Personal: Andreas Eriksson
+<br />Sal/resurs: A503 ALC
+<br />Grupp: TIATIL0_IVAL22
+<br />Veckor: 33-43, 47-51, 3-5, 8-9, 11-14, 16-22<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57483&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#58dc9b; color:#000000; ">TIATIL00S<br>11:00-12:15<br>A503 ALC
+<br>TIATIL0_IVAL...</span></a></div></td><td nowrap="nowrap" align="center" colspan="4" rowspan="15" class=" schedulecell" style="background-color:#d7eebc; color:#000000; "><div title="header=[ 11:00-12:15 KEMKEM01] body=[Personal: Anders Karlsson
+<br />Sal/resurs: S502
+<br />Grupp: KEMKEM01_SU20_SY20
+<br />Veckor: 33-43, 46-50, 2-5, 8-9, 11-14, 16-19, 21-23<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57445&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#d7eebc; color:#000000; ">KEMKEM01<br>11:00-12:15<br>S502
+<br>KEMKEM01_SU2...</span></a></div></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="8" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">11:30</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="15" class=" schedulecell" style="background-color:#ca14e8; color:#000000; "><div title="header=[ 11:55-13:10 DESDES0] body=[Personal: Linus Damm
+<br />Sal/resurs: A501 Bild
+<br />Grupp: DESDES0_IVAL22
+<br />Veckor: 33-43, 46-51, 3-5, 8-9, 11-14, 16-17, 19-22<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57574&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#ca14e8; color:#000000; ">DESDES0<br>11:55-13:10<br>A501 Bild
+<br>DESDES0_IVAL...</span></a></div></td><td nowrap="nowrap" align="center" colspan="4" rowspan="21" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">12:00</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="10" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td><td nowrap="nowrap" align="center" colspan="4" rowspan="9" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td><td nowrap="nowrap" align="center" colspan="4" rowspan="9" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">12:30</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">13:00</td><td nowrap="nowrap" align="center" colspan="4" rowspan="14" class=" schedulecell" style="background-color:#d7fe41; color:#000000; "><div title="header=[ 13:00-14:10 KOTKOS01] body=[Personal: Anders Bengtsson
+<br />Sal/resurs: S502
+<br />Grupp: KOTKOS01_SU20
+<br />Veckor: 33-43, 46-50, 2-5, 8-9, 11-14, 16-23<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57379&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#d7fe41; color:#000000; ">KOTKOS01<br>13:00-14:10<br>S502
+<br>KOTKOS01_SU20
+</span></a></div></td><td nowrap="nowrap" align="center" colspan="4" rowspan="16" class=" schedulecell" style="background-color:#d1ac1b; color:#000000; "><div title=""><a class="schedule" href="right_student_schedule.jsp?lesson=57361&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#d1ac1b; color:#000000; ">RELREL01<br>13:00-14:20<br>A303
+<br>RELREL01_SU2...</span></a></div></td></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="17" class=" schedulecell" style="background-color:#06b58c; color:#000000; "><div title="header=[ 13:05-14:30 SVESVE03] body=[Personal: Sandra  Klefberg
+<br />Sal/resurs: A303
+<br />Grupp: SVESVE03_SU20_SY20
+<br />Veckor: 33-43, 47-51, 3-5, 8-9, 11-14, 16-22<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57517&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#06b58c; color:#000000; ">SVESVE03<br>13:05-14:30<br>A303
+<br>SVESVE03_SU2...</span></a></div></td></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="2" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="15" class=" schedulecell" style="background-color:#d975b1; color:#000000; "><div title="header=[ 13:20-14:35 DIGDIG02] body=[Personal: Andreas Eriksson
+<br />Sal/resurs: A503 ALC
+<br />Grupp: DIGDIG02_SU20
+<br />Veckor: 33-43, 46-51, 3-5, 8-9, 11-14, 16-17, 19-22<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57429&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#d975b1; color:#000000; ">DIGDIG02<br>13:20-14:35<br>A503 ALC
+<br>DIGDIG02_SU20
+</span></a></div></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">13:30</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="15" class=" schedulecell" style="background-color:#d7eebc; color:#000000; "><div title=""><a class="schedule" href="right_student_schedule.jsp?lesson=57462&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#d7eebc; color:#000000; ">KEMKEM01<br>13:40-14:55<br>S501 LAB
+<br>KEMKEM01_SU20
+</span></a></div></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">14:00</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="34" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="32" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">14:30</td><td nowrap="nowrap" align="center" colspan="4" rowspan="2" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="2" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="6" class=" schedulecell" style="background-color:#b809ed; color:#000000; "><div title="header=[ 14:40-15:10 HANDLEDNINGSTID TE] body=[Personal: Petter Avén
+Elias Bank
+Monik Bekamp
+Linus Damm
+Vesa Kenttäkumpu
+Karin Lydh
+Lars Malmros
+Peter Sylvén
+<br />Grupp: GYARTE_SU20_SY20
+<br />Veckor: 33-43, 47-51, 3-5, 8-9, 11-14, 16-22<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=60251&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#b809ed; color:#000000; ">HANDLEDNINGSTID TE<br>14:40-15:10<br><br>GYARTE_SU20_...</span></a></div></td></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="15" class=" schedulecell" style="background-color:#d975b1; color:#000000; "><div title="header=[ 14:45-16:00 DIGDIG02] body=[Personal: Andreas Eriksson
+<br />Sal/resurs: A503 ALC
+<br />Grupp: DIGDIG02_SU20
+<br />Veckor: 33-43, 46-51, 3-5, 8-9, 11-14, 16-17, 19-22<br />]"><a class="schedule" href="right_student_schedule.jsp?lesson=57541&amp;term=3&amp;requestid=-2" title=""><span style="background-color:#d975b1; color:#000000; ">DIGDIG02<br>14:45-16:00<br>A503 ALC
+<br>DIGDIG02_SU20
+</span></a></div></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="25" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">15:00</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td nowrap="nowrap" align="center" colspan="4" rowspan="22" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">15:30</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">16:00</td><td nowrap="nowrap" align="center" colspan="4" rowspan="12" class="light schedulecell"><img src="../../grafics/spacer.gif" alt="" width="20px" height="1px"></td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"><td width="5%" rowspan="6" class="schedulecell">16:30</td></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+<tr class="background schedulerow"></tr>
+</tbody></table></div>
+
+</head>
+
+
 <html lang="en">
 
   <body>
-    <button id = "button-Now", style= "font-size:75px; height:100%; width:100%", onclick="sendMessage()">Send the truth out to the world</button>
+    <button onclick="reDir()">Send</button>
   </body>
 <script>
- function sendMessage() {
-   
-      document.getElementById("button-Now").disabled = true
-   
-      const request = new XMLHttpRequest();
-      request.open("POST", "https://discord.com/api/webhooks/1065916707442544760/MyRnQunal8uotF_"+ "1pYWC36uOHWRLwBPjykJJT8hoJArTQpcI0OtR25a2XjXuhPcCpIZl");
-
-      request.setRequestHeader('Content-type', 'application/json');
-
-      const params = {
-        username: "Captain truth",
-        avatar_url: "https://magic-8ball.com/wp-content/uploads/ball.png",
-        content: "<@219877909844721665> Vtubers are bad"
-      }
-
-      request.send(JSON.stringify(params));
+ function reDir() 
+{
+      window.location.href="http://pixelmen.online/Truth.php";
     }
   </script>
 </html>
