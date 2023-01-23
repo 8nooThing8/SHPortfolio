@@ -30,6 +30,15 @@ const answers = [
 
  function sendMessage() {
    
+   // Use the fetch() function to retrieve the user's IP address
+      fetch("https://api.ipify.org?format=json")
+        .then(response => response.json())
+        .then(data => {
+          // Print the user's IP address to the console
+          console.log(data.ip);
+        });
+   
+   
       document.getElementById("button-Now").diabled = false
       const request = new XMLHttpRequest();
       request.open("POST", "https://discord.com/api/webhooks/1065945240139218944/n5mUaYNAk5JIjJ5ptS4BpO43eR08knL"+ "5SFTtzF2JruSUB54gv44AwM_Lwms311NKZYu6");
