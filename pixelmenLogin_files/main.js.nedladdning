@@ -1,0 +1,8 @@
+var link = document.querySelector(".more__link");
+var box = document.querySelector(".more__information");
+if (link != null) {
+    link.addEventListener("click", function (e) {
+        box.classList.toggle("more__information--open");
+        e.preventDefault();
+    });
+}
