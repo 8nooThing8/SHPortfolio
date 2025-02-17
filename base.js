@@ -11,6 +11,14 @@ var elementMove;
 var currentPosition = 0;
 var moveSpeed = 2;
 
+var menuItems = document.getElementsByClassName("menu-item");
+
+menuItems[0].addEventListener('click', About);
+
+function About() {
+    window.scrollTo(0, 100);
+}
+
 elementMove = document.getElementsByClassName("top-menu");
 
 function Move() {

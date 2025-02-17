@@ -1,5 +1,7 @@
 body {
     background-image: url("background.png");
+    height: auto;
+    background-size: cover;
     color: #AAAAAA;
     font-family: 'Times New Roman';
     background-attachment: fixed;
@@ -22,12 +24,33 @@ body {
     font-family: Arial;
 }
 
+.about-me-text {
+    font-size: 30px;
+    margin-bottom: 3%;
+}
+
 .about-me {
     display: flex;
     flex-direction: column;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    padding-top: 9%;
+}
+
+.about-container {
+    background-color: dimgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+    height: auto;
+    padding: 20px;
+    position: relative;
+    border-radius: 0px 0.6em 0.6em 0px;
+    top: 10vh;
+    left: -35%;
+    box-shadow: rgb(0, 0, 0) 0.5em 0.6em;
 }
 
 .item-container {
@@ -37,7 +60,7 @@ body {
     align-items: center;
     background-size: cover;
     background-position: center;
-    width: 70%;
+    width: 70vw;
     min-height: 100vh;
     height: auto;
     padding: 40px;
@@ -49,8 +72,8 @@ body {
 
 .top-menu {
     background-color: rgba(0, 0, 0, 0.5);
-    width: 100vw;
-    height: 4%;
+    width: 105vw;
+    height: 40px;
     top: 0;
     position: fixed;
     z-index: 100;
