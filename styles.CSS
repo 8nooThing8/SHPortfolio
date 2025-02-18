@@ -1,10 +1,9 @@
 body {
     background-image: url("background.png");
-    height: auto;
-    background-size: cover;
     color: #AAAAAA;
     font-family: 'Times New Roman';
     background-attachment: fixed;
+    background-size: 100%;
 }
 
 .title-text {
