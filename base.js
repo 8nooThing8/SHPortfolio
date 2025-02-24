@@ -1,5 +1,3 @@
-
-
 document.addEventListener('scroll', ScrollEvents)
 
 function MoveBackgroundSlowlyWithScroll() {
@@ -14,10 +12,15 @@ var moveSpeed = 2;
 var menuItems = document.getElementsByClassName("menu-item");
 
 menuItems[0].addEventListener('click', About);
+menuItems[1].addEventListener('click', Games);
 
 function About() {
-    window.scrollTo(0, 100);
+    document.getElementById("title-textID").scrollIntoView();
 }
+function Games() {
+    document.getElementById("games-titleID").scrollIntoView();
+}
+
 
 elementMove = document.getElementsByClassName("top-menu");
 
