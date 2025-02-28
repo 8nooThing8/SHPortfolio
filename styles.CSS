@@ -23,35 +23,36 @@ body {
     font-family: Arial;
 }
 
-.Traum-game {
+.game {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: auto;
     cursor: pointer;
+    margin-top: 3%;
 }
 
-.Traum-trailer {
-    flex: 1;
-    width: 50%;
-    height: auto;
-    max-width: 100%;
-    border-radius: 0.6em 0px 0px 0.6em;
-    box-shadow: rgba(0, 0, 0, 0.4) 7px 7px;
-}
-
-.traum-title {
+.game-title {
     text-align: center;
     margin-bottom: 3%;
 }
 
-.traumtextContainer {
+.game-trailer-right {
+    flex: 1;
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.4) 7px 7px;
+    border-radius: 0px 0.8em 0.8em 0px;
+}
+
+.game-text-container-right {
     flex: 1;
     width: 50%;
     height: auto;
     font-size: 28px;
-    color: rgb(187, 187, 26);
-    background-color: rgb(110, 122, 125);
+    color: #1E1E1E;
+    background-color: #AAAAAA;
     padding: 4px;
     box-sizing: border-box;
     align-items: center;
@@ -61,35 +62,77 @@ body {
     text-shadow: rgba(0, 0, 0, 0.4) 1px 1px;
 }
 
+.game-trailer-left {
+    flex: 1;
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.4) 7px 7px;
+    border-radius: 0.8em 0px 0px 0.8em;
+}
+
+.game-text-container-left {
+    flex: 1;
+    width: 50%;
+    height: auto;
+    font-size: 28px;
+    color: #1E1E1E;
+    background-color: #AAAAAA;
+    padding: 4px;
+    box-sizing: border-box;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0.6em 0px 0px 0.6em;
+    box-shadow: rgba(0, 0, 0, 0.4) 7px 7px;
+    text-shadow: rgba(0, 0, 0, 0.4) 1px 1px;
+}
+
 @media (max-width: 1400px) {
-    .traumtextContainer {
+    .game-text-container-right {
         font-size: 24px;
+    }
+    .game-text-container-left {
+        font-size: 20px;
     }
 }
 @media (max-width: 1200px) {
-    .traumtextContainer {
+    .game-text-container-right {
+        font-size: 20px;
+    }
+    .game-text-container-left {
         font-size: 20px;
     }
 }
 
 @media (max-width: 1000px) {
-    .Traum-game {
+    .game {
         flex-direction: column;
     }
 
-    .Traum-trailer {
-        border-radius: 0.6em 0.6em 0px 0px;
+    .game-trailer-left {
+        border-radius: 0.8em 0.8em 0px 0px;
         width: 100%;
     }
 
-    .traum-title {
-        font-size: 32px;
-    }
-
-    .traumtextContainer {
+    .game-text-container-right {
         border-radius: 0px 0px 0.6em 0.6em;
         width: 100%;
         font-size: 24px;
+    }
+
+    .game-trailer-right {
+        border-radius: 0px 0px 0.8em 0.8em;
+        width: 100%;
+    }
+
+    .game-text-container-left {
+        border-radius: 0.6em 0.6em 0px 0px;
+        width: 100%;
+        font-size: 24px;
+    }
+
+    .game-title {
+        font-size: 32px;
     }
 }
 
