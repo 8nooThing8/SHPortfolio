@@ -1,0 +1,121 @@
+body {
+    color: #AAAAAA;
+    background-color: #1E1E1E;
+    font-family: 'Roboto';
+    background-attachment: fixed;
+    background-size: 100%;
+    overflow-x: hidden;
+}
+
+.title-text {
+    padding-top: 3.5vh;
+    background-position-y: top;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 4vw;
+}
+
+.Specialization-text-first {
+    padding-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.25vw;
+    width: 50vw;
+    height: 23.7vw;
+    padding-left: 3vw;
+    background-color: #464646;
+    margin-left: -2vw;
+}
+.Specialization-text-second {
+    padding-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.25vw;
+    width: 50vw;
+    height: 22vw;
+    padding-left: 3vw;
+    background-color: #464646;
+    margin-left: -2vw;
+}
+
+.Specialization-text-third {
+    padding-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.25vw;
+    width: 50vw;
+    height: 26.1vw;
+    padding-left: 3vw;
+    background-color: #464646;
+    margin-left: -2vw;
+}
+.Specialization-text-fourth {
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.25vw;
+    width: 100%;
+    height: auto;
+    padding-left: 3vw;
+    background-color: #464646;
+    margin-left: -2vw;
+}
+
+.top-menu {
+    left: 0vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100.5vw;
+    height: 40px;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-item {
+    color: rgb(204, 204, 204);
+    position: relative;
+    font-family: Arial;
+    font-size: 30px;
+    margin-left: 0px;
+    margin-right: 2vw;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-modify-CPP-class {
+    display: flex;
+    flex: 1;
+    width: 20%;
+    height: auto;
+}
+.stencilStates-image-class {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: auto;
+}
+
+.spec-container-vert {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5%;
+}
+
+.spec-container-horiz {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5%;
+}

@@ -4,17 +4,21 @@
     <meta charset="utf-8">
     <title>SH Portfolio</title>
     <link rel="stylesheet" href="styles.CSS">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
             About
         </ref>
-        <ref class="menu-item">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
             Games
         </ref>
-        <ref class="menu-item">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+            Specialization
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
             Awards
         </ref>
     </div>
@@ -23,23 +27,37 @@
             <b>Hi!<br>I'm Simon Henriksson</b>
 
             <div class="under-welcome">
-                Game developer
+                Gameplay / physics programmer
             </div>
 
         </div>
 
-        <img src="Break.png" class="break-to-about">
-
-        <div class="about-me-break">
-            <div class="about-me-text">
-                <b>About me</b>
+        <div class="about-container">
+            <img src="Break.png" class="break-to-about">
+            <div class="about-me-break">
+                <div class="about-me-text">
+                    <b>About me</b>
+                </div>
+                I am a game programmer, currently studying at The Game Assembly - Malmö, a game development school. I am a passionate game developer with my sights set on making awesome and innovative games.
+                I've been making games for more than 6 years, but have been fascinated with games ever since I got introduced to them.
             </div>
-            I am a game programmer, currently studying at The Game Assembly - Malmö. I am a passinate game developer with my sights set on a making awsome and innovative games.
-            I've been making games for more than 6 years, but have been facinated with games ever since i got introduced to them.
         </div>
 
         <div class="my-specialization-title" id="specialization-titleID">
             <b>Specialization</b>
+        </div>
+
+        <div class="specialization-title-text">
+            Physics-Based Mesh Breaking
+        </div>
+
+        <div class="game" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'" onclick="window.location.href = 'Specialization.html'">
+            <img src="BrokenHouse.png" class="game-trailer-left">
+
+            <div class="game-text-container-right">
+                Tga has got a specialization course where you choose a subject and read more into it to for example sove a problem you have in your development process.
+                <br><br>The subject i have chosen to specialize in is physx and breaking holes in any mesh, both the collider and the visual mesh.
+            </div>
         </div>
 
         <div class="my-games" id="games-titleID">
@@ -50,45 +68,17 @@
         </div>
 
         <div class="game-title">
-            <b>No Broom For Error - Project 1</b>
-        </div>
-
-        <div class="game">
-            <img src="Traum-trailer.gif" class="game-trailer-left">
-
-            <div class="game-text-container-right">
-                No Brom For Error was made in a XX week period on half-time and was the first project at The Game Assembly, the reference game was "Race The Sun" by Flippfly LLC.
-                <br><br>The main thing i created for this game was a tool to create a sequence of animated obstacles like trees that fall down to try to hit you,
-                <br>I also created the moon functionality to sync up the time left. I also created a tool to move clothes on a clothes line using a bezier curve.
-            </div>
-        </div>
-
-        <div class="game-title">
-            <b>Hole-É-Mole - Project 2</b>
-        </div>
-
-        <div class="game">
-            <div class="game-text-container-left">
-                Hole-É-Mole was made during a XX week period on half-time and was a mobile game made for Android, Reference game was "Lara Croft GO" by Square Enix Montréal.
-                <br><br>The main function i made was the moving platforms that worked using the tiling system we created,
-                something that was important was that adding a moving platform and creating the path would be easy and intuitive.
-                <br>I created most of the Menus in the game, Main menu, level select and settings.
-            </div>
-
-            <img src="Traum-trailer.gif" class="game-trailer-right">
-        </div>
-
-        <div class="game-title">
             <b>TRAUM - Project 3</b>
         </div>
 
-        <div class="game">
-            <img src="Traum-trailer.gif" class="game-trailer-left">
+        <div class="game" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'" onclick="window.location.href = 'Traum.html'">
+            <img src="Traum.jpg" class="game-trailer-left">
 
             <div class="game-text-container-right">
                 TRAUM was made during a 12 week period on half-time and the reference game was "Limbo" by Playdead.
-                <br><br>I was the creator of the systems for most moving things. Things like sprite sheet animator, Video player and spritesheet exporter from Unity meta files.
-                <br>TRAUM became the winner of 3 of 4 total nominated awards at Swedish game awards.
+                <br><br>Pitch:
+                <br>Traum takes us on the journey of our protagonist coming face to face with the embodiment of her trauma through surreal and dangerous environments.
+                <br><br>TRAUM won 3 of 4 nominated awards at The Swedish Game Awards.
                 <br>Winner: Game Of The Year, Best Narrative, Best Diversity.
                 <br>Nominee: Best Audio
             </div>
@@ -98,25 +88,13 @@
             <b>Golem's Quest: Crystal Keep - Project 4</b>
         </div>
 
-        <div class="game">
+        <div class="game" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'" onclick="window.location.href = 'GolemsQuestCrystalKeep.html'">
+            <img src="GolemsQuest.jpg" class="game-trailer-right">
+
             <div class="game-text-container-left">
-                Golem's Quest was made duing a XX Week period on half time and the reference game was "Death's Door" by Acid Nerve.
-                <br><br>The main thing i made in this project and had the most impact was the shadows, this was very fun and i learned alot from this.
-                <br>I created the specilised shaders like the enemy damage shader to make more cracks depending on the health the enemy has left.
-            </div>
-
-            <img src="Traum-trailer.gif" class="game-trailer-right">
-        </div>
-
-        <div class="game-title">
-            <b>Spite: Parasite - Project 6</b>
-        </div>
-
-        <div class="game">
-            <img src="Traum-trailer.gif" class="game-trailer-left">
-
-            <div class="game-text-container-right">
-                <iframe frameborder="0" src="https://itch.io/embed-upload/11267417?color=bcddd7" allowfullscreen="" width="595" height="335"><a href="https://zultoox.itch.io/grapple-ascent-gmtk2024">Play Grapple Ascent: A Yo-Yo's big scaling adventure on itch.io</a></iframe>
+                Golem's Quest: crystal keep was made duing a XX Week period on half time. The reference game was "Death's Door" by Acid Nerve.
+                <br><br><br><br><br><br>Pitch:
+                <br>Slay the hostile monsters that has infested the fortress. Find the crystal keys to reactivate the broken portal, and leave this forsaken land to find your long lost creator.
             </div>
         </div>
 
@@ -124,42 +102,40 @@
             <b>Stella & Orbit: Take flight - Project 7</b>
         </div>
 
-        <div class="game">
+        <div class="game" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'" onclick="window.location.href = 'StellaAndOrbitTakeFlight.html'">
+            <img src="Stella&orbit.png" class="game-trailer-right">
+
             <div class="game-text-container-left">
-
+                Stella & Orbit: take flight was made in a XX Week period on half time. The reference game was "Ratchet & Clank: Quest for Booty" made for the PlayStation3, by Insomniac Games.
+                <br><br><br><br><br><br>Pitch:
+                <br>As an alien with a knack for technology, escape the abusive orphanage using your self-built companion. Traverse through the space harbor and realize your dream of becoming a pirate.
             </div>
-
-            <img src="Traum-trailer.gif" class="game-trailer-right">
         </div>
 
-        <div class="game-title">
-            <b>Coming Soon - Project 8</b>
-        </div>
-
-        <div class="game">
-            <img src="Traum-trailer.gif" class="game-trailer-left">
-
-            <div class="game-text-container-right">
-
-            </div>
+        <div class="all-games" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'" onclick="window.location.href = 'AllGamesList.html'">
+            <b>ALL GAMES...</b>
         </div>
 
         <div class="my-games-personal-projects">
-            <b>Personal projects/Games</b>
+            <b>Personal projects / Games</b>
         </div>
 
         <div class="game-title">
             <b>Grapple Ascent - GMTK Game Jam 2024</b>
         </div>
 
-        <div class="game">
-            <img src="Traum-trailer.gif" class="game-trailer-left">
+        <div class="game" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'" onclick="window.location.href = 'GrappleAscent.html'">
+            <img src="GrappleAscent.png" class="game-trailer-left">
 
             <div class="game-text-container-right">
-
+                Grapple ascent was a game jam project me and 4 others created for the "Game Makers Tool Kit Gamejam 2024". The Gamejam lasted 96 hours and the given theme for the jam was "Built to Scale"
             </div>
         </div>
 
+        <div class="footer">
+            I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The Game Assembly, neither student nor company may be in contact with one another regarding internships before April 23rd.
+            Any internship offers can be made on May 5th, at the earliest.
+        </div>
     </div>
 
     <script src="base.js"></script>

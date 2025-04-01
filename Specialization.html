@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SH Portfolio</title>
+    <link rel="stylesheet" href="stylesSpecialization.CSS">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="top-menu">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
+            About
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
+            Games
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
+            Awards
+        </ref>
+    </div>
+    <div class="title-text" id="title-textID">
+
+        <b>Physics-Based Mesh Breaking</b>
+    </div>
+
+    <div class="speicialization">
+        <div class="spec-container-horiz">
+            <div class="Specialization-text-first">
+                At TGA we have a specialization course at the end of year two. In this course we got to pick a subject to specialize in and learn more about.
+                <br><br>I chose to make a system that lets you destoy holes in a small cabin to then let new objects thrown at it also pass trough seemlessly.
+            </div>
+            <img src="PhysiclyBreak.gif" class="contact-modify-CPP-class">
+        </div>
+        <div class="spec-container-horiz">
+            <div class="Specialization-text-second">
+                In this project i had to overcome a lot of challenges, one of the big once being how is the physics system suppose to just let through objects when it goes into contact with the hole.
+                <br><br>There are many ways you can do this, one of the more popular being let through the object in question if it collides with a trigger with the specified tag or layer.
+                <br>This solution comes with a few problems, one being the performance of the process from contact to let through.
+                <br>The object first checks if it collides with the trigger, if it does then check if it is inside the object the hole is attached to. This makes two operations that should be able to be done in just one.
+                <br><br>There is another problem, the object will disable its collider right when it touches the trigger and you will fall right through the mesh on the edge of the hole wich just wont look right like the image to the right.
+                <br>We also need to check all triggers in the world with this approach as well.
+            </div>
+
+            <img src="ProblemTrigger.png" class="contact-modify-CPP-class">
+        </div>
+
+        <div class="spec-container-horiz">
+
+            <div class="Specialization-text-third">
+                We are able to the above in just one step. this is by using physx onContactModify, a built in physx collision modifier.
+                The onContact mocify is an overide function you can supply physx to directly be able to modify how physx handles collisions,
+                so instead of checking trigger then let through we can let through the collider right when it finds a contact point inside a shape where collisions should be ignored.
+                <br><br>Not only do we only use one operation per collision check and the collisions are more accurate with only letting the actual contact points through.
+                Because we know what two objects collide, we can then optimise the whole process by only checking if there are holes attached to the collider we touched.
+                <br><br>After we know the contact point is inside a hole then we tell the point with setSeparation() that from the one point to the other has a distance of 1,
+                which means no contact and thus keep moving with the current velocity.
+            </div>
+
+            <img src="ContactModifyCPP.png" class="contact-modify-CPP-class">
+        </div>
+
+        <div class="spec-container-horiz">
+
+            <div class="Specialization-text-third">
+                Now we have the "Hard part" over, the physics. The phyiscs works well and if we hover the sphere over the objects they fall through the ground, image to the right.
+                <br>Next step is actually making a visual cut in the mesh. A way to do this is by using stencil testing plus layers to only write color where there are no holes.
+                <br><br>This is quite easy to do in both DirectX11 and OpenGL, both of wich i have written a smaller game engine in to test the different development enviroments and be able to make it multiplatformed.
+            </div>
+
+            <img src="ContactModifyCPP.png" class="contact-modify-CPP-class">
+        </div>
+
+        <div class="contact-modify-cpp-container-horiz">
+            <div class="Specialization-text-fourth">
+                Below i have two different implementations for the two different graphics api i talked about before, OpenGL and DirectX11. 
+                The only difference is in opengl we set all stencil settings right inline while in dx 11 we create them before and set them directly.
+                I would say that the impementation of OpenGL version is easier to understand and can also be more readable in my opinion.
+                Short explanation of whats happening is we first sort all render components, then get each layer one by one and render the objects on the layer to render from back to forward with layer in consideration
+            </div>
+
+            <img src="stencilStates.png" class="stencilStates-image-class">
+        </div>
+    </div>
+
+    <script src="specialization.js"></script>
+</body>
+</html>
