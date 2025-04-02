@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>SH Portfolio</title>
-    <link rel="stylesheet" href="Games.CSS">
+    <link rel="stylesheet" href="Games.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
@@ -75,13 +75,13 @@
 
         <div class="contribution-text-centered">
             <i>shader for text renderer</i>
-        </div> 
+        </div>
 
         <div class="result-text">
             <br>
             <br>
             <br>
-            This is the result of the above 
+            This is the result of the above
         </div>
 
         <img src="text-rendered.png" class="text-rendered">
@@ -97,15 +97,32 @@
 
         <div class="contribution-text">
             The choosen game concept and game theme was space pirates. with this comes alot of open area which with the old shadowing techniche will be covered i darkness or be completely lit up which both looks wrong.
-            The solution to this are cascaded shadow maps. The implementation of cascaded shadow maps in this project was a real hassle and took longer than i thought it would. 
+            The solution to this are cascaded shadow maps. The implementation of cascaded shadow maps in this project was a real hassle and took longer than i thought it would.
             Helping me i had the guest article on <a href="https://learnopengl.com">Learn OpenGL</a> at <a href="https://learnopengl.com/Guest-Articles/2021/CSM">Cascaded Shadow Maps LearnOpenGL</a>
             When i was implementing these cascaded shadow maps i got this result at the start
         </div>
 
-        <img src="cascadedShadowMapFOV.png" class="main-menu">
+        <img src="cascadedShadowMapFOV.png" class="cascaded-shadowmap-wrong">
 
         <div class="contribution-text-centered">
-            <i>Main menu scrolling through options</i>
+            <i>Shadow map from one of the cascade cam</i>
+        </div>
+
+        <div class="contribution-text">
+            The result looks very bad since it almost looks like i have way too much FOV even when this should be zero with a directional light. I knew something was wrong with our othographic camera because compared to one online they were completely different so i had to fix it.
+            <br>While browsing through the <a href="https://learn.microsoft.com/en-us/windows/win32/dxtecharts/cascaded-shadow-maps">DX11 snippet for Cascaded shadow maps</a> there was one slight difference in the orthographics cam we create vs what they create
+            <br>we did
+            <br>"myClipSpace(3, 4) = -nearPlane / (farPlane - nearPlane);"
+            <br>while the DX11 snippet did
+            <br>"myClipSpace(4, 3) = -nearPlane / (farPlane - nearPlane);"
+            <br>When i finaly saw this and fixed it, everything worked.
+
+        </div>
+
+        <img src="cascadedShadowMapFOV.png" class="cascaded-shadowmap-wrong">
+
+        <div class="contribution-text-centered">
+            <i>Shadow map from one of the cascade cam</i>
         </div>
 
         <div id="Third-title" class="contribution-titletext">

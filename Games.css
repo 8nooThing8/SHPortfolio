@@ -43,6 +43,10 @@ body {
     width: 80%;
 }
 
+.cascaded-shadowmap-wrong {
+    width: 45vw;
+}
+
 .nbfeImage {
     margin-top: 3vw;
     margin-bottom: 3vw;
@@ -296,6 +300,11 @@ hr {
     margin-top: 2vw;
     width: 40vw;
     height: 9vw;
+}
+.text-ps {
+    margin-top: 2vw;
+    width: 40vw;
+    height: 6.5vw;
 }
 
 
