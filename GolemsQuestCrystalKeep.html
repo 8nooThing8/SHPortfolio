@@ -3,31 +3,129 @@
 <head>
     <meta charset="utf-8">
     <title>SH Portfolio</title>
-    <link rel="stylesheet" href="styles.CSS">
+    <link rel="stylesheet" href="Games.CSS">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             About
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             Games
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
+            Specialization
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             Awards
         </ref>
     </div>
+    <div class="item-container">
+        <img class="nbfeImage" src="GolemsQuest.jpg">
 
-    <br><br>
-    <a class="gameLink" href="https://www.youtube.com/watch?v=9XMQpyZL1bw">
-        Golems Quest: Crystal Keep
-    </a>
+        <div class="video-contribution-holder">
+            <iframe class="video-player" src="https://www.youtube.com/embed/e0gUAcpYPoU?si=gF-1ym_GkwRlxHuf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="contibution">
+                <br><br>
+                <u><b>Contibution</b></u>
+                <br>
+                <br>
+                <div class="contibutions">
+                    <div onclick="document.getElementById('First-title').scrollIntoView()"><u>Shadow Mapping</u></div>
+                    <div onclick="document.getElementById('Second-title').scrollIntoView()"><u>Monster Damage Shader</u></div>
+                </div>
+            </div>
+        </div>
 
+        <div class="Engine">
+            This game was made in
+            <br>TGE (The Game Assembly in house engine)
+        </div>
 
-    <br>The main thing i made in this project and had the most impact was the shadows, this was very fun and i learned alot from this.
-    <br>I created the specilised shaders like the enemy damage shader to make more cracks depending on the health the enemy has left.
+        <div id="First-title" class="contribution-titletext">
+            <b>Shadow Mapping</b>
+        </div>
 
+        <div class="contribution-text-moving-platform">
+            While making Golems Quest: Crystal Keep in around the middle of the project the world looked very wrong since we only had PBL lighting in the scene which only darkened the back of models.
+            I then decided i had to research how to make shadow maps and make the scene look way better. The main problem was we had just started our game engine and had no direction to how we could do this.
+            The saviour was <a href="https://Learnopengl.com">Learn OpenGL</a> and their great article about <a href="https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping">Shadow Mapping</a> where i could find the basics for the shadow mapping.
+            While making the project we used DirectX11 and learn opengl is in OpenGL, but this was pretty easily translatable to DirectX11. Even with the tutorial it was no small feat, it was amazing when it actually worked since i had been working on it for so long and wanted results.
+            At that stage the below image was the first i got
+            <br>
+            <br>
+        </div>
+        <img src="shadowsP4Wacky.png" class="tree-fall-editor">
+
+        <div class="contribution-text-centered">
+            <i>An image showing some wrongly projected shadows</i>
+        </div>
+
+        <div class="contribution-text-moving-platform">
+            <br>
+            The problem here was something to do with the camera projecting from the bottom of the world upwards and drawing shadows on the theoretical "backsides" since they are the forward for us but back for the shadow camera.
+            When i figured that out and moved the camera so it pointed downwards towards the world instead of upwards i got an amazing result, and was even happier about it than before
+            <br>
+            <br>
+        </div>
+        <img src="shadowsP4.png" class="tree-fall-editor">
+
+        <div class="contribution-text-centered">
+            <i>An image showing correctly projected shadows</i>
+        </div>
+
+        <div id="Second-title" class="contribution-titletext">
+            <b>Monster Damage Shader</b>
+        </div>
+
+        <div class="contribution-text">
+            In the game Death's door when you hit an enemy they starts to glow and gets a bit cracked as a health indicator, since this was our refrence game we wanted something similar.
+            At that point i have had very little experience with HLSL(the shader language DirectX11 uses) but i knew the basics. I decided to see if i could make something remotely similar to how it looks in the Death's Door.
+            I tried a bunch of different cobinatios of noise, voronoy noise, blue noise and anything that could give me streaks, at last with the folowing pixelshader i got something that resembeled cracking when enemies are hit.
+            <br>
+            <br>
+        </div>
+
+        <img src="CracksInEnemies.png" class="cracks-in-enemies">
+
+        <div class="contribution-text-centered">
+            <i>Enemies cracking PS shader</i>
+        </div>
+
+        <div class="result-text">
+            <b>Result</b>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <img src="shaderEnemy.png" class="cracks-in-enemies">
+
+        <div class="contribution-text-centered">
+            <i>A representation of how an enemy who has 1/3 of health left</i>
+        </div>
+
+        <div class="closing-thoughts-title">
+            <b>Closing Thoughts</b>
+        </div>
+        <div class="closing-thoughts">
+            This project was the game i learned the most till then, i both got to research and implement shadow mapping and learn how to make some cool shaders with some very simple noise textures.
+            It was very fun and after the shadows form this projecet i have reimplemented shadows two other projects one the same, DirectX11 and one time in OpenGL.
+        </div>
+
+        <hr>
+        <div class="Playable-game">
+            This game does not have an official site but the game can be downloaded with the button below
+        </div>
+        <a href="GolemsQuestCrystalKeep.zip" download="GolemsQuestCrystalKeep.zip" style="text-decoration:none;">
+            <div class="download-game" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'">
+                Download Game
+            </div>
+        </a>
+    </div>
+
+    <script src="Games.js"></script>
 </body>
 </html>

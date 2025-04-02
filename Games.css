@@ -8,6 +8,7 @@ body {
 }
 
 .top-menu {
+    padding: 0.7vw;
     left: 0vw;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100.5vw;
@@ -32,17 +33,23 @@ body {
 }
 
 .title-text {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    text-align: center;
+    font-size: 1vw;
 }
 
 .traum-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 80%;
+}
+
+.nbfeImage {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 
 .item-container {
@@ -60,4 +67,274 @@ body {
     position: relative;
     left: 50%;
     transform: translate(-50%, -2%);
+}
+
+.video-contribution-holder {
+    display: flex;
+    align-self: baseline;
+}
+
+.video-player {
+    flex: 1;
+    width: 40vw;
+    height: 14vw
+}
+
+.contibution {
+    font-size: 1vw;
+    flex: 1;
+    text-align: center;
+    color: rgb(199, 181, 38);
+}
+
+.contibutions {
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.contribution-titletext {
+    margin-bottom: 3vw;
+    margin-top: 7vw;
+    font-size: 2vw;
+}
+
+.result-text {
+    text-align: justify;
+    width: 80%;
+    font-size: 1vw;
+    margin-bottom: -0.5vw;
+}
+
+.contribution-text {
+    text-align: justify;
+    width: 80%;
+    font-size: 1vw;
+}
+.contribution-text-moving-platform {
+    text-align: justify;
+    width: 100%;
+    font-size: 1vw;
+}
+
+.contribution-text-centered {
+    padding-top: 1vw;
+    text-align: center;
+    width: 80%;
+    font-size: 0.8vw;
+}
+
+.contribution-text-transform-animator {
+    text-align: justify;
+    font-size: 1vw;
+}
+
+.Engine {
+    text-align: center;
+    font-size: 1vw;
+}
+
+.SpriteSheetImage {
+    width: auto;
+    height: 14vw;
+    margin-left: 2vw;
+}
+
+.SpriteSheetImage {
+    width: auto;
+    height: 14vw;
+    margin-left: 2vw;
+}
+
+.awards {
+    width: auto;
+    height: 9vw;
+    transform: translate(0, -5vw);
+}
+
+.Rawards {
+    width: auto;
+    height: 9vw;
+}
+
+.awards-GOTY {
+    width: auto;
+    height: 15vw;
+    transform:translate(0, -6.75vw);
+    margin-left:-2vw;
+    margin-right:-2vw;
+}
+
+.interpolated-position {
+    width: 100%;
+    margin-bottom: 1vw;
+}
+
+.traum-animation {
+    width: 10vw;
+    height: auto;
+}
+
+.cracks-in-enemies {
+    width: 40vw;
+    height: auto;
+}
+
+.level-select {
+    border-radius: 0.7vw 0.7vw 0.7vw 0.7vw;
+    width: 37vw;
+    height: auto;
+}
+
+.text-image-container-horiz {
+    display: flex;
+    flex-direction: row;
+}
+
+.traum-spritesheet-container {
+    margin-bottom: 1vw;
+    height: 10vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.traum-spritesheet {
+    height: 10vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.closing-thoughts-title {
+    margin-top: 7vw;
+    font-size: 3vw;
+}
+
+.closing-thoughts {
+    font-size: 1vw;
+}
+
+.Playable-game {
+    margin-top: 2vw;
+    font-size: 1vw;
+}
+
+hr {
+    display: block;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    width: 100%;
+}
+
+.tree-fall-editor {
+    width: 35vw;
+    height: 20vw;
+}
+
+.moon-timer {
+    width: 40vw;
+    height: 25vw;
+}
+
+.main-menu {
+    width: 40vw;
+    height: 19vw;
+}
+
+.bezier-curve {
+    width: 17vw;
+    height: 20vw;
+    flex: 1;
+    margin-right: 0.3vw;
+    border-radius: 0.3vw 0.3vw 0.3vw 0.3vw;
+}
+
+.bezier-curve-code {
+    width: 30vw;
+    height: 20vw;
+    flex: 1;
+    margin-left: 0.3vw;
+    border-radius: 0.3vw 0.3vw 0.3vw 0.3vw;
+}
+
+.contribution-text-bezier-lerp {
+    text-align: justify;
+    width: 60%;
+    font-size: 1vw;
+}
+
+.download-game {
+    margin-top: 2vw;
+    z-index: 1;
+    padding: 1%;
+    flex: 1;
+    width: 100%;
+    height: auto;
+    font-size: 1.5vw;
+    color: #1E1E1E;
+    background-color: rgb(204, 204, 204);
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 0.6em 0.6em 0.6em 0.6em;
+    box-shadow: rgb(35, 35, 35) 0.2vw 0.2vw;
+    cursor: pointer;
+}
+.shape-cast {
+    width: 45vw;
+    height: 4vw;
+}
+
+.text-render-image {
+    margin-top: 2vw;
+    width: 45vw;
+    height: 23vw;
+}
+.text-rendered {
+    margin-top: 2vw;
+    width: 40vw;
+    height: 9vw;
+}
+
+
+
+
+@media (pointer:coarse) {
+    .video-contribution-holder {
+        display: block;
+        align-self: center;
+    }
+    .text-image-container-horiz {
+        flex-direction: column;
+    }
+    .contribution-text {
+        align-self: center;
+    }
+    .SpriteSheetImage {
+        align-self: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .video-contribution-holder {
+        display: block;
+        align-self: center;
+    }
+    .text-image-container-horiz {
+        flex-direction: column;
+    }
+
+    .contribution-text{
+        align-self: center;
+    }
+    .SpriteSheetImage {
+        margin-top: 3vw;
+        align-self: center;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
 }

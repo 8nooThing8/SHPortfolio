@@ -1,34 +1,129 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>SH Portfolio</title>
-    <link rel="stylesheet" href="styles.CSS">
+    <link rel="stylesheet" href="Games.CSS">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             About
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             Games
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
+            Specialization
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             Awards
         </ref>
     </div>
+    <div class="item-container">
+        <img class="nbfeImage" src="HoleEMole.png">
 
-    <br> <br>
+        <div class="traum-spritesheet-container">
+            <img src="FinalistRookies.png" class="Rawards">
+            <img src="HighlyComendableRookies.png" class="Rawards">
+        </div>
 
-    <a class="gameLink" href="https://play.google.com/store/apps/details?id=com.OBLO.MoleGame&pli=1">
-        Hole-é-Mole
-    </a>
+        <div class="video-contribution-holder">
+            <iframe class="video-player" src="https://www.youtube.com/embed/K-PwLLgQEOc?si=ELK8GpPp27Qvwwhe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="contibution">
+                <br><br>
+                <u><b>Contibution</b></u>
+                <br>
+                <br>
+                <div class="contibutions">
+                    <div onclick="document.getElementById('First-title').scrollIntoView()"><u>Moving Platform</u></div>
+                    <div onclick="document.getElementById('Second-title').scrollIntoView()"><u>Main Menu</u></div>
+                    <div onclick="document.getElementById('Third-title').scrollIntoView()"><u>Level Select</u></div>
+                </div>
+            </div>
+        </div>
 
+        <div class="Engine">
+            This game was made in
+            <br>Unity Game Engine
+        </div>
 
-    <br>The main function i made was the moving platforms that worked using the tiling system we created,
-    something that was important was that adding a moving platform and creating the path would be easy and intuitive.
-    <br>I created most of the Menus in the game, Main menu, level select and settings.
+        <div id="First-title" class="contribution-titletext">
+            <b>Moving Platform</b>
+        </div>
+
+        <div class="contribution-text-moving-platform">
+            Hole-é-mole was the second game project i participated in at The Game Assembly, it was a moblie game made in Unity. The main feature i created for Hole-é-mole was the moving platforms that moves creatures and the mole around.
+            These platforms can be activated by going to a lever and interacting with it or walking onto a pressure plate. How i made it was when the platform is suppose to move it shoots a raycast upwards and check all objects on the current node to move.
+            This works well and all but in heind sight i would instead just get what is standing on the platform since that is a function we had and could use easily. This could have improved performance and stability if the ray somehow misses.
+            It was only a smaler game so not necessary to change but fun to think about.
+            <br>
+            <br>
+        </div>
+        <img src="MovingPlatform.gif" class="tree-fall-editor">
+
+        <div class="contribution-text-centered">
+            <i>A working moving platform that goes up and down when presses a layer</i>
+        </div>
+
+        <div id="Second-title" class="contribution-titletext">
+            <b>Main Menu</b>
+        </div>
+
+        <div class="contribution-text">
+            When it came to main menu's in games, i hate when they are always the same boring static no moving things so i wanted to mix things up. I have always loved 3D main menus cause they look awsome and are quite easy to implement for a developer.
+            This also removes a bit of work for the graphics team since they always have a lot on their plates this helped them as well. The main menu is setup so that there is a gameobject in the middle of the four options in main menu.
+            When you swipe to the left or right this object rotates bepending on your swipe direction, so it becomes a revolving wheel of sorts. I also added some torches to the background to give it some ambience.
+            The menu at finals turned out very well and is very enjoyable to spin around and select options.
+            <br>
+            <br>
+        </div>
+
+        <img src="MainMenu.gif" class="main-menu">
+
+        <div class="contribution-text-centered">
+            <i>Main menu scrolling through options</i>
+        </div>
+
+        <div id="Third-title" class="contribution-titletext">
+            <b>Level Select</b>
+        </div>
+
+        <div class="contribution-text-bezier-lerp">
+            When it came to level select that needed to be implemented, i had a very good idea so i took the task.
+            The idea was because we are going through a cave system and going further and further down, it will be a tressuremap kind of thing that goes deeper and deeper on your screen.
+            It was easy to implement, all that was needed was tracking how much you scroll and move the backdrop with that amount.
+            Since the background image is a gameobject all the colliders for entering levels move with it.
+            <br>
+            <br>
+        </div>
+
+        <img src="LevelSelect.gif" class="level-select">
+
+        <br>
+        <i>Scrolling in level select from hole-é-mole</i>
+
+        <div class="closing-thoughts-title">
+            <b>Closing Thoughts</b>
+        </div>
+        <div class="closing-thoughts">
+            This was my first time developing a game for mobile and it was a great experience, i got to learn more about optimisation for phone since its not as powerful as a pc.
+            The game itself is a fun puzzle game to play, and was even more fun to make it.
+        </div>
+
+        <hr>
+
+        <div class="Playable-game">
+            If you want to learn more and play our game follow the Link below
+        </div>
+
+        <a class="title-text" href="https://play.google.com/store/apps/details?id=com.OBLO.MoleGame&hl=en_ZA">
+            Hole-É-Mole
+        </a>
+    </div>
+
+    <script src="Games.js"></script>
 </body>
 </html>

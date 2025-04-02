@@ -265,6 +265,7 @@ body {
 }
 
 .top-menu {
+    padding: 0.7vw;
     left: 0vw;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100.5vw;

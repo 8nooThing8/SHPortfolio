@@ -9,23 +9,123 @@
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
             About
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
             Games
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
+            Specialization
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
             Awards
         </ref>
     </div>
     <div class="item-container">
         <img class="traum-image" src="Traum.jpg">
+
+        <div class="traum-spritesheet-container">
+            <img src="DIVERSITY.png" class="awards">
+            <img src="GOTY.png" class="awards-GOTY">
+            <img src="NARRATIVE.png" class="awards">
+        </div>
+
+        <div class="video-contribution-holder">
+            <iframe class="video-player" src="https://www.youtube-nocookie.com/embed/S37jEJCWIgg?si=wVGaY_8IvJZy5cpu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="contibution">
+                <br><br>
+                <u><b>Contibution</b></u>
+                <br>
+                <br>
+                <div class="contibutions">
+                    <div onclick="document.getElementById('SSUE-title').scrollIntoView()"><u>Unity Sprite Sheet Extractor/Importer</u></div>
+                    <div onclick="document.getElementById('SSA-title').scrollIntoView()"><u>Sprite Sheet Animator</u></div>
+                    <div onclick="document.getElementById('TAUTT-title').scrollIntoView()"><u>Scripted Animation, Unity To TGE</u></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Engine">
+            This game was made in
+            <br>TGE (The Game Assembly in house engine)
+        </div>
+
+        <div id="SSUE-title" class="contribution-titletext">
+            <b>Unity Sprite sheet Extractor/Importer</b>
+        </div>
+
+        <div class="text-image-container-horiz">
+            <div class="contribution-text">
+                For the project we needed an easy, stressfree and effective way to switch between different textures when animating a sprite.
+                I had done this before soi took the task and at first made a simple sprite switcher to animate the sprite, this method needed to create a bunch of textures and store it in memory and thus was a no go.
+                To make this more effective i used the meta files from unity when editing and exported the meta into our project to get the min and max coordinates on the sprite.
+                with the unity sprite ".meta" files, i could import these and create textures from them in our engine. I then used these rects i get and animate the sprite.
+            </div>
+            <img src="SpriteSheetMeta.png" class="SpriteSheetImage">
+        </div>
+
+        <div id="SSA-title" class="contribution-titletext">
+            <b>Sprite Sheet Animator</b>
+        </div>
+
+        <div class="contribution-text">
+            After importing ".meta" files the animation of these sprites could begin. The way they load in is we have the name and extension of the texture and just add ".meta" at the end.
+            All these rects in the dile could then be loaded into a list to easily and effectivly access them later.
+            in the animator class i have a variable that stores what sprite index is suppose to be used to cut out an area of the bigger texture.
+            <br>
+            <br>
+        </div>
+
+        <div class="traum-spritesheet-container">
+            <img src="SpriteSheetSplit.png" class="traum-spritesheet">
+            <img src="TaumAnimation.gif" class="traum-animation">
+        </div>
+
+        <div class="contribution-text-centered">
+            <i>Run animation from the main character in Traum</i>
+        </div>
+
+        <div id="TAUTT-title" class="contribution-titletext">
+            <b>Scripted Animation</b>
+        </div>
+
+        <div class="contribution-text-transform-animator">
+            In Traum we had to make a way to move the monster on a path where the level designers could move, rotate and scale the object how they wanted and when they wanted it.
+            I used unity for this task as well but this time using unity's Animaton tool. In unity Level designers used the animator and keyframes to move, rotate and scale right when it was needed in the boss sequence.
+            In this place i also used unity's ".animation" file since its just plain text and i could extract position, rotation and scale.
+            <br>In hindsight i would say that this is not a very efficient solution since there is alot of extra data in these unity ".animation" files that is not needed so instead directly export all of the properties to a json.
+            Or if there is no way to acces these in Unity c# script you could make an external script that reads and extracts all properties from the ".animation" file and output into another file,
+            then you would save a bit of storage.
+            <br>I still like the implementation and an interesting way to go about solving the problem.
+            <br>
+            <br>
+        </div>
+
+        <img src="InterpolatedPosition.png" class="interpolated-position">
+
+        <i>Run animation from the main character in Traum</i>
+
+        <div class="closing-thoughts-title">
+            <b>Closing Thoughts</b>
+        </div>
+        <div class="closing-thoughts">
+            This was one of my favourite games to work on, since i got to work with tools i enjoy and make fun features for Traum.
+            Traum is also a three time Swedish Game Awards winner, everyone in the developent team was amazaing and we made a very cool, fun and enjoyable game together.
+            <br>Thanks to everyone at "Morbid Games"
+        </div>
+
+        <hr>
+
+        <div class="Playable-game">
+            If you want to learn more and play our amazing game follow the Link below
+        </div>
+
         <a class="title-text" href="https://k0ded.itch.io/traum">
             TRAUM
         </a>
-
-        <br>I was the creator of the systems for most moving things. Things like sprite sheet animator, Video player and spritesheet exporter from Unity meta files.
     </div>
+
+    <script src="Games.js"></script>
 </body>
 </html>

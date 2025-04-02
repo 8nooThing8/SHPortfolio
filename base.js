@@ -21,13 +21,13 @@ menuItems[2].addEventListener('click', Specialization);
 menuItems[3].addEventListener('click', Awards);
 
 function About() {
-    document.getElementById("title-textID").scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("title-textID").scrollIntoView();
 }
 function Games() {
-    document.getElementById("games-titleID").scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("games-titleID").scrollIntoView();
 }
 function Specialization() {
-    document.getElementById("specialization-titleID").scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("specialization-titleID").scrollIntoView();
 }
 function Awards() {
 
@@ -58,7 +58,7 @@ function ScrollEvents() {
     MoveBackgroundSlowlyWithScroll();
 }
 
-setInterval(Move, 1);
+setInterval(Move, 7);
 
 
 

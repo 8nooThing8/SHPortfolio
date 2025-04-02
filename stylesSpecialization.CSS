@@ -8,7 +8,7 @@ body {
 }
 
 .title-text {
-    padding-top: 3.5vh;
+    padding-top: 10vh;
     background-position-y: top;
     display: flex;
     flex-direction: column;
@@ -16,50 +16,50 @@ body {
     font-size: 4vw;
 }
 
+.spec-holder {
+    font-size: 1.3vw;
+}
+
 .Specialization-text-first {
-    padding-top: 3vw;
+    padding-top: 1.3vw;
     display: flex;
     flex-direction: column;
     text-align: left;
-    font-size: 1.25vw;
     width: 50vw;
-    height: 23.7vw;
+    height: auto;
     padding-left: 3vw;
     background-color: #464646;
     margin-left: -2vw;
 }
 .Specialization-text-second {
-    padding-top: 3vw;
+    padding-top: 1.3vw;
     display: flex;
     flex-direction: column;
     text-align: left;
-    font-size: 1.25vw;
     width: 50vw;
-    height: 22vw;
+    height: auto;
     padding-left: 3vw;
     background-color: #464646;
     margin-left: -2vw;
 }
 
 .Specialization-text-third {
-    padding-top: 3vw;
+    padding-top: 1.3vw;
     display: flex;
     flex-direction: column;
     text-align: left;
-    font-size: 1.25vw;
     width: 50vw;
-    height: 26.1vw;
+    height: auto;
     padding-left: 3vw;
     background-color: #464646;
     margin-left: -2vw;
 }
 .Specialization-text-fourth {
-    padding-top: 3vw;
+    padding-top: 1.3vw;
     padding-bottom: 3vw;
     display: flex;
     flex-direction: column;
     text-align: left;
-    font-size: 1.25vw;
     width: 100%;
     height: auto;
     padding-left: 3vw;
@@ -68,6 +68,7 @@ body {
 }
 
 .top-menu {
+    padding: 0.7vw;
     left: 0vw;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100.5vw;
@@ -118,4 +119,16 @@ body {
     width: 100%;
     height: auto;
     margin-bottom: 5%;
+}
+
+.spec-container-horiz-second {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30vw;
+    margin-bottom: 5%;
+}
+
+html {
+    scroll-behavior: smooth;
 }

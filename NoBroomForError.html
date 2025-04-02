@@ -3,28 +3,120 @@
 <head>
     <meta charset="utf-8">
     <title>SH Portfolio</title>
-    <link rel="stylesheet" href="styles.CSS">
+    <link rel="stylesheet" href="Games.CSS">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             About
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             Games
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
+            Specialization
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             Awards
         </ref>
     </div>
-    <br> <br>
-    <a class="gameLink" href="https://omenotisdev.itch.io/no-broom-for-error">
-        No Broom for Error
-    </a>
+    <div class="item-container">
+        <img class="nbfeImage" src="NoBroomForError.png">
 
-    <br>The main thing i created for this game was a tool to create a sequence of animated obstacles like trees that fall down to try to hit you,
-    <br>I also created the moon functionality to sync up the time left. I also created a tool to move clothes on a clothes line using a bezier curve.
+        <div class="video-contribution-holder">
+            <iframe class="video-player" src="https://www.youtube.com/embed/pgv8kyc6-4A?si=0LTnwUYzpSFiupbd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="contibution">
+                <br><br>
+                <u><b>Contibution</b></u>
+                <br>
+                <br>
+                <div class="contibutions">
+                    <div onclick="document.getElementById('TFSE-title').scrollIntoView()"><u>Tree Fall Sequence Editor</u></div>
+                    <div onclick="document.getElementById('MT-title').scrollIntoView()"><u>Moon Timer</u></div>
+                    <div onclick="document.getElementById('CLBC-title').scrollIntoView()"><u>Bezier Curving</u></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Engine">
+            This game was made in
+            <br>Unity Game Engine
+        </div>
+
+        <div id="TFSE-title" class="contribution-titletext">
+            <b>Tree Fall Sequence Editor</b>
+        </div>
+
+        <div class="contribution-text">
+            This was the first project at The Game Assembly and i was assigned the task to make a hopefully easy tool for making falling trees in this endless runner game.
+            The tool was made with unity's editor tools which made it possible to do things like only displaying information when a flag was set which is not possible in the default properties editor.
+            In the end i made a tool that could do this, the only problem was that it was not very user friendly since i had not made many tools that others had to use which made it hard to use and thus not very many of these instances can be seen in the game.
+            It was a learningful experince and learnetmore about the unity tool.
+            <br>
+            <br>
+        </div>
+        <img src="TreeFallEditor.png" class="tree-fall-editor">
+
+        <div class="contribution-text-centered">
+            <i>A screenshot of what a sequence and the edior could look like in action</i>
+        </div>
+
+        <div id="MT-title" class="contribution-titletext">
+            <b>Moon Timer</b>
+        </div>
+
+        <div class="contribution-text">
+            We wanted a fun way to show how much time is left so we decided to do it the same way race the sun does it, our reference game. In race the sun, like the name sugests you have to keep racing the sun while it keeps going down and when you get more time it rises again.
+            Since we had a haloween theme and a witch as the main character we made the sun be a moon instead. My solution to this was pretty simple, have a start position and have an end position and lerp smoothly between these with (Time passed ÷ max time).
+            This made a pretty nice and smooth move from highest point to lowest point. One problem this caused was the moon in the final product was too close and can sometimes be seen clipping into the ground, the solution move it further back.
+            <br>
+            <br>
+        </div>
+
+        <img src="moonAnim.gif" class="moon-timer">
+
+        <div class="contribution-text-centered">
+            <i>A sped up version of the moon timer in editor</i>
+        </div>
+
+        <div id="CLBC-title" class="contribution-titletext">
+            <b>Bezier Curving</b>
+        </div>
+
+        <div class="contribution-text-bezier-lerp">
+            In our project we wanted to make a clothes line that moves forwards and back. The easiest way to do this like i did was to just make a simple bezier curve between two vector3's.
+            A bezier curve could be made very complicated with a bunch of math functions but that would be way too indepth for this project so i just decided to use multiple Vector3 lerps to smoothly go between these points.
+            <br>
+            <br>
+        </div>
+        <div class="text-image-container-horiz">
+            <img src="LerpBezier.gif" class="bezier-curve">
+            <img src="lerpBezierCode.png" class="bezier-curve-code">
+        </div>
+        <br>
+        <i>A showcase of both code and visulization of lerped bezier curve</i>
+
+        <div class="closing-thoughts-title">
+            <b>Closing Thoughts</b>
+</div>
+        <div class="closing-thoughts">
+            This was my first game project at The Game Assembly and was a very interesting experience, i had never worked this close with a bunch of diciplines so i had to lean how to work with everyone and help them with what is needed.
+
+        </div>
+
+        <hr>
+
+        <div class="Playable-game">
+            If you want to learn more and play our game follow the Link below
+        </div>
+
+        <a class="title-text" href="https://omenotisdev.itch.io/no-broom-for-error">
+            No Broom For Error
+        </a>
+    </div>
+
+    <script src="Games.js"></script>
 </body>
 </html>

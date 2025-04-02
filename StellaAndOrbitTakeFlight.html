@@ -3,28 +3,148 @@
 <head>
     <meta charset="utf-8">
     <title>SH Portfolio</title>
-    <link rel="stylesheet" href="styles.CSS">
+    <link rel="stylesheet" href="Games.CSS">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             About
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             Games
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
+            Specialization
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
             Awards
         </ref>
     </div>
-    <br> <br>
-    <a class="gameLink" href="StellaAndOrbitTakeFlight.html">
-        Stella & Orbit: Take Flight
-    </a>
+    <div class="item-container">
+        <img class="nbfeImage" src="HoleEMole.png">
 
-    <br>I created systems such as mainly the cascaded shadow maps using the resource Learnopengl guest presentation on CSM
+        <div class="video-contribution-holder">
+            <iframe class="video-player" src="https://www.youtube.com/embed/Iqr3XIhSnUQ?si=UpZg620osi18jLEX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="contibution">
+                <br><br>
+                <u><b>Contibution</b></u>
+                <br>
+                <br>
+                <div class="contibutions">
+                    <div onclick="document.getElementById('First-title').scrollIntoView()"><u>Text Renderer</u></div>
+                    <div onclick="document.getElementById('Second-title').scrollIntoView()"><u>Cascaded Shadow Maps</u></div>
+                    <div onclick="document.getElementById('Third-title').scrollIntoView()"><u>Dialouge</u></div>
+                </div>
+            </div>
+        </div>
 
+        <div class="Engine">
+            This game was made in
+            <br>TRK (our inhouse engine at VRAK)
+        </div>
+
+        <div id="First-title" class="contribution-titletext">
+            <b>Text Renderer</b>
+        </div>
+
+        <div class="contribution-text">
+            In the previous project P6 we did not have any type of text rendering which made it so that the graphics team had to make text as sprites then we can render these with our sprite renderers.
+            We wanted to let the graphics team work more on models, textures, buttons and other graphical elements and we handle the text in engine instead of outside. For this I implemented FreeType, a free and open source c font render engine.
+            With freetype we could define each character as a textureResource in a map wich has the key of a char. With this we then use the DX11 function
+            <a href="https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-copysubresourceregion">CopySubresourceRegion</a>
+            to copy the contents of the char we wanted that is mapped to a texture and paste it to a new texture that had been inited before with a total character pixel offset to place all the character correctly.
+        </div>
+
+        <img src="TextRenderer.png" class="text-render-image">
+
+        <div class="contribution-text-centered">
+            <i>Script to copy a tetxure from map to a bigger combined text texture</i>
+        </div>
+
+        <div class="contribution-text">
+            <br>
+            <br>
+            When we have copied to the resource we set it as a Shader Resource View and then use it in a text pixel shader, we sample color from the texture and only return the red channel and multiply in albedo tint to be able to change color of the text.
+            <br>
+            <br>
+        </div>
+
+        <img src="textPS.png" class="text-ps">
+
+        <div class="contribution-text-centered">
+            <i>shader for text renderer</i>
+        </div> 
+
+        <div class="result-text">
+            <br>
+            <br>
+            <br>
+            This is the result of the above 
+        </div>
+
+        <img src="text-rendered.png" class="text-rendered">
+
+        <div class="contribution-text-centered">
+            <i>Text that says "Clanking Orphanage" with font Comic Sans</i>
+        </div>
+
+        <div id="Second-title" class="contribution-titletext">
+            <b>Cascaded Shadow Maps</b>
+        </div>
+
+
+        <div class="contribution-text">
+            The choosen game concept and game theme was space pirates. with this comes alot of open area which with the old shadowing techniche will be covered i darkness or be completely lit up which both looks wrong.
+            The solution to this are cascaded shadow maps. The implementation of cascaded shadow maps in this project was a real hassle and took longer than i thought it would. 
+            Helping me i had the guest article on <a href="https://learnopengl.com">Learn OpenGL</a> at <a href="https://learnopengl.com/Guest-Articles/2021/CSM">Cascaded Shadow Maps LearnOpenGL</a>
+            When i was implementing these cascaded shadow maps i got this result at the start
+        </div>
+
+        <img src="cascadedShadowMapFOV.png" class="main-menu">
+
+        <div class="contribution-text-centered">
+            <i>Main menu scrolling through options</i>
+        </div>
+
+        <div id="Third-title" class="contribution-titletext">
+            <b>Level Select</b>
+        </div>
+
+        <div class="contribution-text-bezier-lerp">
+            When it came to level select that needed to be implemented, i had a very good idea so i took the task.
+            The idea was because we are going through a cave system and going further and further down, it will be a tressuremap kind of thing that goes deeper and deeper on your screen.
+            It was easy to implement, all that was needed was tracking how much you scroll and move the backdrop with that amount.
+            Since the background image is a gameobject all the colliders for entering levels move with it.
+            <br>
+            <br>
+        </div>
+
+        <img src="LevelSelect.gif" class="level-select">
+
+        <br>
+        <i>Scrolling in level select from hole-é-mole</i>
+
+        <div class="closing-thoughts-title">
+            <b>Closing Thoughts</b>
+        </div>
+        <div class="closing-thoughts">
+            This was my first time developing a game for mobile and it was a great experience, i got to learn more about optimisation for phone since its not as powerful as a pc.
+            The game itself is a fun puzzle game to play, and was even more fun to make it.
+        </div>
+
+        <hr>
+
+        <div class="Playable-game">
+            If you want to learn more and play our game follow the Link below
+        </div>
+
+        <a class="title-text" href="https://play.google.com/store/apps/details?id=com.OBLO.MoleGame&hl=en_ZA">
+            Hole-É-Mole
+        </a>
+    </div>
+
+    <script src="Games.js"></script>
 </body>
 </html>
