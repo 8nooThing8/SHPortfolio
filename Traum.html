@@ -4,22 +4,22 @@
     <meta charset="utf-8">
     <title>SH Portfolio</title>
     <link rel="stylesheet" href="Games.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
-            About
-        </ref>
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
             Games
         </ref>
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
             Specialization
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
-            Awards
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'AboutMe.html'">
+            About Me
         </ref>
     </div>
     <div class="item-container">
@@ -58,7 +58,7 @@
         <div class="text-image-container-horiz">
             <div class="contribution-text">
                 For the project we needed an easy, stressfree and effective way to switch between different textures when animating a sprite.
-                I had done this before soi took the task and at first made a simple sprite switcher to animate the sprite, this method needed to create a bunch of textures and store it in memory and thus was a no go.
+                I had done this before so i took the task and at first made a simple sprite switcher to animate the sprite, this method needed to create a bunch of textures and store it in memory and thus was a no go.
                 To make this more effective i used the meta files from unity when editing and exported the meta into our project to get the min and max coordinates on the sprite.
                 with the unity sprite ".meta" files, i could import these and create textures from them in our engine. I then used these rects i get and animate the sprite.
             </div>
@@ -70,8 +70,8 @@
         </div>
 
         <div class="contribution-text">
-            After importing ".meta" files the animation of these sprites could begin. The way they load in is we have the name and extension of the texture and just add ".meta" at the end.
-            All these rects in the dile could then be loaded into a list to easily and effectivly access them later.
+            After importing ".meta" files the animation of these sprites could begin. The way they load in is we have the name and extension of the texture t.ex "T_Player_C.dds" and just add ".meta" at the end.
+            All these rects in the File could then be loaded into a list to easily and effectivly access them later.
             in the animator class i have a variable that stores what sprite index is suppose to be used to cut out an area of the bigger texture.
             <br>
             <br>

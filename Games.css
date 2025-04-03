@@ -1,7 +1,7 @@
 body {
     background-color: #1E1E1E;
     color: #AAAAAA;
-    font-family: 'Roboto';
+    font-family: 'Quicksand';
     background-attachment: fixed;
     background-size: 100%;
     overflow-x: hidden;
@@ -42,6 +42,14 @@ body {
     margin-right: auto;
     width: 80%;
 }
+.HoleEMole {
+    margin-top: 7vw;
+    margin-bottom: 3vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
 
 .cascaded-shadowmap-wrong {
     width: 45vw;
@@ -71,6 +79,12 @@ body {
     position: relative;
     left: 50%;
     transform: translate(-50%, -2%);
+}
+
+.grapple-ascent-game {
+    width: 960px;
+    height: 600px;
+    transform: scale(0.85)
 }
 
 .video-contribution-holder {
@@ -116,12 +130,19 @@ body {
 }
 .contribution-text-moving-platform {
     text-align: justify;
-    width: 100%;
+    width: 80%;
     font-size: 1vw;
 }
 
 .contribution-text-centered {
     padding-top: 1vw;
+    text-align: center;
+    width: 80%;
+    font-size: 0.8vw;
+}
+
+.contribution-text-cascade {
+    padding-top: 0.3vw;
     text-align: center;
     width: 80%;
     font-size: 0.8vw;
@@ -264,7 +285,7 @@ hr {
 
 .contribution-text-bezier-lerp {
     text-align: justify;
-    width: 60%;
+    width: 80%;
     font-size: 1vw;
 }
 

@@ -3,32 +3,75 @@
 <head>
     <meta charset="utf-8">
     <title>SH Portfolio</title>
-    <link rel="stylesheet" href="styles.CSS">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="Games.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
-            About
-        </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
             Games
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
-            Awards
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
+            Specialization
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'AboutMe.html'">
+            About Me
         </ref>
     </div>
-    <br> <br>
+    <div class="item-container">
+        <img class="traum-image" src="GrappleAscent.png">
+
+        <div class="video-contribution-holder">
+            <iframe class="video-player" src="https://www.youtube.com/embed/Iqr3XIhSnUQ?si=UpZg620osi18jLEX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="contibution">
+                <br><br>
+                <u><b>Contibution</b></u>
+                <br>
+                <br>
+                <div class="contibutions">
+                    <div onclick="document.getElementById('SSUE-title').scrollIntoView()"><u>Rope rendering</u></div>
+                    <div onclick="document.getElementById('SSA-title').scrollIntoView()"><u>Camera Controller</u></div>
+                    <div onclick="document.getElementById('TAUTT-title').scrollIntoView()"><u>All graphics, no shaders</u></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Engine">
+            This game was made in
+            <br>Unity Game Engine
+        </div>
+        
+        <div class="closing-thoughts-title">
+            <b>Closing Thoughts</b>
+        </div>
+        <div class="closing-thoughts">
+            Grapple Ascent was a very fun game to work on and we made a very cool product in the end its also very fun and satisfying
+        </div>
 
 
-    <iframe class="grapple-ascent-game" frameborder="0" src="https://itch.io/embed-upload/11267417?color=bcddd7" allowfullscreen="" width="1920" height="1080"><a href="https://zultoox.itch.io/grapple-ascent-gmtk2024">Play Grapple Ascent: A Yo-Yo's big scaling adventure on itch.io</a></iframe>
-    <br> <br>
-    <a class="gameLink" href="https://zultoox.itch.io/grapple-ascent-gmtk2024">
-        Grappple Ascent: A yoyos big scaling adventure
-    </a>
+        <hr>
 
-    <br>I made stuff you know
+        <div class="Playable-game" style="text-align: center; width: 30vw;">
+            Right below you can try the game right here.
+            <br>This web version has a very intense fog when you get further up
+            <br>To avoid this download the game from itch instead
+        </div>
 
+        <iframe class="grapple-ascent-game" frameborder="0" src="https://itch.io/embed-upload/11267417?color=bcddd7" allowfullscreen=""><a href="https://zultoox.itch.io/grapple-ascent-gmtk2024">Play Grapple Ascent: A Yo-Yo's big scaling adventure on itch.io</a></iframe>
+
+        <div class="Playable-game">
+            If you want to learn more and play our amazing game follow the Link below
+        </div>
+
+        <a class="title-text" href="https://zultoox.itch.io/grapple-ascent-gmtk2024">
+            Grapple Ascent: A big yoyo's scaling adventure
+        </a>
+    </div>
+
+    <script src="Games.js"></script>
 </body>
 </html>

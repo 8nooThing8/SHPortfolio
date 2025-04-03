@@ -4,26 +4,26 @@
     <meta charset="utf-8">
     <title>SH Portfolio</title>
     <link rel="stylesheet" href="Games.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
-            About
-        </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
             Games
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
             Specialization
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'" onauxclick="window.location.href = 'index.html'">
-            Awards
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'AboutMe.html'">
+            About Me
         </ref>
     </div>
     <div class="item-container">
-        <img class="nbfeImage" src="HoleEMole.png">
+        <img class="HoleEMole" src="Stella&orbit.png">
 
         <div class="video-contribution-holder">
             <iframe class="video-player" src="https://www.youtube.com/embed/Iqr3XIhSnUQ?si=UpZg620osi18jLEX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -108,7 +108,7 @@
             <i>Shadow map from one of the cascade cam</i>
         </div>
 
-        <div class="contribution-text">
+        <div class="contribution-text" style="margin-top: 2vw;margin-bottom: 0.7vw">
             The result looks very bad since it almost looks like i have way too much FOV even when this should be zero with a directional light. I knew something was wrong with our othographic camera because compared to one online they were completely different so i had to fix it.
             <br>While browsing through the <a href="https://learn.microsoft.com/en-us/windows/win32/dxtecharts/cascaded-shadow-maps">DX11 snippet for Cascaded shadow maps</a> there was one slight difference in the orthographics cam we create vs what they create
             <br>we did
@@ -116,49 +116,74 @@
             <br>while the DX11 snippet did
             <br>"myClipSpace(4, 3) = -nearPlane / (farPlane - nearPlane);"
             <br>When i finaly saw this and fixed it, everything worked.
-
         </div>
 
-        <img src="cascadedShadowMapFOV.png" class="cascaded-shadowmap-wrong">
+        <img src="WithoutCascades.png" class="cascaded-shadowmap-wrong">
+        <div class="contribution-text-cascade">
+            <i>Before</i>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
 
-        <div class="contribution-text-centered">
-            <i>Shadow map from one of the cascade cam</i>
+        <img src="WithCascades.png" class="cascaded-shadowmap-wrong">
+        <div class="contribution-text-cascade">
+            <i>After</i>
+        </div>
+
+        <div class="contribution-text" style="margin-top: 2.5vw;">
+            As we can see in the before and after, the effect is amazing and we get so much more color and shdowing thoughout the world
         </div>
 
         <div id="Third-title" class="contribution-titletext">
-            <b>Level Select</b>
+            <b>Dialouge</b>
         </div>
 
-        <div class="contribution-text-bezier-lerp">
-            When it came to level select that needed to be implemented, i had a very good idea so i took the task.
-            The idea was because we are going through a cave system and going further and further down, it will be a tressuremap kind of thing that goes deeper and deeper on your screen.
-            It was easy to implement, all that was needed was tracking how much you scroll and move the backdrop with that amount.
-            Since the background image is a gameobject all the colliders for entering levels move with it.
+        <div class="contribution-text">
+            We wanted Stella(Main character) to be able to interact with the world like the pritate npc's in the world.
+            This was perfect since i had already implemented the text renderer into our engine then i can use this to slowly type out the text that the character should say.
+            <br>
             <br>
             <br>
         </div>
 
-        <img src="LevelSelect.gif" class="level-select">
+        <img src="DialougeInGame.gif" class="cascaded-shadowmap-wrong">
 
-        <br>
-        <i>Scrolling in level select from hole-é-mole</i>
+        <div class="contribution-text-cascade">
+            <i>Showing typing NPC</i>
+        </div>
+
+        <div class="contribution-text">
+            <br>
+            <br>
+            Because we already use unreal engine to export the level, then i created a component for this where you can input what text dialouge should be said, also time between each character is would be typed.
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <img src="unreal-Dialouge.png" class="cascaded-shadowmap-wrong" style="height: 20vw; width: 28vw;">
+
+        <div class="contribution-text-cascade">
+            <i>An image showing the unreal editor for dialouge component</i>
+        </div>
 
         <div class="closing-thoughts-title">
             <b>Closing Thoughts</b>
         </div>
         <div class="closing-thoughts">
-            This was my first time developing a game for mobile and it was a great experience, i got to learn more about optimisation for phone since its not as powerful as a pc.
-            The game itself is a fun puzzle game to play, and was even more fun to make it.
+            this was a very fun game to develop and work on i got to learn alot of new skills and also some things to avoid at times. Most interesting thing i learned about was the DX11 CopySubresourceRegion function and how good it can be.
         </div>
 
         <hr>
 
         <div class="Playable-game">
-            If you want to learn more and play our game follow the Link below
+            Play our game by following the Link below
         </div>
 
-        <a class="title-text" href="https://play.google.com/store/apps/details?id=com.OBLO.MoleGame&hl=en_ZA">
-            Hole-É-Mole
+        <a class="title-text" href="https://drive.google.com/file/d/16cv4TzgLnsYb6ffo8N4y8v6NFfXZXQ-I/view?usp=drive_link">
+            Stella & Orbit: Take Flight
         </a>
     </div>
 
