@@ -3,11 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name=description content="TestingTesting">
-    <meta name=author content="Test">
-    <title>SH Portfolio</title>
-    <meta name=description content="TestingTesting">
-    <meta name=author content="Test">
+    <meta name=description content="Simon Henriksson Portfolio">
+    <meta name=author content="Simon Henriksson">
+    <title>Simon Henriksson: Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,14 +14,14 @@
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'Index.html'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
             Home
         </ref>
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
-            Games
+            Specialization
         </ref>
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
-            Specialization
+            Games
         </ref>
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'AboutMe.html'">
             About Me
@@ -38,16 +36,15 @@
     <hr class="intro-to-specialization">
 
     <div class="title-text" id="specialization-titleID">
-        <b>Specialization</b>
+        <b>Physics based mesh-breaking</b>
     </div>
 
     <div class="specialization-container">
         <div class="specialization">
             <div class="game-text-behind">
-                <b>Physics based mesh-breaking</b>
-                <br>Tga has a specialization course where you choose a subject and read more into it.
+                Tga has a specialization course where you choose a subject and read more into it.
                 <br><br><b>Purpose</b>
-                <br>I wanted a way to replicate destruction of buildings effectivly, games like "The Finals, by Embark
+                <br>I wanted a way to replicate destruction of buildings effectivly, alike games like "The Finals, by Embark
                 studios".This can then be implemented into games to give the player the power of destoying a house like
                 it was nothing
             </div>
@@ -135,6 +132,13 @@
         </div>
     </div>
 
+    <div class="all-games-container" onclick="window.location.href = 'AllGamesList.html'">
+        <div class="all-games" onmouseover="this.style.animation = 'scaleUpAllGames 0.3 forwards'"
+             onmouseOut="this.style.animation = 'scaleBackAllGames 0.3 forwards'">
+            <b>ALL GAMES...</b>
+        </div>
+    </div>
+
     <hr style="margin-top: 5vw; margin-bottom: 5vw;">
 
     <div class="title-text">
@@ -142,29 +146,28 @@
     </div>
 
     <div class="games-container">
-
         <div class="grapple-ascent">
             <div class="game-text-behind">
                 <b>Grapple ascent: A YoYo's Big Scaling Adventure</b>
                 <br>Made in a game jam project me and 4 others created for the "Game Makers Tool Kit Gamejam
-                2024". The Gamejam lasted 96 hours and the given theme for the jam was "Built to Scale"
-                <div class="pitch-grapple">
-                    <b>Pitch</b>:
-                    <br>
-                    <bt>Finish
-                </div>
+                2024". The Gamejam lasted 96 hours and the given theme was "Built to Scale"
             </div>
             <img src="GrappleAscent.png" class="game"
                  onMouseOver="this.style.animation = 'FadeGame 0.4s forwards'; this.style.filter = 'blur(4px)'"
                  onMouseOut="this.style.animation = 'FadeGameBack 0.2s forwards'; this.style.filter = 'blur(0px)'"
                  onclick="window.location.href = 'GrappleAscent.html'">
         </div>
-    </div>
 
-    <div class="all-games-container" onclick="window.location.href = 'AllGamesList.html'">
-        <div class="all-games" onmouseover="this.style.animation = 'scaleUpAllGames 0.3 forwards'"
-             onmouseOut="this.style.animation = 'scaleBackAllGames 0.3 forwards'">
-            <b>ALL GAMES...</b>
+        <div class="nongine">
+            <div class="game-text-behind">
+                <b>Grapple ascent: A YoYo's Big Scaling Adventure</b>
+                <br>Made in a game jam project me and 4 others created for the "Game Makers Tool Kit Gamejam
+                2024". The Gamejam lasted 96 hours and the given theme was "Built to Scale"
+            </div>
+            <img src="NonGine.png" class="game"
+                 onMouseOver="this.style.animation = 'FadeGame 0.4s forwards'; this.style.filter = 'blur(4px)'"
+                 onMouseOut="this.style.animation = 'FadeGameBack 0.2s forwards'; this.style.filter = 'blur(0px)'"
+                 onclick="window.location.href = 'NonGine.html'">
         </div>
     </div>
 

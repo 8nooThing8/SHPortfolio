@@ -136,7 +136,7 @@ body {
     transform: translate(-10vw, -6vw)
 }
 
-.traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent {
+.traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent, .nongine {
     width: 45vw;
     height: 25vw;
     display: flex;
@@ -158,6 +158,10 @@ body {
 .grapple-ascent{
     flex: 1;
     align-self: center;
+}
+
+.nongine{
+grid-column: 2;
 }
 
 .pitch-traum{

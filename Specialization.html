@@ -1,8 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>SH Portfolio</title>
+    <meta name=description content="Simon Henriksson Portfolio">
+    <meta name=author content="Simon Henriksson">
+    <title>Simon Henriksson: Portfolio</title>
     <link rel="stylesheet" href="stylesSpecialization.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,110 +17,221 @@
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onclick="window.location.href = 'Index.html'">
             Home
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
-            Games
-        </ref>
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
             Specialization
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'AboutMe.html'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'index.html'">
+            Games
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'AboutMe.html'">
             About Me
         </ref>
     </div>
-    <div class="title-text" id="title-textID">
+    <div class="item-container">
+        <img class="title-image " src="BrokenHouse.png">
 
-        <b>Physics-Based Mesh Breaking</b>
+        <div class="Engine">
+            This porject was executed in
+            <br>NonGine (My Own Engine)
+        </div>
+
+        <div class="specialization-titletext">
+            <b>Intro</b>
+        </div>
+
+        <div class="specialization-text">
+            At TGA we have a specialization course at the end of year two. In this course we got to pick a subject to
+            specialize in and learn more about.
+            <br><br>I chose to make a system that lets you destoy holes in a small cabin to then let new objects thrown
+            at it also pass trough seemlessly.
+            <br><br>In this project i had to overcome a lot of challenges, one of the biggest being how the physics
+            system is suppose to just let through objects when it goes into contact with the hole.
+        </div>
+        <img src="PhysiclyBreak.gif" class="default-image">
+
+        <div class="specialization-text-centered">
+            <i>A display of a user throwing balls at a house, DX11 version of my engine</i>
+        </div>
+
+        <div class="specialization-titletext">
+            <b>How?</b>
+        </div>
+
+        <div class="specialization-text">
+            There are many ways you can do this, one of the more popular being, let through the object in question if it
+            collides with a trigger with the specified tag or layer.
+            <br><br>This solution comes with a few problems, one being the performance of the process from contact to
+            let through. The object first checks if it collides with the trigger, if it does then check if it is inside
+            the object the hole is attached to. This makes two operations that should be able to be done in just one.
+            <br><br>There is another problem, the object will disable its collider right when it touches the trigger and
+            you will fall right through the mesh on the edge of the hole wich just wont look right like the image to the
+            right.
+        </div>
+
+        <img src="ProblemTrigger.png" class="default-image">
+
+        <div class="specialization-text-centered">
+            <i>Trigger as a solution and the problem it causes illustration. The ball will start to fall too early</i>
+        </div>
+
+        <div class="specialization-titletext">
+            <b>Better solution</b>
+        </div>
+
+        <div class="specialization-text">
+            We are able to the above in just one step. this is by using physx effective onContactModify, a built in
+            physx collision modifier.
+            The onContactModify is an overide function you can supply physx to directly be able to modify how physx
+            handles collisions,
+            so instead of checking trigger then let through we can let through the collider right when it finds a
+            contact point inside a shape where collisions should be ignored.
+            <br><br>Not only do we only use one operation per collision check, the collisions are also more accurate
+            with only letting the actual contact points through.
+            Because we know what two objects collide, we can then optimise the whole process by only checking if there
+            are holes attached to the collider we touched.
+            <br><br>After we know the contact point is inside a hole then we tell the point with setSeparation() that
+            from the one point to the other has a distance of 1,
+            which means no contact and thus keep moving.
+        </div>
+
+        <img src="ContactModifyCPP.png" class="default-image">
+
+        <div class="specialization-text-centered">
+            <i>Contact modify implementation</i>
+        </div>
+
+        <div class="specialization-titletext">
+            <b>Cutting A Visual Hole</b>
+        </div>
+
+        <div class="specialization-text">
+            Now we have the "Hard part" over, the physics. The phyiscs works well and if we hover the sphere over some
+            objects, chests in this case, they fall through the ground.
+            To the right we have an example of what the result of oncontact modify gave.
+        </div>
+
+        <img src="PhysicsBreaking.gif" class="default-image">
+
+        <div class="specialization-text-centered">
+            <b>Chests are falling through the ground, no visual removing of mesh yet</b>
+        </div>
+
+        <div class="specialization-text">
+            <br><br>Next step is actually making a visual cut in the mesh. A way to do this is by using stencil testing
+            plus layers to only write color where there are no holes.
+            <br>This was quite easy to do in both DirectX11 and OpenGL.
+        </div>
+
+        <img src="StencilStateOpenGL.png" class="default-image" style="margin-top: 1vw;">
+
+        <div class="specialization-text-centered">
+            <i>OpenGL, stencil state implementation</i>
+        </div>
+
+        <div
+            style="display: flex; flex-direction: row; width: 115%; align-self: center; transform: translate(5.5%, 0); margin-top: -3vw;">
+            <div style="align-self: center; margin-top: 4.4vw; margin-bottom: -0.5vw; flex: 1; margin-right: -5vw;">
+                <img src="InitilizingStencilsDX11.png" class="default-image">
+
+                <div class="specialization-text-centered">
+                    <i>DirectX11, stencil state initilization</i>
+                </div>
+            </div>
+
+            <div style="align-self: center; margin-top: 3vw; margin-bottom: -0.5vw; flex: 1;">
+                <img src="UsingStencilsDX11.png" class="default-image">
+
+                <div class="specialization-text-centered">
+                    <i>DirectX11, stencil state usage</i>
+                </div>
+            </div>
+        </div>
+
+        <div class="specialization-text" style="margin-top: 4vw;">
+            We use these stencil states to render the scene with a cabin with holes in it, this would be the result
+        </div>
+
+        <img src="HoleInMesh.gif" class="default-image" style="margin-top: 1vw;">
+
+        <div class="specialization-text-centered">
+            <i>Displaying how it looks with two big holes in the cabin</i>
+        </div>
+
+        <div class="specialization-titletext" style="margin-top: 5.5vw;">
+            <b>Finalising</b>
+        </div>
+        
+        <div class="specialization-text">
+            Now we have both the physics part done and the visulization that there is a hole.
+            Now the last part was just making a demo where you throw balls at a cabin to break holes in it.
+            This was simple, every time you click create a ball at the cameras position and add a velocity to it.
+            When it detects a collision you add a cylinder mesh that has the remove layer set.
+        </div>
+
+        <img src="HoleBreakingComplete.gif" class="default-image" style="margin-top: 1vw;">
+
+        <div class="specialization-text-centered">
+            <i>The balls are creating holes in the cabin</i>
+        </div>
+
+        <div class="specialization-titletext">
+            <b>Closing Thoughts</b>
+        </div>
+        <div class="specialization-text" style="width: 100%;">
+            The development of this project has been a interesting ride. I have learned alot about how to use stencil states and what cool effects these can give.
+            The final product is not perfect and still has some bugs that was not squashed, one visual example is sometimes when you throw a ball it collides with the wall even if there's a hole there.
+            First implementation was using DirectX11 using my own engine that i built from the ground up and made during a course at TGA. 
+            This was my first graphical programming experience, i did not know alot about optimising the rendering pipeline and thus resulting in pretty bad fps around 150 at just a 10 objects.
+            With the specialization course i decided to rewerite my entire engine in OpenGL, it was no small feat but i got it done. In the new version i get around 150 fps with 1000 objects.
+            Theres is still much to be desired but its a learning experience. I am still very proud of what i acomplished in the amount of time i had, around 8 weeks at 50% speed. 
+            <br><br>Thank you for reading!
+        </div>
+
+        <hr>
+
+        <div class="Playable-game">
+            If you want to try out breaking a cabin on your own you can check out the link below
+        </div>
+
+        <a href="Breaking-in-openGL.zip" style="width: 50vw; font-size: 1.7vw; text-align: center; margin-top: 2vw;">
+            Download OpenGL Version
+        </a>
     </div>
-    <div class="spec-holder">
-        <div class="spec-container-horiz">
-            <div class="Specialization-text-first">
-                At TGA we have a specialization course at the end of year two. In this course we got to pick a subject to specialize in and learn more about.
-                <br><br>I chose to make a system that lets you destoy holes in a small cabin to then let new objects thrown at it also pass trough seemlessly.
-                <br><br>In this project i had to overcome a lot of challenges, one of the biggest being how the physics system is suppose to just let through objects when it goes into contact with the hole.
-            </div>
-            <img src="PhysiclyBreak.gif" class="contact-modify-CPP-class">
-        </div>
-        <div class="spec-container-horiz">
-            <div class="Specialization-text-second">
-                There are many ways you can do this, one of the more popular being let through the object in question if it collides with a trigger with the specified tag or layer.
-                <br><br>This solution comes with a few problems, one being the performance of the process from contact to let through.
-                <br>The object first checks if it collides with the trigger, if it does then check if it is inside the object the hole is attached to. This makes two operations that should be able to be done in just one.
-                <br><br>There is another problem, the object will disable its collider right when it touches the trigger and you will fall right through the mesh on the edge of the hole wich just wont look right like the image to the right.
-                <br>We also need to check all triggers in the world with this approach as well.
-            </div>
-
-            <img src="ProblemTrigger.png" class="contact-modify-CPP-class">
-        </div>
-
-        <div class="spec-container-horiz">
-
-            <div class="Specialization-text-third">
-                We are able to the above in just one step. this is by using physx onContactModify, a built in physx collision modifier.
-                The onContact mocify is an overide function you can supply physx to directly be able to modify how physx handles collisions,
-                so instead of checking trigger then let through we can let through the collider right when it finds a contact point inside a shape where collisions should be ignored.
-                <br><br>Not only do we only use one operation per collision check and the collisions are more accurate with only letting the actual contact points through.
-                Because we know what two objects collide, we can then optimise the whole process by only checking if there are holes attached to the collider we touched.
-                <br><br>After we know the contact point is inside a hole then we tell the point with setSeparation() that from the one point to the other has a distance of 1,
-                which means no contact and thus keep moving with the current velocity.
-            </div>
-
-            <img src="ContactModifyCPP.png" class="contact-modify-CPP-class">
-        </div>
-
-        <div class="spec-container-horiz-second">
-
-            <div class="Specialization-text-third">
-                Now we have the "Hard part" over, the physics. The phyiscs works well and if we hover the sphere over the objects they fall through the ground, image to the right.
-                To the right we have an example of what the result of oncontact modify gave.
-                <br><br>Next step is actually making a visual cut in the mesh. A way to do this is by using stencil testing plus layers to only write color where there are no holes.
-                <br>This is quite easy to do in both DirectX11 and OpenGL, both of wich i have written a simple game engine in to test the different development enviroments and be able to make it multiplatformed.
-            </div>
-
-            <img src="PhysicsBreaking.gif" class="contact-modify-CPP-class">
-        </div>
-
-        <div class="contact-modify-cpp-container-horiz">
-            <div class="Specialization-text-fourth">
-                Below i have two different implementations for the two different graphics API i talked about before, OpenGL and DirectX11.
-                The only difference is in opengl we set all stencil settings right inline while in dx 11 we create them before and set them directly.
-                I would say that the impementation of OpenGL version is easier to understand and can also be more readable in my opinion.
-                Short explanation of whats happening is we first sort all render components, then get each layer one by one and render the objects on the layer to render from back to forward with layer in consideration
-            </div>
-
-            <img src="stencilStates.png" class="stencilStates-image-class">
-        </div>
-    </div>
-    
 
     <hr style="margin-top: 5vw; margin-bottom: 5vw;">
 
     <footer style="flex-direction: column;">
         <div class="footer-text-holder">
             <b style="font-size: 2vw;">Contact</b>
-            <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
+            <br>Email: <a href="mailto:simon@pixi.nu"
+                style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
             <br>Location: Malmö, Västra Hamnen
 
             <br>
             <br>
-            
+
             <div class="links">
-                <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
+                <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank"
+                    style="text-decoration: none;">
                     <img src="linkedin-logo.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="itch-io.1024x1024.png" class="icon-link">
                 </a>
-    
-                <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
+
+                <a href="https://github.com/8nooThing8" target="_blank"
+                    style="text-decoration: none; margin-left: 1vw;">
                     <img src="Github.png" class="icon-link">
                 </a>
-    
+
                 <a href="C-V.pdf" target="_blank">
                     <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
                 </a>
             </div>
-            
+
             <br><br>
 
             I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The
@@ -126,6 +240,7 @@
         </div>
     </footer>
 
-    <script src="Games.js"></script>
+    <script src="Base.js"></script>
 </body>
+
 </html>

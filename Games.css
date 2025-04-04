@@ -145,6 +145,7 @@ footer{
     width: 80%;
     font-size: 1vw;
 }
+
 .contribution-text-moving-platform {
     text-align: justify;
     width: 80%;
@@ -152,7 +153,7 @@ footer{
 }
 
 .contribution-text-centered {
-    padding-top: 1vw;
+    padding-top: 0.5vw;
     text-align: center;
     width: 80%;
     font-size: 0.8vw;

@@ -128,7 +128,7 @@ var moveSpeed = 2;
 
 var menuItems = document.getElementsByClassName("menu-item");
 
-menuItems[0].addEventListener('click', Games);
+menuItems[2].addEventListener('click', Games);
 menuItems[1].addEventListener('click', Specialization);
 
 function Games() {

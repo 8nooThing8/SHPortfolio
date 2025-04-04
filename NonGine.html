@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name=description content="Simon Henriksson Portfolio">
+    <meta name=author content="Simon Henriksson">
+    <title>Simon Henriksson: Portfolio</title>
+    <link rel="stylesheet" href="Games.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top-menu">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onclick="window.location.href = 'index.html'">
+            Home
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'Specialization.html'">
+            Specialization
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'index.html'">
+            Games
+        </ref>
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'AboutMe.html'">
+            About Me
+        </ref>
+    </div>
+    <div class="item-container">
+        <div id="SSUE-title" class="contribution-titletext">
+            <b>Intro</b>
+        </div>
+
+        <div class="contribution-text">
+            NonGine started of as a course we had at The Game Assembly where we designed and build a DirectX11 game
+            engine from scratch to finsihed engine.
+            I liked the idea of making a custom engine that i can then chose how it looks.
+            I also decided to at around the middle of the course to make a quick editor that you can transofrm objects,
+            add components and adjust parameters on added components to objects.
+            The game engine has a Component System and a save and load system to save and load to a file.
+        </div>
+
+        <img src="NonGineEx.png" class="tree-fall-editor" style="margin-top: 3vw;">
+
+        <div class="contribution-text-centered">
+            <i>An example of how NonGine in game editor looks</i>
+        </div>
+
+        <div class="contribution-text" style="margin-top: 5vw;">
+            I have now after the Specialization course i partook in at TGA recreated the core parts of the engine in
+            OpenGL to both improve performance and see how it is developing in a different graphics API
+            Both the OpenGL and DX11 version of the engine has support for physx and physics objects.
+            This has been one of my biggest projects and i'm going to continue improve the engine to make it more use
+            friendly and optimised
+        </div>
+
+        <div class="contribution-text" style="margin-top: 5vw; text-align: center;">
+            Thank you for reading this article about my Engine 😊
+        </div>
+
+        <hr>
+
+        <div class="Playable-game" style="text-align: center;">
+            It is not yet ready for a downloadable release, 
+            <br>if interested then my specialization was made using
+            <br>this engine, you can downlaod it at the bottom at <a href="Specialization.html">Specialization</a>
+        </div>
+    </div>
+
+    <hr style="margin-top: 5vw; margin-bottom: 5vw;">
+
+    <footer style="flex-direction: column;">
+        <div class="footer-text-holder">
+            <b style="font-size: 2vw;">Contact</b>
+            <br>Email: <a href="mailto:simon@pixi.nu"
+                style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
+            <br>Location: Malmö, Västra Hamnen
+
+            <br>
+            <br>
+
+            <div class="links">
+                <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank"
+                    style="text-decoration: none;">
+                    <img src="linkedin-logo.png" class="icon-link">
+                </a>
+
+                <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
+                    <img src="itch-io.1024x1024.png" class="icon-link">
+                </a>
+
+                <a href="https://github.com/8nooThing8" target="_blank"
+                    style="text-decoration: none; margin-left: 1vw;">
+                    <img src="Github.png" class="icon-link">
+                </a>
+
+                <a href="C-V.pdf" target="_blank">
+                    <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
+                </a>
+            </div>
+
+            <br><br>
+
+            I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The
+            Game Assembly, neither student nor company may be in contact with one another regarding internships before
+            April 23rd. Any internship offers can be made on May 5th, at the earliest.
+        </div>
+    </footer>
+
+    <script src="Base.js"></script>
+</body>
+
+</html>
