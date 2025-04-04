@@ -130,11 +130,7 @@ var menuItems = document.getElementsByClassName("menu-item");
 
 menuItems[0].addEventListener('click', Games);
 menuItems[1].addEventListener('click', Specialization);
-menuItems[2].addEventListener('click', About);
 
-function About() {
-    document.getElementById("").scrollIntoView();
-}
 function Games() {
     document.getElementById("title-textID").scrollIntoView();
 }
@@ -165,7 +161,7 @@ setInterval(Move, 7);
 counter = 0;
 
 const interval = setInterval(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, scrollY);
     counter++;
 
     if (counter >= 5) {

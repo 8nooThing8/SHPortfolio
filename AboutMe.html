@@ -14,12 +14,15 @@
 
 <body>
     <div class="top-menu">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onclick="window.location.href = 'Index.html'">
+            Home
+        </ref>
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
             onclick="window.location.href = 'index.html'">
             Games
         </ref>
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'index.html'">
+            onclick="window.location.href = 'Specialization.html'">
             Specialization
         </ref>
         <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
@@ -33,24 +36,76 @@
         </a>
     </div>
 
-    <div class="about-me-text">
-        I'm Simon Henriksson, an Engine & Physics programmer. I am currently studying at The Game Assembly - Malmö in
-        Higher Vocational Education - Game Programming. The Game Assembly is a Game Development school.
-        <br>I am apassionate game developer with my sights set on making awesome and innovative games.
-        I love to experiment with new programs, languages and API's, I recreated my own engine in OpenGL just to try the
-        new graphics API and what it could do. I've been making games for more than 6 years, but have been fascinated and
-        loved games ever since I got introduced to them as a youngen.
+    <div class="above-me-container">
+        <div class="Image-text-container" style="display: flex; flex-direction: column;">
+            <div style="font-size: 1vw; text-align: center; width: 20vw; align-self: center; flex: 1;">
+                "Physics is your friend until nothing works anymore, 
+                 then you are no longer its friend"
+            </div>
+            <img src="me.png" class="me-image">
+
+            <div style=" font-size: 2.5vw; text-align: center;">
+                ⬆ This Is Me ⬆
+                <br>
+                Hello 👋
+            </div>
+        </div>
+        
+        <div class="about-me-text">
+            I'm Simon Henriksson, an Engine & Physics programmer. I am currently studying at The Game Assembly - Malmö
+            in Higher Vocational Education - Game Programming. The Game Assembly is a Game Development school.
+            I am apassionate game developer with my sights set on making awesome and innovative games. I love to
+            experiment with new programs, languages and API's, I recreated my own engine in OpenGL just to try
+            the new graphics API and what it could do. I've been making games for more than 6 years, but have been
+            fascinated and loved games ever since I got introduced to them as a youngen.
+        </div>
+
+    </div>
+
+    <div style="justify-content: end; align-items: end; display: flex; flex-direction: column;">
+        <div style="font-size: 1.3vw; text-align: center; flex: 1;">
+            Here's a PsyDuck, 
+            <br>
+            Very Awsome Pokémon
+        </div>
+
+        <img src="PsyDuck.jpg" style="width: 16vw; flex: 1;  transform: translate(6%, 0);">
     </div>
 
     <hr style="margin-top: 5vw; margin-bottom: 5vw;">
 
-    <footer>
+    <footer style="flex-direction: column;">
         <div class="footer-text-holder">
+            <b style="font-size: 2vw;">Contact</b>
+            <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
+            <br>Location: Malmö, Västra Hamnen
+
+            <br>
+            <br>
+            
+            <div class="links">
+                <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
+                    <img src="linkedin-logo.png" class="icon-link">
+                </a>
+    
+                <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
+                    <img src="itch-io.1024x1024.png" class="icon-link">
+                </a>
+    
+                <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
+                    <img src="Github.png" class="icon-link">
+                </a>
+    
+                <a href="C-V.pdf" target="_blank">
+                    <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
+                </a>
+            </div>
+            
+            <br><br>
+
             I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The
             Game Assembly, neither student nor company may be in contact with one another regarding internships before
-            April
-            23rd.
-            Any internship offers can be made on May 5th, at the earliest.
+            April 23rd. Any internship offers can be made on May 5th, at the earliest.
         </div>
     </footer>
 

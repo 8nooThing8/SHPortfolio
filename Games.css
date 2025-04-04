@@ -20,6 +20,23 @@ body {
     justify-content: center;
 }
 
+footer{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+
+.footer-text-holder {
+    width: 50vw;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.icon-link{
+    width: 3vw;
+}
+
 .menu-item {
     color: rgb(204, 204, 204);
     position: relative;

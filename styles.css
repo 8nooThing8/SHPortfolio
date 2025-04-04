@@ -31,14 +31,27 @@ body {
     transform: translate(0, -20.3vw)
 }
 
-.me-image{
+.me-image {
+    width: 20vw;
+    clip-path: circle();
+}
 
+.icon-link{
+    width: 3vw;
+}
+
+.above-me-container{
+    width: 80vw;
+    display: flex;
+    justify-content: center;
 }
 
 .about-me-text{
-    font-size: 1vw;
+    align-self: center;
+    font-size: 1.3vw;
     text-align: justify;
-    width: 35vw;
+    width: 55vw;
+    margin-left: 5vw;
 }
 
 .games-container {
@@ -184,13 +197,6 @@ body {
     font-size: 1.8vw;
     padding: 1vw;
 }
-.game-text-behind-specialization {
-    flex: 1;
-    position: absolute;
-    z-index: -2;
-    font-size: 1.8vw;
-    padding: 1vw;
-}
 
 .title-text {
     margin-top: 10vw;
@@ -240,10 +246,9 @@ footer{
     display: flex;
 }
 
-.footer-text-holder{
+.footer-text-holder {
     width: 50vw;
     text-align: center;
-<<<<<<< HEAD:styles.CSS
     font-size: 1vw;
 }
 
@@ -290,10 +295,4 @@ footer{
     .pitch-grapple{
         margin-top: 16%;
     }
-=======
-    overflow: hidden;
-    border-radius: 0.6em 0.6em 0.6em 0.6em;
-    box-shadow: rgba(0, 0, 0, 0.4) 7px 7px;
-    cursor: pointer;
->>>>>>> fd36d50af096a14436ce6c5cbad32de067dd0e9f:styles.css
 }

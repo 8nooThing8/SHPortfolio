@@ -1,154 +1,198 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>SH Portfolio</title>
     <link rel="stylesheet" href="AllGames.css">
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap">
 </head>
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
-            About
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onclick="window.location.href = 'Index.html'">
+            Home
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'">
             Games
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'Specialization.html'">
             Specialization
         </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
-            Awards
+        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'AboutMe.html'">
+            About Me
         </ref>
     </div>
-    <div class="my-games" id="games-titleID">
+
+    <div class="all-games">
         <b>All Games</b>
     </div>
-    <div class="game-title">
-        <b>No Broom For Error - Project 1</b>
-    </div>
 
-    <div class="game" onMouseOver="this.style.transform='scale(0.71)'" onMouseOut="this.style.transform='scale(0.7)'" onclick="window.location.href = 'NoBroomForError.html'">
-        <img src="NoBroomForError.png" class="game-trailer-left">
+    <div class="games-container">
+        <div class="general-game">
+            <div class="game-text-behind">
+                <b>No Broom for Error</b>
+                <br>Made during a 6 week period on half-time, The reference game was "Race The Sun" by Flippfly LLC.
+                <div class="pitch-nobroom">
+                    <b>Pitch</b>:
+                    <br>On your whimsical quest to find Candy, use your trusty Vroomstick™ to swerve around obstacles as
+                    you brew your way to victory before Halloween ends!
+                </div>
+            </div>
+            <img src="NoBroomForError.png" class="game"
+                onMouseOver="this.style.animation = 'FadeGame 0.4s forwards'; this.style.filter = 'blur(4px)'"
+                onMouseOut="this.style.animation = 'FadeGameBack 0.2s forwards'; this.style.filter = 'blur(0px)'"
+                onclick="window.location.href = 'NoBroomForError.html'">
+        </div>
 
-        <div class="game-text-container-right">
-            No Brom For Error was made during a XX week period on half-time and was the first project at The Game Assembly, The reference game was "Race The Sun" by Flippfly LLC.
-            <br><br><br><br><br><br>Pitch:
-            <br>On your whimsical quest to find Candy, use your trusty Vroomstick™ to swerve around obstacles as you brew your way to victory before Halloween ends!
+        <div class="general-game-col2">
+            <div class="game-text-behind">
+                <b>Hole-É-Mole</b>
+                <br>Made during a 6 week period on half-time for Android. The reference game was "Lara Croft GO" by
+                Square Enix Montréal.
+
+                <div class="pitch-mole">
+                    <b>Pitch</b>:
+                    <br>Join the mole on an epic adventure through the depths of the roly cave system!
+                </div>
+            </div>
+            <img src="HoleEMole.png" class="game"
+                onMouseOver="this.style.animation = 'FadeGame 0.4s forwards'; this.style.filter = 'blur(4px)'"
+                onMouseOut="this.style.animation = 'FadeGameBack 0.2s forwards'; this.style.filter = 'blur(0px)'"
+                onclick="window.location.href = 'HoleEMole.html'">
+        </div>
+
+        <div class="general-game">
+            <div class="game-text-behind">
+                <b>Traum</b>
+
+                <br>Made during a 12 week period on half-time. The reference game was "Limbo" by Playdead.
+                <div class="pitch-traum">
+                    <b>Pitch</b>:
+                    <br>Traum takes us on the journey of our protagonist coming face to face with the embodiment of her
+                    trauma through surreal and dangerous environments.
+                </div>
+            </div>
+            <img src="TraumImage.png" class="game"
+                onMouseOver="this.style.animation = 'FadeGame 0.4s forwards'; this.style.filter = 'blur(4px)'"
+                onMouseOut="this.style.animation = 'FadeGameBack 0.2s forwards'; this.style.filter = 'blur(0px)'"
+                onclick="window.location.href = 'Traum.html'">
+        </div>
+
+        <div class="general-game">
+            <div class="game-text-behind">
+                <b>Golem's Quest: Crystal Keep</b>
+
+                <br>Made during a 8 Week period on half time. The reference game was "Death's Door" by Acid Nerve.
+                <div class="pitch-golem">
+                    <b>Pitch</b>:
+                    <br>Slay the hostile monsters that has infested the fortress. Find the crystal keys to reactivate
+                    the
+                    broken portal, and leave this forsaken land to find your long lost creator.
+                </div>
+            </div>
+            <img src="GolemsQuest.jpg" class="game"
+                onMouseOver="this.style.animation = 'FadeGame 0.4s forwards'; this.style.filter = 'blur(4px)'"
+                onMouseOut="this.style.animation = 'FadeGameBack 0.2s forwards'; this.style.filter = 'blur(0px)'"
+                onclick="window.location.href = 'GolemsQuestCrystalKeep.html'">
+        </div>
+
+        <div class="general-game">
+            <div class="game-text-behind">
+                <b>Spite: Parasite</b>
+                <br>Made duing a 10 Week period on half time. The reference game was "Diablo III" by Blizzard
+                Entertainment.
+
+                <div class="pitch-stella">
+                    <b>Pitch</b>:
+                    <br>As a demi-god, lay an ancient civilization to rest whose people have been twisted to the point
+                    of no return. Stop the spread of fungal corruption with your magic staff.
+                </div>
+            </div>
+            <img src="SpiteParasite.jpg" class="game"
+                onMouseOver="this.style.animation = 'FadeGame 0.4s forwards'; this.style.filter = 'blur(4px)'"
+                onMouseOut="this.style.animation = 'FadeGameBack 0.2s forwards'; this.style.filter = 'blur(0px)'"
+                onclick="window.location.href = 'StellaAndOrbitTakeFlight.html'">
+        </div>
+
+        <div class="general-game">
+            <div class="game-text-behind">
+                <b>Stella & Orbit: Take Flight</b>
+                <br>Made during a 15 Week period on half time. The reference game was "Ratchet & Clank: Quest for Booty"
+                for the PlayStation3, by Insomniac Games.
+
+                <div class="pitch-stella">
+                    <b>Pitch</b>:
+                    <br>As an alien with a knack for technology, escape the abusive orphanage using your self-built
+                    companion. Traverse through the space harbor and realize your dream of becoming a pirate.
+                </div>
+            </div>
+            <img src="Stella&orbit.png" class="game"
+                onMouseOver="this.style.animation = 'FadeGame 0.4s forwards'; this.style.filter = 'blur(4px)'"
+                onMouseOut="this.style.animation = 'FadeGameBack 0.2s forwards'; this.style.filter = 'blur(0px)'"
+                onclick="window.location.href = 'StellaAndOrbitTakeFlight.html'">
+        </div>
+
+        <div class="general-game">
+            <div class="game-text-behind">
+                <b>Grapple ascent: A YoYo's Big Scaling Adventure</b>
+                <br>Made in a game jam project me and 4 others created for the "Game Makers Tool Kit Gamejam
+                2024". The Gamejam lasted 96 hours and the given theme for the jam was "Built to Scale"
+                <div class="pitch-grapple">
+                    <b>Pitch</b>:
+                    <br>
+                    <bt>Finish
+                </div>
+            </div>
+            <img src="GrappleAscent.png" class="game"
+                onMouseOver="this.style.animation = 'FadeGame 0.4s forwards'; this.style.filter = 'blur(4px)'"
+                onMouseOut="this.style.animation = 'FadeGameBack 0.2s forwards'; this.style.filter = 'blur(0px)'"
+                onclick="window.location.href = 'GrappleAscent.html'">
         </div>
     </div>
 
-    <div class="game-title">
-        <b>Hole-É-Mole - Project 2</b>
-    </div>
+    <hr style="margin-top: 5vw; margin-bottom: 5vw;">
 
-    <div class="game" onMouseOver="this.style.transform='scale(0.71)'" onMouseOut="this.style.transform='scale(0.7)'" onclick="window.location.href = 'HoleEMole.html'">
-        <img src="HoleEMole.png" class="game-trailer-right">
+    <footer style="flex-direction: column;">
+        <div class="footer-text-holder">
+            <b style="font-size: 2vw;">Contact</b>
+            <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
+            <br>Location: Malmö, Västra Hamnen
 
-        <div class="game-text-container-left">
-            Hole-É-Mole was made during a XX week period on half-time and was a mobile game made for Android, The reference game was "Lara Croft GO" by Square Enix Montréal.
-            <br><br><br>Pitch:
-            <br>Join the mole on an epic adventure through the depths of the roly cave system!
-            <br><br>Nominated for mobile game of the year at the rookies, the game came in just short of number one and instead got "Highly Commended"
+            <br>
+            <br>
+            
+            <div class="links">
+                <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
+                    <img src="linkedin-logo.png" class="icon-link">
+                </a>
+    
+                <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
+                    <img src="itch-io.1024x1024.png" class="icon-link">
+                </a>
+    
+                <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
+                    <img src="Github.png" class="icon-link">
+                </a>
+    
+                <a href="C-V.pdf" target="_blank">
+                    <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
+                </a>
+            </div>
+            
+            <br><br>
+
+            I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The
+            Game Assembly, neither student nor company may be in contact with one another regarding internships before
+            April 23rd. Any internship offers can be made on May 5th, at the earliest.
         </div>
-    </div>
+    </footer>
 
-    <div class="game-title">
-        <b>TRAUM - Project 3</b>
-    </div>
-
-    <div class="game" onMouseOver="this.style.transform='scale(0.71)'" onMouseOut="this.style.transform='scale(0.7)'" onclick="window.location.href = 'Traum.html'">
-        <img src="TraumImage.png" class="game-trailer-left">
-
-        <div class="game-text-container-right">
-            TRAUM was made during a 12 week period on half-time and the reference game was "Limbo" by Playdead.
-            <br><br>Pitch:
-            <br>Traum takes us on the journey of our protagonist coming face to face with the embodiment of her trauma through surreal and dangerous environments.
-            <br><br>TRAUM won 3 of 4 nominated awards at The Swedish Game Awards.
-            <br>Winner: Game Of The Year, Best Narrative, Best Diversity.
-            <br>Nominee: Best Audio
-        </div>
-    </div>
-
-    <div class="game-title">
-        <b>Golem's Quest: Crystal Keep - Project 4</b>
-    </div>
-
-    <div class="game" onMouseOver="this.style.transform='scale(0.71)'" onMouseOut="this.style.transform='scale(0.7)'" onclick="window.location.href = 'GolemsQuestCrystalKeep.html'">
-        <img src="GolemsQuest.jpg" class="game-trailer-right">
-
-        <div class="game-text-container-left">
-            Golem's Quest: crystal keep was made duing a XX Week period on half time. The reference game was "Death's Door" by Acid Nerve.
-            <br><br><br><br><br><br>Pitch:
-            <br>Slay the hostile monsters that has infested the fortress. Find the crystal keys to reactivate the broken portal, and leave this forsaken land to find your long lost creator.
-        </div>
-    </div>
-
-    <div class="game-title">
-        <b>Spite: Parasite - Project 6</b>
-    </div>
-
-    <div class="game" onMouseOver="this.style.transform='scale(0.71)'" onMouseOut="this.style.transform='scale(0.7)'" onclick="window.location.href = 'SpiteParasite.html'">
-        <img src="SpiteParasite.jpg" class="game-trailer-left">
-
-        <div class="game-text-container-right">
-            Spite: Parasite was made duing a half time XX Week period. The reference game was "Diablo III" by Blizzard Entertainment.
-            <br><br><br><br><br><br><br>Pitch:
-            <br>As a demi-god, lay an ancient civilization to rest whose people have been twisted to the point of no return. Stop the spread of fungal corruption with your magic staff.
-        </div>
-    </div>
-
-    <div class="game-title">
-        <b>Stella & Orbit: Take flight - Project 7</b>
-    </div>
-
-    <div class="game" onMouseOver="this.style.transform='scale(0.71)'" onMouseOut="this.style.transform='scale(0.7)'" onclick="window.location.href = 'StellaAndOrbitTakeFlight.html'">
-        <img src="Stella&orbit.png" class="game-trailer-right">
-
-        <div class="game-text-container-left">
-            Stella & Orbit: take flight was made in a XX Week period on half time. The reference game was "Ratchet & Clank: Quest for Booty" made for the PlayStation3, by Insomniac Games.
-            <br><br><br><br><br><br>Pitch:
-            <br>As an alien with a knack for technology, escape the abusive orphanage using your self-built companion. Traverse through the space harbor and realize your dream of becoming a pirate.
-        </div>
-    </div>
-
-    <div class="game-title">
-        <b>Coming Soon - Project 8</b>
-    </div>
-
-    <div class="game" onMouseOver="this.style.transform='scale(0.71)'" onMouseOut="this.style.transform='scale(0.7)'" onclick="window.location.href = 'ComingSoonP8.html'">
-        <img src="ComingSoon.png" class="game-trailer-left">
-
-        <div class="game-text-container-right">
-
-        </div>
-    </div>
-
-    <div class="my-games-personal-projects">
-        <b>Personal projects / Games</b>
-    </div>
-
-    <div class="game-title">
-        <b>Grapple Ascent - GMTK Game Jam 2024</b>
-    </div>
-
-    <div class="game" onMouseOver="this.style.transform='scale(0.71)'" onMouseOut="this.style.transform='scale(0.7)'" onclick="window.location.href = 'GrappleAscent.html'">
-        <img src="GrappleAscent.png" class="game-trailer-left">
-
-        <div class="game-text-container-right">
-
-        </div>
-    </div>
-
-    <div class="footer">
-        I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The Game Assembly, neither student nor company may be in contact with one another regarding internships before April 23rd.
-        Any internship offers can be made on May 5th, at the earliest.
-    </div>
-
-    <script src="Games.js"></script>
+    <script src="base.js"></script>
 </body>
+
 </html>
