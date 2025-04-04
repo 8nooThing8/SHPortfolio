@@ -13,19 +13,24 @@
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onclick="window.location.href = 'index.html'">
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" 
+        onclick="window.location.href = 'index.html'">
             Home
-        </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'Specialization.html'">
+        </div>
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'index.html#specialization-container-id'">
             Specialization
-        </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
+        </div>
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'index.html#games-container-id'">
             Games
-        </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'AboutMe.html'">
+        </div>
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'AboutMe.html'">
             About Me
-        </ref>
+        </div>
     </div>
+    
     <div class="item-container">
         <img class="HoleEMole" src="Stella&orbit.png">
 
@@ -106,7 +111,7 @@
             When i was implementing these cascaded shadow maps i got this result at the start
         </div>
 
-        <img src="cascadedShadowMapFOV.png" class="cascaded-shadowmap-wrong">
+        <img src="cascadedShadowMapFOV.png" class="cascaded-shadowmap-wrong" style="margin-top: 4vw;">
 
         <div class="contribution-text-centered">
             <i>Shadow map from one of the cascade cam</i>
@@ -122,7 +127,7 @@
             <br>When i finaly saw this and fixed it, everything worked.
         </div>
 
-        <img src="WithoutCascades.png" class="cascaded-shadowmap-wrong">
+        <img src="WithoutCascades.png" class="cascaded-shadowmap-wrong" style="margin-top: 3vw;">
         <div class="contribution-text-cascade">
             <i>Before</i>
         </div>
@@ -193,7 +198,7 @@
 
     <hr style="margin-top: 5vw; margin-bottom: 5vw;">
 
-    <footer style="flex-direction: column;">
+    <footer style="flex-direction: column; margin-bottom: 5vw;">
         <div class="footer-text-holder">
             <b style="font-size: 2vw;">Contact</b>
             <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>

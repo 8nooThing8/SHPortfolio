@@ -13,21 +13,26 @@
 
 <body>
     <div class="top-menu">
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onclick="window.location.href = 'Index.html'">
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" 
+        onclick="window.location.href = 'index.html'">
             Home
-        </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'Specialization.html'">
+        </div>
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'index.html#specialization-container-id'">
             Specialization
-        </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'index.html'">
+        </div>
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'index.html#games-container-id'">
             Games
-        </ref>
-        <ref class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" onclick="window.location.href = 'AboutMe.html'">
+        </div>
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'AboutMe.html'">
             About Me
-        </ref>
+        </div>
     </div>
+
     <div class="item-container">
-        <img class="traum-image" src="GrappleAscent.png">
+        <img class="traum-image" src="GrappleAscent.png" style="margin-top: 3vw;">
 
         <div class="video-contribution-holder">
             <iframe class="video-player" src="https://www.youtube.com/embed/Iqr3XIhSnUQ?si=UpZg620osi18jLEX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -37,9 +42,9 @@
                 <br>
                 <br>
                 <div class="contibutions">
-                    <div onclick="document.getElementById('SSUE-title').scrollIntoView()"><u>Rope rendering</u></div>
-                    <div onclick="document.getElementById('SSA-title').scrollIntoView()"><u>Camera Controller</u></div>
-                    <div onclick="document.getElementById('TAUTT-title').scrollIntoView()"><u>All graphics, no shaders</u></div>
+                    <div onclick="document.getElementById('TAUTT-title').scrollIntoView({ block: 'center' })"><u>Intro/Idéa</u></div>
+                    <div onclick="document.getElementById('SSUE-title').scrollIntoView({ block: 'center' })"><u>Rope rendering</u></div>
+                    <div onclick="document.getElementById('SSA-title').scrollIntoView({ block: 'center' })"><u>Camera Controller</u></div>
                 </div>
             </div>
         </div>
@@ -48,6 +53,46 @@
             This game was made in
             <br>Unity Game Engine
         </div>
+
+        <div class="contribution-titletext">
+            <b>Intro/Idéa</b>
+        </div>
+
+        <div class="contribution-text-moving-platform" id="TAUTT-title" >
+            While deciding on an idea we were thinking the theme built to scale as in make things smaller or bigger to make them fit like everyone else. 
+            An idéa came to interperate built to scale as something that someone made to climb also called scale in some instances and that is how a grapple climbing game was decided.
+            I was the only one in the group who had done some graphics so i became the graphics team for the project.
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="contribution-titletext">
+            <b>Rope Rendering</b>
+        </div>
+
+        <div class="contribution-text-moving-platform" id="SSUE-title" >
+            We need a rope to use as the grapple string and we started by using line renderer in unity which worked well until the line curved around objects and the connection points was very few which made the line phase through these objects.
+            To fix this i created a 3D version of the line renderer that takes in a mesh and still uses line renderer as a base to know where the line will start and end.
+            I also made the line be a bit more strict on where it would connect.
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="contribution-titletext">
+            <b>Camera Controller</b>
+        </div>
+
+        <div class="contribution-text-moving-platform" id="SSA-title" >
+            The camera controlls and effects was made by me. Making the camera zoom out as you go faster made the most effect. Yolu could then feel that you are going fast and felt very good in general.
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
         
         <div class="closing-thoughts-title">
             <b>Closing Thoughts</b>
@@ -55,7 +100,6 @@
         <div class="closing-thoughts">
             Grapple Ascent was a very fun game to work on and we made a very cool product in the end its also very fun and satisfying
         </div>
-
 
         <hr>
 
@@ -78,7 +122,7 @@
 
     <hr style="margin-top: 5vw; margin-bottom: 5vw;">
 
-    <footer style="flex-direction: column;">
+    <footer style="flex-direction: column; margin-bottom: 5vw;">
         <div class="footer-text-holder">
             <b style="font-size: 2vw;">Contact</b>
             <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>

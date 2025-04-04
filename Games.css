@@ -57,7 +57,7 @@ footer{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 100%;
 }
 .HoleEMole {
     margin-top: 7vw;
@@ -135,40 +135,41 @@ footer{
 
 .result-text {
     text-align: justify;
-    width: 80%;
+    width: 100%;
     font-size: 1vw;
     margin-bottom: -0.5vw;
 }
 
 .contribution-text {
     text-align: justify;
-    width: 80%;
+    width: 100%;
     font-size: 1vw;
 }
 
 .contribution-text-moving-platform {
     text-align: justify;
-    width: 80%;
+    width: 100%;
     font-size: 1vw;
 }
 
 .contribution-text-centered {
     padding-top: 0.5vw;
     text-align: center;
-    width: 80%;
+    width: 100%;
     font-size: 0.8vw;
 }
 
 .contribution-text-cascade {
     padding-top: 0.3vw;
     text-align: center;
-    width: 80%;
+    width: 100%;
     font-size: 0.8vw;
 }
 
 .contribution-text-transform-animator {
     text-align: justify;
     font-size: 1vw;
+    width: 100%;
 }
 
 .Engine {
@@ -303,7 +304,7 @@ hr {
 
 .contribution-text-bezier-lerp {
     text-align: justify;
-    width: 80%;
+    width: 100%;
     font-size: 1vw;
 }
 

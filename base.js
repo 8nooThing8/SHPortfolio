@@ -126,21 +126,6 @@ var elementMove;
 var currentPosition = 0;
 var moveSpeed = 2;
 
-var menuItems = document.getElementsByClassName("menu-item");
-
-menuItems[2].addEventListener('click', Games);
-menuItems[1].addEventListener('click', Specialization);
-
-function Games() {
-    document.getElementById("title-textID").scrollIntoView();
-}
-function Specialization() {
-    document.getElementById("specialization-titleID").scrollIntoView();
-}
-function Awards() {
-
-}
-
 
 elementMove = document.getElementsByClassName("top-menu");
 
