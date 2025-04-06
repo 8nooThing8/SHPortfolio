@@ -204,8 +204,6 @@ function konamiExecution() {
     window.open(sitesList[site]);
 }
 
-
-
 document.addEventListener("DOMContentLoaded",() => {
 	button = new ExplosiveButton("button");
 });
