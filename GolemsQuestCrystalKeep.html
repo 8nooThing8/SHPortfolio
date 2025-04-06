@@ -62,11 +62,10 @@
             I then decided i had to research how to make shadow maps and make the scene look way better. The main problem was we had just started our game engine and had no direction to how we could do this.
             The saviour was <a href="https://Learnopengl.com">Learn OpenGL</a> and their great article about <a href="https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping">Shadow Mapping</a> where i could find the basics for the shadow mapping.
             While making the project we used DirectX11 and learn opengl is in OpenGL, but this was pretty easily translatable to DirectX11. Even with the tutorial it was no small feat, it was amazing when it actually worked since i had been working on it for so long and wanted results.
-            At that stage the below image was the first i got
-            <br>
             <br>
         </div>
-        <img src="shadowsP4Wacky.png" class="tree-fall-editor">
+
+        <img src="shadowsP4Wacky.png" class="tree-fall-editor" style=" margin-top: 3vw;">
 
         <div class="contribution-text-centered">
             <i>An image showing some wrongly projected shadows</i>
@@ -75,14 +74,36 @@
         <div class="contribution-text-moving-platform">
             <br>
             The problem here was something to do with the camera projecting from the bottom of the world upwards and drawing shadows on the theoretical "backsides" since they are the forward for us but back for the shadow camera.
-            When i figured that out and moved the camera so it pointed downwards towards the world instead of upwards i got an amazing result, and was even happier about it than before
+            When i figured that out and moved the camera so it pointed downwards towards the world instead of upwards, this looked correct and projects shadow but now the shadows are very pixelated.
             <br>
             <br>
         </div>
+
+        <img src="PixelatedShadowMap.png" class="tree-fall-editor">
+        <div class="contribution-text-centered">
+            <i>Shadows pixelated</i>
+        </div>
+
+        <img src="ShadowMappingPixelatedCode.png" class="tree-fall-editor" style="height: 3.8vw; margin-top: 3vw;">
+        <div class="contribution-text-centered">
+            <i>Direct shadow sampling</i>
+        </div>
+
+        <div class="contribution-text-moving-platform" style=" margin-top: 3vw;">
+            I applied some Percent close filtering onto the shadows to blur out the edges to make them smoother and it looked much better
+            <br>
+            <br>
+        </div>
+
         <img src="shadowsP4.png" class="tree-fall-editor">
 
         <div class="contribution-text-centered">
-            <i>An image showing correctly projected shadows</i>
+            <i>An image showing correctly projected and smoothened shadows</i>
+        </div>
+
+        <img src="ShadowMappingPCFCode.png" class="tree-fall-editor" style="height: 17vw; margin-top: 3vw;">
+        <div class="contribution-text-centered">
+            <i>PCF Shadow sampling code</i>
         </div>
 
         <div id="Second-title" class="contribution-titletext">

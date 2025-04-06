@@ -38,6 +38,8 @@ footer{
 }
 
 .traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent, .general-game, .general-game-col2 {
+    max-width: 864px;
+    max-height: calc(864px / 1.8);
     width: 45vw;
     height: 25vw;
     display: flex;
@@ -66,7 +68,7 @@ footer{
 }
 
 .pitch-golem {
-    margin-top: 11%;
+    margin-top: 6%;
 }
 
 .pitch-stella {
@@ -93,8 +95,14 @@ footer{
     position: absolute;
     z-index: -2;
     font-size: 1.8vw;
-    padding: 1vw;
+    padding: 1.8%;
 }
+
+ @media (min-width: 1920px) {
+    .game-text-behind {
+        font-size: 34.56px;
+    }
+ }
 
 .all-games{
     font-size: 4vw;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name=description content="Simon Henriksson Portfolio">
@@ -13,8 +14,8 @@
 
 <body>
     <div class="top-menu">
-        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" 
-        onclick="window.location.href = 'index.html'">
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = 'index.html'">
             Home
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
@@ -30,12 +31,15 @@
             About Me
         </div>
     </div>
-    
+
     <div class="item-container">
         <img class="HoleEMole" src="Stella&orbit.png">
 
         <div class="video-contribution-holder">
-            <iframe class="video-player" src="https://www.youtube.com/embed/Iqr3XIhSnUQ?si=UpZg620osi18jLEX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="video-player" src="https://www.youtube.com/embed/Iqr3XIhSnUQ?si=UpZg620osi18jLEX"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="contibution">
                 <br><br>
                 <u><b>Contibution</b></u>
@@ -43,7 +47,8 @@
                 <br>
                 <div class="contibutions">
                     <div onclick="document.getElementById('First-title').scrollIntoView()"><u>Text Renderer</u></div>
-                    <div onclick="document.getElementById('Second-title').scrollIntoView()"><u>Cascaded Shadow Maps</u></div>
+                    <div onclick="document.getElementById('Second-title').scrollIntoView()"><u>Cascaded Shadow Maps</u>
+                    </div>
                     <div onclick="document.getElementById('Third-title').scrollIntoView()"><u>Dialouge</u></div>
                 </div>
             </div>
@@ -59,11 +64,17 @@
         </div>
 
         <div class="contribution-text">
-            In the previous project P6 we did not have any type of text rendering which made it so that the graphics team had to make text as sprites then we can render these with our sprite renderers.
-            We wanted to let the graphics team work more on models, textures, buttons and other graphical elements and we handle the text in engine instead of outside. For this I implemented FreeType, a free and open source c font render engine.
-            With freetype we could define each character as a textureResource in a map wich has the key of a char. With this we then use the DX11 function
-            <a href="https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-copysubresourceregion">CopySubresourceRegion</a>
-            to copy the contents of the char we wanted that is mapped to a texture and paste it to a new texture that had been inited before with a total character pixel offset to place all the character correctly.
+            In the previous project P6 we did not have any type of text rendering which made it so that the graphics
+            team had to make text as sprites then we can render these with our sprite renderers.
+            We wanted to let the graphics team work more on models, textures, buttons and other graphical elements and
+            we handle the text in engine instead of outside. For this I implemented FreeType, a free and open source c
+            font render engine.
+            With freetype we could define each character as a textureResource in a map wich has the key of a char. With
+            this we then use the DX11 function
+            <a
+                href="https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-copysubresourceregion">CopySubresourceRegion</a>
+            to copy the contents of the char we wanted that is mapped to a texture and paste it to a new texture that
+            had been inited before with a total character pixel offset to place all the character correctly.
         </div>
 
         <img src="TextRenderer.png" class="text-render-image">
@@ -75,7 +86,9 @@
         <div class="contribution-text">
             <br>
             <br>
-            When we have copied to the resource we set it as a Shader Resource View and then use it in a text pixel shader, we sample color from the texture and only return the red channel and multiply in albedo tint to be able to change color of the text.
+            When we have copied to the resource we set it as a Shader Resource View and then use it in a text pixel
+            shader, we sample color from the texture and only return the red channel and multiply in albedo tint to be
+            able to change color of the text.
             <br>
             <br>
         </div>
@@ -105,9 +118,12 @@
 
 
         <div class="contribution-text">
-            The choosen game concept and game theme was space pirates. with this comes alot of open area which with the old shadowing techniche will be covered i darkness or be completely lit up which both looks wrong.
-            The solution to this are cascaded shadow maps. The implementation of cascaded shadow maps in this project was a real hassle and took longer than i thought it would.
-            Helping me i had the guest article on <a href="https://learnopengl.com">Learn OpenGL</a> at <a href="https://learnopengl.com/Guest-Articles/2021/CSM">Cascaded Shadow Maps LearnOpenGL</a>
+            The choosen game concept and game theme was space pirates. with this comes alot of open area which with the
+            old shadowing techniche will be covered i darkness or be completely lit up which both looks wrong.
+            The solution to this are cascaded shadow maps. The implementation of cascaded shadow maps in this project
+            was a real hassle and took longer than i thought it would.
+            Helping me i had the guest article on <a href="https://learnopengl.com">Learn OpenGL</a> at <a
+                href="https://learnopengl.com/Guest-Articles/2021/CSM">Cascaded Shadow Maps LearnOpenGL</a>
             When i was implementing these cascaded shadow maps i got this result at the start
         </div>
 
@@ -118,12 +134,20 @@
         </div>
 
         <div class="contribution-text" style="margin-top: 2vw;margin-bottom: 0.7vw">
-            The result looks very bad since it almost looks like i have way too much FOV even when this should be zero with a directional light. I knew something was wrong with our othographic camera because compared to one online they were completely different so i had to fix it.
-            <br>While browsing through the <a href="https://learn.microsoft.com/en-us/windows/win32/dxtecharts/cascaded-shadow-maps">DX11 snippet for Cascaded shadow maps</a> there was one slight difference in the orthographics cam we create vs what they create
+            The result looks very bad since it almost looks like i have way too much FOV even when this should be zero
+            with a directional light. I knew something was wrong with our othographic camera because compared to one
+            online they were completely different so i had to fix it.
+            <br>While browsing through the <a
+                href="https://learn.microsoft.com/en-us/windows/win32/dxtecharts/cascaded-shadow-maps">DX11 snippet for
+                Cascaded shadow maps</a> there was one slight difference in the orthographics cam we create vs what they
+            create
             <br>we did
-            <br>"myClipSpace(3, 4) = -nearPlane / (farPlane - nearPlane);"
+            <pre
+                style="font-family:monospace;color: rgb(156, 220, 254); background-color: rgb(43, 43, 43); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(224, 224, 138); font-weight: 400;">myClipSpace</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">3</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">4</span>) = -nearPlane / (farPlane - nearPlane);</li></ol></pre>
+            <div style="margin-top: -1.1vw;"></div>
             <br>while the DX11 snippet did
-            <br>"myClipSpace(4, 3) = -nearPlane / (farPlane - nearPlane);"
+            <pre
+                style="font-family:monospace;color: rgb(156, 220, 254); background-color: rgb(43, 43, 43); font-weight: 400; "><ol style="padding-left: 3em;"><li><span style="color: rgb(224, 224, 138); font-weight: 400;">myClipSpace</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">4</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">3</span>) = -nearPlane / (farPlane - nearPlane);</li></ol></pre>
             <br>When i finaly saw this and fixed it, everything worked.
         </div>
 
@@ -142,8 +166,17 @@
         </div>
 
         <div class="contribution-text" style="margin-top: 2.5vw;">
-            As we can see in the before and after, the effect is amazing and we get so much more color and shdowing thoughout the world
+            As we can see in the before and after, the effect is amazing and we get so much more color and shdowing
+            thoughout the world
         </div>
+
+        <div class="contribution-text-cascade">
+            <i>After</i>
+        </div>
+
+        <pre
+            style="height: 60vh; width: 100%; overflow-y: auto; overflow-x: auto; font-family:monospace;color: rgb(156, 220, 254); background-color: rgb(43, 43, 43); font-weight: 400; "><ol style="padding-left: 3em;"><li style="width: 100%;"><span style="color: rgb(156, 220, 254); font-weight: 400;"><span style="color: rgb(86, 156, 214); font-weight: 400;">bool</span> <span style="color: rgb(224, 224, 138); font-weight: 400;">GraphicsEngine::SetShadowCamera</span><span style="color: rgb(86, 156, 214); font-weight: 400;">()</span></span></li><li style="width: 100%;">{</li><li style="width: 100%;">	<span style="color: rgb(216, 160, 223); font-weight: 400;">if</span> (!myDirectionalLights.<span style="color: rgb(224, 224, 138); font-weight: 400;">empty</span>())</li><li style="width: 100%;">	{</li><li style="width: 100%;">		<span style="color: rgb(216, 160, 223); font-weight: 400;">auto</span> vec = MainSingleton::<span style="color: rgb(224, 224, 138); font-weight: 400;">Get</span>()-&gt;mySceneManager-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetCamera</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetCameraData</span>().<span style="color: rgb(224, 224, 138); font-weight: 400;">GetFrustumCornersWorldSpace</span>();</li><li style="width: 100%;"></li><li style="width: 100%;">		<span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::vector&lt;<span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::pair&lt;CU::Vector3f, CU::Vector3f&gt;&gt; minMax;</li><li style="width: 100%;">		<span style="color: rgb(216, 160, 223); font-weight: 400;">constexpr</span> <span style="color: rgb(86, 156, 214); font-weight: 400;">float</span> zMult = <span style="color: rgb(86, 156, 214); font-weight: 400;">1000.0f</span>;</li><li style="width: 100%;">		<span style="color: rgb(216, 160, 223); font-weight: 400;">auto</span>&amp; data = myDirectionalLights[<span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>]-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetData</span>();</li><li style="width: 100%;">		<span style="color: rgb(216, 160, 223); font-weight: 400;">for</span> (<span style="color: rgb(86, 156, 214); font-weight: 400;">int</span> i = <span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>; i &lt; vec.<span style="color: rgb(224, 224, 138); font-weight: 400;">size</span>(); i++)</li><li style="width: 100%;">		{</li><li style="width: 100%;">			CU::Vector3f center;</li><li style="width: 100%;">			<span style="color: rgb(216, 160, 223); font-weight: 400;">for</span> (<span style="color: rgb(216, 160, 223); font-weight: 400;">auto</span>&amp; vP : vec[i])</li><li style="width: 100%;">			{</li><li style="width: 100%;">				center += vP;</li><li style="width: 100%;">			}</li><li style="width: 100%;">			center /= <span style="color: rgb(224, 224, 138); font-weight: 400;">static_cast</span>&lt;<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span>&gt;(vec[i].<span style="color: rgb(224, 224, 138); font-weight: 400;">size</span>());</li><li style="width: 100%;"></li><li style="width: 100%;">			data.myLightViews[i] = CU::Matrix4x4f::<span style="color: rgb(224, 224, 138); font-weight: 400;">LookAt</span>(center - myDirectionalLights.<span style="color: rgb(224, 224, 138); font-weight: 400;">front</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetData</span>().direction, center, CU::<span style="color: rgb(224, 224, 138); font-weight: 400;">Vector3f</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">0.f</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">1.f</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">0.f</span>));</li><li style="width: 100%;"></li><li style="width: 100%;">			minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">emplace_back</span>();</li><li style="width: 100%;"></li><li style="width: 100%;">			minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.x = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::numeric_limits&lt;<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span>&gt;::<span style="color: rgb(224, 224, 138); font-weight: 400;">max</span>();</li><li style="width: 100%;">			minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.y = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::numeric_limits&lt;<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span>&gt;::<span style="color: rgb(224, 224, 138); font-weight: 400;">max</span>();</li><li style="width: 100%;">			minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.z = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::numeric_limits&lt;<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span>&gt;::<span style="color: rgb(224, 224, 138); font-weight: 400;">max</span>();</li><li style="width: 100%;"></li><li style="width: 100%;">			minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.x = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::numeric_limits&lt;<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span>&gt;::<span style="color: rgb(224, 224, 138); font-weight: 400;">lowest</span>();</li><li style="width: 100%;">			minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.y = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::numeric_limits&lt;<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span>&gt;::<span style="color: rgb(224, 224, 138); font-weight: 400;">lowest</span>();</li><li style="width: 100%;">			minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.z = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::numeric_limits&lt;<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span>&gt;::<span style="color: rgb(224, 224, 138); font-weight: 400;">lowest</span>();</li><li style="width: 100%;"></li><li style="width: 100%;">			<span style="color: rgb(216, 160, 223); font-weight: 400;">for</span> (<span style="color: rgb(216, 160, 223); font-weight: 400;">auto</span>&amp; vP : vec[i])</li><li style="width: 100%;">			{</li><li style="width: 100%;">				<span style="color: rgb(86, 156, 214); font-weight: 400;">const</span> <span style="color: rgb(216, 160, 223); font-weight: 400;">auto</span> trf = vP * data.myLightViews[i];</li><li style="width: 100%;"></li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.x = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::<span style="color: rgb(224, 224, 138); font-weight: 400;">min</span>(minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.x, trf.x);</li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.y = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::<span style="color: rgb(224, 224, 138); font-weight: 400;">min</span>(minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.y, trf.y);</li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.z = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::<span style="color: rgb(224, 224, 138); font-weight: 400;">min</span>(minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.z, trf.z);</li><li style="width: 100%;"></li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.x = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::<span style="color: rgb(224, 224, 138); font-weight: 400;">max</span>(minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.x, trf.x);</li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.y = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::<span style="color: rgb(224, 224, 138); font-weight: 400;">max</span>(minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.y, trf.y);</li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.z = <span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::<span style="color: rgb(224, 224, 138); font-weight: 400;">max</span>(minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.z, trf.z);</li><li style="width: 100%;">			}</li><li style="width: 100%;"></li><li style="width: 100%;">			<span style="color: rgb(216, 160, 223); font-weight: 400;">if</span> (minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.z &lt; <span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>)</li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.z *= zMult;</li><li style="width: 100%;">			<span style="color: rgb(216, 160, 223); font-weight: 400;">else</span></li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().first.z /= zMult;</li><li style="width: 100%;"></li><li style="width: 100%;">			<span style="color: rgb(216, 160, 223); font-weight: 400;">if</span> (minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.z &lt; <span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>)</li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.z /= zMult;</li><li style="width: 100%;">			<span style="color: rgb(216, 160, 223); font-weight: 400;">else</span></li><li style="width: 100%;">				minMax.<span style="color: rgb(224, 224, 138); font-weight: 400;">back</span>().second.z *= zMult;</li><li style="width: 100%;"></li><li style="width: 100%;">		}</li><li style="width: 100%;"></li><li style="width: 100%;">		<span style="color: rgb(216, 160, 223); font-weight: 400;">auto</span>* curentCamHolder = myCurrentCamera;</li><li style="width: 100%;"></li><li style="width: 100%;">		myCommandList.<span style="color: rgb(224, 224, 138); font-weight: 400;">Enqueue</span>([&amp;]()</li><li style="width: 100%;">			{</li><li style="width: 100%;">				ImGui::<span style="color: rgb(224, 224, 138); font-weight: 400;">Begin</span>(<span style="color: rgb(214, 157, 133); font-weight: 400;">"Shadow visulizing"</span>);</li><li style="width: 100%;"></li><li style="width: 100%;">				ID3D11ShaderResourceView* nullView = <span style="color: rgb(86, 156, 214); font-weight: 400;">nullptr</span>;</li><li style="width: 100%;">				GraphicsEngine::<span style="color: rgb(224, 224, 138); font-weight: 400;">GetRHI</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetContext</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">PSSetShaderResources</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">105</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">1</span>, &amp;nullView);</li><li style="width: 100%;">			});</li><li style="width: 100%;"></li><li style="width: 100%;">		<span style="color: rgb(216, 160, 223); font-weight: 400;">for</span> (<span style="color: rgb(86, 156, 214); font-weight: 400;">int</span> i = <span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>; i &lt; vec.<span style="color: rgb(224, 224, 138); font-weight: 400;">size</span>(); i++)</li><li style="width: 100%;">		{</li><li style="width: 100%;">			<span style="color: rgb(216, 160, 223); font-weight: 400;">if</span> (!myDirectionalLights.<span style="color: rgb(224, 224, 138); font-weight: 400;">size</span>())</li><li style="width: 100%;">				<span style="color: rgb(216, 160, 223); font-weight: 400;">return</span> <span style="color: rgb(86, 156, 214); font-weight: 400;">false</span>;</li><li style="width: 100%;"></li><li style="width: 100%;">			myCommandList.<span style="color: rgb(224, 224, 138); font-weight: 400;">Enqueue</span>([&amp;, index = i, miniMax = minMax, view = data.myLightViews]()</li><li style="width: 100%;">				{</li><li style="width: 100%;">					GraphicsEngine::<span style="color: rgb(224, 224, 138); font-weight: 400;">GetRHI</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetContext</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">OMSetRenderTargets</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">nullptr</span>, myShadowMap-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetDepthStencilView</span>(index).<span style="color: rgb(224, 224, 138); font-weight: 400;">Get</span>());</li><li style="width: 100%;">					GraphicsEngine::<span style="color: rgb(224, 224, 138); font-weight: 400;">GetRHI</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetContext</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">ClearDepthStencilView</span>(myShadowMap-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetDepthStencilView</span>(index).<span style="color: rgb(224, 224, 138); font-weight: 400;">Get</span>(), D3D11_CLEAR_DEPTH, <span style="color: rgb(86, 156, 214); font-weight: 400;">1.0f</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>);</li><li style="width: 100%;"></li><li style="width: 100%;">					<span style="color: rgb(248, 248, 242); font-weight: 400;">std</span>::wstringstream stream;</li><li style="width: 100%;">					stream &lt;&lt; <span style="color: rgb(214, 157, 133); font-weight: 400;">"Shadow map nr: "</span> &lt;&lt; index;</li><li style="width: 100%;">					myRHI-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">BeginRenderTag</span>(stream.<span style="color: rgb(224, 224, 138); font-weight: 400;">str</span>().<span style="color: rgb(224, 224, 138); font-weight: 400;">c_str</span>());</li><li style="width: 100%;"></li><li style="width: 100%;">					CU::Camera camera;</li><li style="width: 100%;">					<span style="color: rgb(216, 160, 223); font-weight: 400;">auto</span> val = miniMax[index];</li><li style="width: 100%;"></li><li style="width: 100%;">					<span style="color: rgb(87, 166, 74); font-weight: 400;">//camera.GetSettings().myNearPlane = 10;</span></li><li style="width: 100%;">					<span style="color: rgb(87, 166, 74); font-weight: 400;">//camera.GetSettings().myFarPlane = 500000;</span></li><li style="width: 100%;"></li><li style="width: 100%;">					<span style="color: rgb(87, 166, 74); font-weight: 400;">//float x = val.second.x - val.first.x;</span></li><li style="width: 100%;">					<span style="color: rgb(87, 166, 74); font-weight: 400;">//float y = val.second.y - val.first.y;</span></li><li style="width: 100%;"></li><li style="width: 100%;">					<span style="color: rgb(216, 160, 223); font-weight: 400;">auto</span>&amp; data = myDirectionalLights[<span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>]-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetData</span>();</li><li style="width: 100%;"></li><li style="width: 100%;">					<span style="color: rgb(87, 166, 74); font-weight: 400;">//offset = CU::Camera::splitpoints[index];</span></li><li style="width: 100%;"></li><li style="width: 100%;">					<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span> offset = <span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>;</li><li style="width: 100%;"></li><li style="width: 100%;">					<span style="color: rgb(87, 166, 74); font-weight: 400;">//if (index &gt; 0)</span></li><li style="width: 100%;">					<span style="color: rgb(87, 166, 74); font-weight: 400;">//	offset = CU::Camera::splitpoints[index-1];</span></li><li style="width: 100%;"></li><li style="width: 100%;">					<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span> left = val.first.x;</li><li style="width: 100%;">					<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span> right = val.second.x;</li><li style="width: 100%;">					<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span> bottom = val.first.y;</li><li style="width: 100%;">					<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span> top = val.second.y;</li><li style="width: 100%;">					<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span> nearPlane = val.first.z;</li><li style="width: 100%;">					<span style="color: rgb(86, 156, 214); font-weight: 400;">float</span> farPlane = val.second.z;</li><li style="width: 100%;"></li><li style="width: 100%;">					camera.<span style="color: rgb(224, 224, 138); font-weight: 400;">Init</span>(left - offset, right + offset, bottom - offset, top + offset, nearPlane, farPlane);</li><li style="width: 100%;"></li><li style="width: 100%;">					<span style="color: rgb(216, 160, 223); font-weight: 400;">auto</span>&amp; timer = CU::Time::<span style="color: rgb(224, 224, 138); font-weight: 400;">Get</span>();</li><li style="width: 100%;">					myFrameBuffer.myCameraPosition = view[index].<span style="color: rgb(224, 224, 138); font-weight: 400;">GetRowVector</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">4</span>);</li><li style="width: 100%;">					myFrameBuffer.myInverseViewMatrix = view[index];</li><li style="width: 100%;">					myFrameBuffer.myProjectionMatrix = camera.<span style="color: rgb(224, 224, 138); font-weight: 400;">GetClipSpace</span>();</li><li style="width: 100%;">					myFrameBuffer.myScreenResolution = <span style="color: rgb(224, 224, 138); font-weight: 400;">GetResolution</span>();</li><li style="width: 100%;">					myFrameBuffer.myDeltaTime = timer.<span style="color: rgb(224, 224, 138); font-weight: 400;">GetDeltaTime</span>();</li><li style="width: 100%;">					myFrameBuffer.myUnscaledDeltaTime = timer.<span style="color: rgb(224, 224, 138); font-weight: 400;">GetDeltaTimeUnscaled</span>();</li><li style="width: 100%;">					myFrameBuffer.myTotalTime = timer.<span style="color: rgb(224, 224, 138); font-weight: 400;">GetTotalTime</span>();</li><li style="width: 100%;">					myFrameBuffer.myForward = myDirectionalLights[<span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>]-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetData</span>().direction;</li><li style="width: 100%;">					<span style="color: rgb(224, 224, 138); font-weight: 400;">UpdateAndSetConstantBuffer</span>(ConstantBufferType::FrameBuffer, myFrameBuffer);</li><li style="width: 100%;"></li><li style="width: 100%;">					data.myLightProjections[index] = myFrameBuffer.myProjectionMatrix;</li><li style="width: 100%;"></li><li style="width: 100%;">					D3D11_VIEWPORT viewport = {};</li><li style="width: 100%;">					viewport.TopLeftX = <span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>;</li><li style="width: 100%;">					viewport.TopLeftY = <span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>;</li><li style="width: 100%;">					viewport.Width = <span style="color: rgb(86, 156, 214); font-weight: 400;">4096</span>;</li><li style="width: 100%;">					viewport.Height = <span style="color: rgb(86, 156, 214); font-weight: 400;">4096</span>;</li><li style="width: 100%;">					viewport.MaxDepth = <span style="color: rgb(86, 156, 214); font-weight: 400;">1.0f</span>;</li><li style="width: 100%;">					myRHI-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetContext</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">RSSetViewports</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">1</span>, &amp;viewport);</li><li style="width: 100%;"></li><li style="width: 100%;"></li><li style="width: 100%;">					GraphicsEngine::<span style="color: rgb(224, 224, 138); font-weight: 400;">GetRHI</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetContext</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">PSSetShader</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">nullptr</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">nullptr</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>);</li><li style="width: 100%;">				});</li><li style="width: 100%;"></li><li style="width: 100%;">			MainSingleton::<span style="color: rgb(224, 224, 138); font-weight: 400;">Get</span>()-&gt;mySceneManager-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">RenderCurScene</span>();</li><li style="width: 100%;"></li><li style="width: 100%;">			myCommandList.<span style="color: rgb(224, 224, 138); font-weight: 400;">Enqueue</span>([&amp;, index = i]()</li><li style="width: 100%;">				{</li><li style="width: 100%;">					myRHI-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">EndTag</span>();</li><li style="width: 100%;">				});</li><li style="width: 100%;"></li><li style="width: 100%;">		}</li><li style="width: 100%;"></li><li style="width: 100%;">		myCommandList.<span style="color: rgb(224, 224, 138); font-weight: 400;">Enqueue</span>([&amp;]()</li><li style="width: 100%;">			{</li><li style="width: 100%;">				GraphicsEngine::<span style="color: rgb(224, 224, 138); font-weight: 400;">GetRHI</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetContext</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">OMSetRenderTargets</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">nullptr</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">nullptr</span>);</li><li style="width: 100%;">				ImGui::<span style="color: rgb(224, 224, 138); font-weight: 400;">Image</span>((<span style="color: rgb(86, 156, 214); font-weight: 400;">void</span>*)myShadowMap-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetShaderResourceView</span>().<span style="color: rgb(224, 224, 138); font-weight: 400;">Get</span>(), <span style="color: rgb(224, 224, 138); font-weight: 400;">ImVec2</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">350</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">350</span>));</li><li style="width: 100%;">				GraphicsEngine::<span style="color: rgb(224, 224, 138); font-weight: 400;">GetRHI</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetContext</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">PSSetShaderResources</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">105</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">1</span>, myShadowMap-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetShaderResourceView</span>().<span style="color: rgb(224, 224, 138); font-weight: 400;">GetAddressOf</span>());</li><li style="width: 100%;"></li><li style="width: 100%;">				ImGui::<span style="color: rgb(224, 224, 138); font-weight: 400;">End</span>();</li><li style="width: 100%;">			});</li><li style="width: 100%;"></li><li style="width: 100%;">		GraphicsEngine::<span style="color: rgb(224, 224, 138); font-weight: 400;">GetRHI</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">GetContext</span>()-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">OMSetRenderTargets</span>(<span style="color: rgb(86, 156, 214); font-weight: 400;">0</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">nullptr</span>, <span style="color: rgb(86, 156, 214); font-weight: 400;">nullptr</span>);</li><li style="width: 100%;"></li><li style="width: 100%;">		<span style="color: rgb(216, 160, 223); font-weight: 400;">this</span>-&gt;<span style="color: rgb(224, 224, 138); font-weight: 400;">SetFrameBuffer</span>(curentCamHolder);</li><li style="width: 100%;"></li><li style="width: 100%;">		<span style="color: rgb(216, 160, 223); font-weight: 400;">return</span> <span style="color: rgb(86, 156, 214); font-weight: 400;">true</span>;</li><li style="width: 100%;">	}</li><li style="width: 100%;">	<span style="color: rgb(216, 160, 223); font-weight: 400;">return</span> <span style="color: rgb(86, 156, 214); font-weight: 400;">false</span>;</li><li style="width: 100%;">}</li></ol></pre>
+
 
         <div id="Third-title" class="contribution-titletext">
             <b>Dialouge</b>
@@ -151,7 +184,8 @@
 
         <div class="contribution-text">
             We wanted Stella(Main character) to be able to interact with the world like the pritate npc's in the world.
-            This was perfect since i had already implemented the text renderer into our engine then i can use this to slowly type out the text that the character should say.
+            This was perfect since i had already implemented the text renderer into our engine then i can use this to
+            slowly type out the text that the character should say.
             <br>
             <br>
             <br>
@@ -166,7 +200,8 @@
         <div class="contribution-text">
             <br>
             <br>
-            Because we already use unreal engine to export the level, then i created a component for this where you can input what text dialouge should be said, also time between each character is would be typed.
+            Because we already use unreal engine to export the level, then i created a component for this where you can
+            input what text dialouge should be said, also time between each character is would be typed.
             <br>
             <br>
             <br>
@@ -182,7 +217,9 @@
             <b>Closing Thoughts</b>
         </div>
         <div class="closing-thoughts">
-            this was a very fun game to develop and work on i got to learn alot of new skills and also some things to avoid at times. Most interesting thing i learned about was the DX11 CopySubresourceRegion function and how good it can be.
+            this was a very fun game to develop and work on i got to learn alot of new skills and also some things to
+            avoid at times. Most interesting thing i learned about was the DX11 CopySubresourceRegion function and how
+            good it can be.
         </div>
 
         <hr>
@@ -191,7 +228,8 @@
             Play our game by following the Link below
         </div>
 
-        <a class="title-text" href="https://drive.google.com/file/d/16cv4TzgLnsYb6ffo8N4y8v6NFfXZXQ-I/view?usp=drive_link">
+        <a class="title-text"
+            href="https://drive.google.com/file/d/16cv4TzgLnsYb6ffo8N4y8v6NFfXZXQ-I/view?usp=drive_link">
             Stella & Orbit: Take Flight
         </a>
     </div>
@@ -201,30 +239,33 @@
     <footer style="flex-direction: column; margin-bottom: 5vw;">
         <div class="footer-text-holder">
             <b style="font-size: 2vw;">Contact</b>
-            <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
+            <br>Email: <a href="mailto:simon@pixi.nu"
+                style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
             <br>Location: Malmö, Västra Hamnen
 
             <br>
             <br>
-            
+
             <div class="links">
-                <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
+                <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank"
+                    style="text-decoration: none;">
                     <img src="linkedin-logo.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="itch-io.1024x1024.png" class="icon-link">
                 </a>
-    
-                <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
+
+                <a href="https://github.com/8nooThing8" target="_blank"
+                    style="text-decoration: none; margin-left: 1vw;">
                     <img src="Github.png" class="icon-link">
                 </a>
-    
+
                 <a href="C-V.pdf" target="_blank">
                     <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
                 </a>
             </div>
-            
+
             <br><br>
 
             I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The
@@ -235,4 +276,5 @@
 
     <script src="Base.js"></script>
 </body>
+
 </html>

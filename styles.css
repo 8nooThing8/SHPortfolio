@@ -136,7 +136,7 @@ body {
     filter: blur(6px);
     opacity: 0.15;
     object-fit: cover;
-    width: 110vw;
+    width: 130vw;
     height: 20vw;
     display: flex;
     position: relative;
@@ -144,7 +144,7 @@ body {
     align-content: center;
     justify-content: center;
     cursor: pointer;
-    transform: translate(-10vw, -6vw)
+    transform: translate(-30vw, -6vw)
 }
 
 .traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent, .nongine {
@@ -285,6 +285,7 @@ footer {
 }
 
 @media (max-width: 1000px), (pointer: coarse) {
+
     .traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent, .nongine {
         width: 60vw;
         height: 33vw;
