@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name=description content="Simon Henriksson Portfolio">
@@ -13,36 +14,40 @@
 
 <body>
     <div class="top-menu">
-        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" 
-        onclick="window.location.href = 'index.html'">
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+            onclick="window.location.href = './'">
             Home
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'index.html#specialization-container-id'">
+            onclick="window.location.href = './#specialization-container-id'">
             Specialization
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'index.html#games-container-id'">
+            onclick="window.location.href = './#games-container-id'">
             Games
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'AboutMe.html'">
+            onclick="window.location.href = 'AboutMe'">
             About Me
         </div>
     </div>
-    
+
     <div class="item-container">
         <img class="nbfeImage" src="NoBroomForError.png">
 
         <div class="video-contribution-holder">
-            <iframe class="video-player" src="https://www.youtube.com/embed/pgv8kyc6-4A?si=0LTnwUYzpSFiupbd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="video-player" src="https://www.youtube.com/embed/pgv8kyc6-4A?si=0LTnwUYzpSFiupbd"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="contibution">
                 <br><br>
                 <u><b>Contibution</b></u>
                 <br>
                 <br>
                 <div class="contibutions">
-                    <div onclick="document.getElementById('TFSE-title').scrollIntoView()"><u>Tree Fall Sequence Editor</u></div>
+                    <div onclick="document.getElementById('TFSE-title').scrollIntoView()"><u>Tree Fall Sequence
+                            Editor</u></div>
                     <div onclick="document.getElementById('MT-title').scrollIntoView()"><u>Moon Timer</u></div>
                     <div onclick="document.getElementById('CLBC-title').scrollIntoView()"><u>Bezier Curving</u></div>
                 </div>
@@ -59,9 +64,13 @@
         </div>
 
         <div class="contribution-text">
-            This was the first project at The Game Assembly and i was assigned the task to make a hopefully easy tool for making falling trees in this endless runner game.
-            The tool was made with unity's editor tools which made it possible to do things like only displaying information when a flag was set which is not possible in the default properties editor.
-            In the end i made a tool that could do this, the only problem was that it was not very user friendly since i had not made many tools that others had to use which made it hard to use and thus not very many of these instances can be seen in the game.
+            This was the first project at The Game Assembly and i was assigned the task to make a hopefully easy tool
+            for making falling trees in this endless runner game.
+            The tool was made with unity's editor tools which made it possible to do things like only displaying
+            information when a flag was set which is not possible in the default properties editor.
+            In the end i made a tool that could do this, the only problem was that it was not very user friendly since i
+            had not made many tools that others had to use which made it hard to use and thus not very many of these
+            instances can be seen in the game.
             It was a learningful experince and learnetmore about the unity tool.
             <br>
             <br>
@@ -77,9 +86,15 @@
         </div>
 
         <div class="contribution-text">
-            We wanted a fun way to show how much time is left so we decided to do it the same way race the sun does it, our reference game. In race the sun, like the name sugests you have to keep racing the sun while it keeps going down. When you collect time powerups you get more time and it rises again.
-            the game was set at night so the sun became a moon instead. My solution to this was pretty simple, have a start position and have an end position and lerp smoothly between these.
-            This made a pretty nice and smooth move from highest point to lowest point. One problem this caused was the moon were way too close and can sometimes be seen clipping into the ground, the solution would be to move it further back or dont write depth for it and always render it first and resulting in it being at the back at all time.
+            We wanted a fun way to show how much time is left so we decided to do it the same way race the sun does it,
+            our reference game. In race the sun, like the name sugests you have to keep racing the sun while it keeps
+            going down. When you collect time powerups you get more time and it rises again.
+            the game was set at night so the sun became a moon instead. My solution to this was pretty simple, have a
+            start position and have an end position and lerp smoothly between these.
+            This made a pretty nice and smooth move from highest point to lowest point. One problem this caused was the
+            moon were way too close and can sometimes be seen clipping into the ground, the solution would be to move it
+            further back or dont write depth for it and always render it first and resulting in it being at the back at
+            all time.
             <br>
             <br>
         </div>
@@ -95,8 +110,11 @@
         </div>
 
         <div class="contribution-text-bezier-lerp">
-            In our project we wanted to make a clothes line that moves forwards and back. The easiest way to do this like i did was to just make a simple bezier curve between two vector3's.
-            A bezier curve could be made very complicated with a bunch of math functions but that would be way too indepth for this project so i just decided to use multiple Vector3 lerps to smoothly go between these points.
+            In our project we wanted to make a clothes line that moves forwards and back. The easiest way to do this
+            like i did was to just make a simple bezier curve between two vector3's.
+            A bezier curve could be made very complicated with a bunch of math functions but that would be way too
+            indepth for this project so i just decided to use multiple Vector3 lerps to smoothly go between these
+            points.
             <br>
             <br>
         </div>
@@ -109,9 +127,11 @@
 
         <div class="closing-thoughts-title">
             <b>Closing Thoughts</b>
-</div>
+        </div>
         <div class="closing-thoughts">
-            This was my first game project at The Game Assembly and was a very interesting experience, i had never worked this close with a bunch of diciplines so i had to lean how to work with everyone and help them with what they might have needed.
+            This was my first game project at The Game Assembly and was a very interesting experience, i had never
+            worked this close with a bunch of diciplines so i had to lean how to work with everyone and help them with
+            what they might have needed.
 
         </div>
 
@@ -131,30 +151,33 @@
     <footer style="flex-direction: column; margin-bottom: 5vw;">
         <div class="footer-text-holder">
             <b style="font-size: 2vw;">Contact</b>
-            <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
+            <br>Email: <a href="mailto:simon@pixi.nu"
+                style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
             <br>Location: Malmö, Västra Hamnen
 
             <br>
             <br>
-            
+
             <div class="links">
-                <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
+                <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank"
+                    style="text-decoration: none;">
                     <img src="linkedin-logo.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="itch-io.1024x1024.png" class="icon-link">
                 </a>
-    
-                <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
+
+                <a href="https://github.com/8nooThing8" target="_blank"
+                    style="text-decoration: none; margin-left: 1vw;">
                     <img src="Github.png" class="icon-link">
                 </a>
-    
+
                 <a href="C-V.pdf" target="_blank">
                     <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
                 </a>
             </div>
-            
+
             <br><br>
 
             I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The
@@ -165,4 +188,5 @@
 
     <script src="Base.js"></script>
 </body>
+
 </html>
