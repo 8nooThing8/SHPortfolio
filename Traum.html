@@ -13,24 +13,24 @@
 
 <body>
     <div class="top-menu">
-        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" 
-        onclick="window.location.href = 'index.html'">
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+             onclick="window.location.href = 'index.html'">
             Home
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'index.html#specialization-container-id'">
+             onclick="window.location.href = 'index.html#specialization-container-id'">
             Specialization
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'index.html#games-container-id'">
+             onclick="window.location.href = 'index.html#games-container-id'">
             Games
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'AboutMe.html'">
+             onclick="window.location.href = 'AboutMe.html'">
             About Me
         </div>
     </div>
-    
+
     <div class="item-container">
         <img class="traum-image" src="Traum.jpg">
 
@@ -71,7 +71,17 @@
                 To make this more effective i used the meta files from unity when editing and exported the meta into our project to get the min and max coordinates on the sprite.
                 with the unity sprite ".meta" files, i could import these and create textures from them in our engine. I then used these rects i get and animate the sprite.
             </div>
-            <img src="SpriteSheetMeta.png" class="SpriteSheetImage">
+
+            <div>
+                <img src="SpriteSheetMeta.png" class="SpriteSheetImage">
+                <div style="text-align: center; margin-left: 10%">
+                    <i>Example of a sprite ".meta" file</i>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 100%">
+            <pre style="font-family:monospace;color: rgb(248, 248, 242); background-color: rgb(43, 43, 43); font-weight: 400; "><ol style="padding-left: 3em;"><li>std::wstring filePathWide = spriteSheet.<span style="color: rgb(245, 171, 53); font-weight: 400;">GetFilePath</span>();</li><li><span style="color: rgb(212, 208, 171); font-weight: 400;">// Add meta to the end of string</span></li><li>filePathWide += <span style="color: rgb(171, 227, 56); font-weight: 400;">L".meta"</span>;</li><li></li><li><span style="color: rgb(248, 248, 242); font-weight: 400;">std::ifstream <span style="color: rgb(0, 224, 224); font-weight: 400;">file</span><span style="color: rgb(245, 171, 53); font-weight: 400;">(filePathWide)</span></span>;</li><li>std::string line;</li><li></li><li><span style="color: rgb(245, 171, 53); font-weight: 400;">bool</span> foundInformation = <span style="color: rgb(245, 171, 53); font-weight: 400;">false</span>;</li><li>	</li><li><span style="color: rgb(220, 198, 224); font-weight: 400;">while</span> (file.<span style="color: rgb(245, 171, 53); font-weight: 400;">good</span>())</li><li>{</li><li><span style="color: rgb(212, 208, 171); font-weight: 400;">// Search for the information we want and run if it finds one</span></li><li>	<span style="color: rgb(220, 198, 224); font-weight: 400;">while</span> (std::<span style="color: rgb(245, 171, 53); font-weight: 400;">getline</span>(file, line))</li><li>	{</li><li>		<span style="color: rgb(220, 198, 224); font-weight: 400;">if</span> (line == <span style="color: rgb(171, 227, 56); font-weight: 400;">"rect:"</span>)</li><li>		{</li><li>			foundInformation = <span style="color: rgb(245, 171, 53); font-weight: 400;">true</span>;</li><li>			<span style="color: rgb(220, 198, 224); font-weight: 400;">break</span>;</li><li>		}</li><li>	}</li><li></li><li>	<span style="color: rgb(220, 198, 224); font-weight: 400;">if</span> (!foundInformation)</li><li>		<span style="color: rgb(220, 198, 224); font-weight: 400;">continue</span>;</li><li></li><li>	<span style="color: rgb(220, 198, 224); font-weight: 400;">if</span> (line == <span style="color: rgb(171, 227, 56); font-weight: 400;">"rect:"</span>)</li><li>	{</li><li>		std::<span style="color: rgb(245, 171, 53); font-weight: 400;">getline</span>(file, line);</li><li></li><li>		std::<span style="color: rgb(245, 171, 53); font-weight: 400;">getline</span>(file, xString);</li><li>		std::<span style="color: rgb(245, 171, 53); font-weight: 400;">getline</span>(file, yString);</li><li></li><li>		std::<span style="color: rgb(245, 171, 53); font-weight: 400;">getline</span>(file, widthString);</li><li>		std::<span style="color: rgb(245, 171, 53); font-weight: 400;">getline</span>(file, heightString);</li><li></li><li>		x = SpriteSheet::<span style="color: rgb(245, 171, 53); font-weight: 400;">SearchForNumber</span>(xString);</li><li>		y = SpriteSheet::<span style="color: rgb(245, 171, 53); font-weight: 400;">SearchForNumber</span>(yString);</li><li></li><li>		width = <span style="color: rgb(245, 171, 53); font-weight: 400;">SearchForNumber</span>(widthString);</li><li>		height = <span style="color: rgb(245, 171, 53); font-weight: 400;">SearchForNumber</span>(heightString);</li><li>	}</li><li></li><li>	foundInformation = <span style="color: rgb(245, 171, 53); font-weight: 400;">false</span>;</li><li>}</li><li></li><li>file.<span style="color: rgb(245, 171, 53); font-weight: 400;">close</span>();</li></ol></pre>
         </div>
 
         <div id="SSA-title" class="contribution-titletext">
@@ -145,25 +155,25 @@
 
             <br>
             <br>
-            
+
             <div class="links">
                 <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
                     <img src="linkedin-logo.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="itch-io.1024x1024.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="Github.png" class="icon-link">
                 </a>
-    
+
                 <a href="C-V.pdf" target="_blank">
                     <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
                 </a>
             </div>
-            
+
             <br><br>
 
             I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The

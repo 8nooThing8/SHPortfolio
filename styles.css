@@ -3,12 +3,11 @@ body {
     color: #AAAAAA;
     font-family: 'Quicksand';
     background-attachment: fixed;
-    background-size: 100%;
     overflow-x: hidden;
     padding: 5vw;
 }
 
-.intro{
+.intro {
     font-size: 4vw;
     text-align: center;
     transform: translate(0, -20vw)
@@ -20,14 +19,14 @@ body {
     transform: translate(0, -20vw)
 }
 
-.intro-to-specialization{
-    width: 130%;
-    margin-left: -15%;
+.intro-to-specialization {
+    width: 1000%;
     margin-top: -18.55vw;
+    margin-left: -500%
 }
 
 .intro-spec-splitter {
-    width: 50.8vw;
+    width: 58%;
     transform: translate(0, -20.3vw)
 }
 
@@ -36,17 +35,17 @@ body {
     clip-path: circle();
 }
 
-.icon-link{
+.icon-link {
     width: 3vw;
 }
 
-.above-me-container{
+.above-me-container {
     width: 80vw;
     display: flex;
     justify-content: center;
 }
 
-.about-me-text{
+.about-me-text {
     align-self: center;
     font-size: 1.3vw;
     text-align: justify;
@@ -61,7 +60,7 @@ body {
     justify-content: center;
 }
 
-.all-games-container{
+.all-games-container {
     margin-top: 5vw;
     align-content: center;
     justify-content: center;
@@ -73,34 +72,44 @@ body {
     display: flex;
 }
 
-.all-games{
+.all-games {
     cursor: pointer;
     align-content: center;
     justify-content: center;
     text-align: center;
     font-size: 3.4vw;
     width: 35%;
+    max-width: 450px;
+    max-height: 50px;
     background-color: #AAAAAA;
     color: #292929;
     align-self: center;
-    padding: 0.5vw;
-    padding-top: 0.8vw;
-    padding-bottom: 0.8vw;
+    padding: 2%;
     border-radius: 0.4em 0.4em 0.4em 0.4em;
     box-shadow: 0.1em 0.1em 0.16em rgb(65, 65, 65);
-    
     text-shadow: 0.04em 0.04em 0.1em rgb(100, 100, 100);
 }
 
-@keyframes scaleUpAllGames {
-    100% {transform: scale(1.05);}
-}
-@keyframes scaleBackAllGames {
-    0% {transform: scale(1);}
+@media (min-width: 1250px){
+    .all-games {
+        font-size: 2.6rem;
+    }
 }
 
-.games-under-text{
-    font-size: 2.5vw; 
+@keyframes scaleUpAllGames {
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes scaleBackAllGames {
+    0% {
+        transform: scale(1);
+    }
+}
+
+.games-under-text {
+    font-size: 2.5vw;
     margin-top: -2.5vw;
 }
 
@@ -111,6 +120,8 @@ body {
 }
 
 .specialization {
+    max-width: 1100px;
+    max-height: calc( 1100px / 1.8);
     width: 53vw;
     height: 30vw;
     display: flex;
@@ -137,6 +148,8 @@ body {
 }
 
 .traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent, .nongine {
+    max-width: 724px;
+    max-height: calc( 724px / 1.8);
     width: 45vw;
     height: 25vw;
     display: flex;
@@ -155,28 +168,32 @@ body {
     grid-row: 2;
 }
 
-.grapple-ascent{
+.grapple-ascent {
     flex: 1;
     align-self: center;
 }
 
-.nongine{
-grid-column: 2;
+.nongine {
+    grid-column: 2;
 }
 
-.pitch-traum{
+.pitch-traum {
     margin-top: 12%;
 }
-.pitch-golem{
+
+.pitch-golem {
     margin-top: 11%;
 }
-.pitch-stella{
+
+.pitch-stella {
     margin-top: 5.7%;
 }
-.pitch-mole{
+
+.pitch-mole {
     margin-top: 16.4%;
 }
-.pitch-grapple{
+
+.pitch-grapple {
     margin-top: 17%;
 }
 
@@ -188,18 +205,23 @@ grid-column: 2;
 }
 
 @keyframes FadeGame {
-    100% {opacity: 0.15;}
-  }
-  @keyframes FadeGameBack {
-    0% {opacity: 0.15;}
-  }
+    100% {
+        opacity: 0.15;
+    }
+}
+
+@keyframes FadeGameBack {
+    0% {
+        opacity: 0.15;
+    }
+}
 
 .game-text-behind {
     flex: 1;
     position: absolute;
     z-index: -2;
-    font-size: 1.8vw;
-    padding: 1vw;
+    font-size: 1.7vw;
+    padding: 3%;
 }
 
 .title-text {
@@ -209,11 +231,22 @@ grid-column: 2;
     margin-bottom: 2vw;
 }
 
+@media (min-width: 1607px){
+    .game-text-behind {
+        font-size: 1.8rem;
+    }
+}
+@media (min-width: 1920px){
+    .title-text {
+        font-size: 2.5vw;
+    }
+}
+
 .top-menu {
     padding: 0.7vw;
     left: 0vw;
     background-color: rgba(0, 0, 0, 0.65);
-    width: 100.5vw;
+    width: 100%;
     height: 40px;
     top: 0;
     position: fixed;
@@ -234,16 +267,11 @@ grid-column: 2;
     cursor: pointer;
 }
 
-.icon-LinkedIn{
-    width: 100px;
-    height: 100px;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
-footer{
+footer {
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -257,12 +285,12 @@ footer{
 }
 
 @media (max-width: 1000px), (pointer: coarse) {
-    .traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent {
+    .traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent, .nongine {
         width: 60vw;
         height: 33vw;
     }
 
-    .games-container{
+    .games-container {
         margin-top: 5vw;
     }
 
@@ -284,19 +312,48 @@ footer{
 }
 
 @media (max-width: 1000px), (pointer: coarse) {
-    .pitch-traum{
-        margin-top: 26%;
+    .nongine {
+        grid-column: 1;
     }
-    .pitch-golem{
-        margin-top: 26%;
+    .pitch-golem {
+        margin-top: 4%;
     }
-    .pitch-stella{
-        margin-top: 22%;
+
+    .game-text-behind {
+        font-size: 2.4vw;
     }
-    .pitch-mole{
-        margin-top: 28%;
-    }
-    .pitch-grapple{
-        margin-top: 16%;
-    }
+}
+
+button{
+    position: absolute;
+    transform: translate(40vw, 80vw);
+}
+
+.exploding, .exploding:focus, .exploding:hover {
+    background: transparent;
+    color: transparent;
+}
+
+.exploding {
+    pointer-events: none;
+    position: relative;
+    will-change: transform;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.particle {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.particle--debris {
+    background: #255ff4;
+}
+
+.particle--fire {
+    border-radius: 50%;
 }

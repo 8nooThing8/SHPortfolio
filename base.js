@@ -146,7 +146,7 @@ setInterval(Move, 7);
 counter = 0;
 
 const interval = setInterval(() => {
-    window.scrollTo(0, scrollY);
+    window.scrollTo(75, scrollY);
     counter++;
 
     if (counter >= 5) {
@@ -154,35 +154,251 @@ const interval = setInterval(() => {
     }
 });
 
-PressedCount = 0;
-lastpressedKey = 0;
+const keyCombinationExecuted = new Event("key-combination");
 
-keycombination = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+class keycombination{
+    constructor(comb, func)
+    {
+        this.combination = comb;
+        this.function = func;
+    }
+
+    PressedCount = 0;
+    lastpressedKey = 0;
+    combination;
+    function;
+}
+
+let combination = [
+    new keycombination([38, 38, 40, 40, 37, 39, 37, 39, 66, 65], function(){konamiExecution();})
+];
 
 document.addEventListener('keydown', function (event) {
-    if (event.keyCode == keycombination[PressedCount])
-    {
-        lastpressedKey = keycombination[PressedCount];
-        PressedCount++;
-    }
-    else 
-    {
-        lastpressedKey = 0;
-        PressedCount = 0;
-    }
-    
-    if (PressedCount == 10) {
-        lastpressedKey = 0;
-        PressedCount = 0;
 
-        site = Math.floor(Math.random() * sitesList.length);
+    for (let i = 0; i < combination.length; i++) 
+    {
+        combination[i] = combination[i];
 
-        konamiExecution(sitesList[site]);
+        if (event.keyCode == combination[i].combination[combination[i].PressedCount])
+            {
+                combination[i].lastpressedKey = combination[i].combination[combination[i].PressedCount];
+                combination[i].PressedCount++;
+            }
+            else 
+            {
+                combination[i].lastpressedKey = 0;
+                combination[i].PressedCount = 0;
+            }
+            
+            if (combination[i].PressedCount == combination[i].combination.length) {
+                combination[i].lastpressedKey = 0;
+                combination[i].PressedCount = 0;
+        
+                combination[i].function();
+            }
     }
 });
 
-function konamiExecution(url) {
-    window.open(url)
+function konamiExecution() {
+    site = Math.floor(Math.random() * sitesList.length);
+    window.open(sitesList[site]);
+}
+
+
+
+document.addEventListener("DOMContentLoaded",() => {
+	button = new ExplosiveButton("button");
+});
+
+class ExplosiveButton {
+	constructor(el) {
+		this.element = document.querySelector(el);
+		this.width = 0;
+		this.height = 0;
+		this.centerX = 0;
+		this.centerY = 0;
+		this.pieceWidth = 0;
+		this.pieceHeight = 0;
+		this.piecesX = 9;
+		this.piecesY = 4;
+		this.duration = 3500;
+
+        combination.push(new keycombination([38, 39, 40, 40, 40], function(){button.explode(button.duration);}));
+	}
+
+	explode(duration) {
+		let explodingState = "exploding";
+
+		if (!this.element.classList.contains(explodingState)) {
+			this.element.classList.add(explodingState);
+
+			this.createParticles("fire",25,duration);
+		}
+	}
+
+	createParticles(kind,count,duration) {
+		for (let c = 0; c < count; ++c) {
+			let r = randomFloat(0.25,0.5),
+				diam = r * 2,
+				xBound = this.centerX - r,
+				yBound = this.centerY - r,
+				easing = "cubic-bezier(0.15,0.5,0.5,0.85)";
+
+			if (kind == "fire") {
+				let x = this.centerX + randomFloat(-xBound,xBound),
+					y = this.centerY + randomFloat(-yBound,yBound),
+					a = calcAngle(this.centerX,this.centerY,x,y),
+					dist = randomFloat(1,5);
+
+				new FireParticle(this.element,x,y,20, 20,a,dist,duration,easing);
+
+			} else if (kind == "debris") {
+				let x = (this.pieceWidth / 2) + this.pieceWidth * (c % this.piecesX),
+					y = (this.pieceHeight / 2) + this.pieceHeight * Math.floor(c / this.piecesX),
+					a = calcAngle(this.centerX,this.centerY,x,y),
+					dist = randomFloat(4,7);
+
+				new DebrisParticle(this.element,x,y,400, 400,a,dist,duration,easing);
+			}
+		}
+	}
+}
+class Particle {
+	constructor(parent,x,y,w,h,angle,distance = 1,className2 = "") {
+		let width = `${w}em`,
+			height = `${h}em`,
+			adjustedAngle = angle + Math.PI/2;
+
+		this.div = document.createElement("div");
+		this.div.className = "particle";
+
+		if (className2)
+			this.div.classList.add(className2);
+
+		this.div.style.width = width;
+		this.div.style.height = height;
+
+        this.div.style.zIndex = 1000;
+
+		parent.appendChild(this.div);
+
+		this.s = {
+			x: x - w/2,
+			y: y - h/2
+		};
+		this.d = {
+			x: this.s.x + Math.sin(adjustedAngle) * distance,
+			y: this.s.y - Math.cos(adjustedAngle) * distance
+		};
+	}
+	runSequence(el,keyframesArray,duration = 1e3,easing = "linear",delay = 0) {
+		let animation = el.animate(keyframesArray, {
+				duration: duration,
+				easing: easing,
+				delay: delay
+			}
+		);
+		animation.onfinish = () => {
+			let parentCL = el.parentElement.classList;
+
+			el.remove();
+
+			if (!document.querySelector(".particle"))
+				parentCL.remove(...parentCL);
+		};
+	}
+}
+class DebrisParticle extends Particle {
+	constructor(parent,x,y,w,h,angle,distance,duration,easing) {
+		super(parent,x,y,w,h,angle,distance,"particle--debris");
+		
+		let maxAngle = 1080,
+			rotX = randomInt(0,maxAngle),
+			rotY = randomInt(0,maxAngle),
+			rotZ = randomInt(0,maxAngle);
+
+		this.runSequence(this.div,[
+			{
+				opacity: 1,
+				transform: `translate(${this.s.x}em,${this.s.y}em) rotateX(0) rotateY(0) rotateZ(0)`
+			},
+			{
+				opacity: 1,
+			},
+			{
+				opacity: 1,
+			},
+			{
+				opacity: 1,
+			},
+			{
+				opacity: 0,
+				transform: `translate(${this.d.x}em,${this.d.y}em) rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)`
+			}
+		],randomInt(duration/2,duration),easing);
+	}
+}
+class FireParticle extends Particle {
+	constructor(parent,x,y,w,h,angle,distance,duration,easing) {
+		super(parent,x,y,w,h,angle,distance,"particle--fire");
+
+		let sx = this.s.x,
+			sy = this.s.y,
+			dx = this.d.x,
+			dy = this.d.y;
+
+		this.runSequence(this.div,[
+			{
+				background: "hsl(60,100%,100%)",
+				transform: `translate(${sx}em,${sy}em) scale(1)`
+			},
+			{
+				background: "hsl(60,100%,80%)",
+				transform: `translate(${sx + (dx - sx)*0.25}em,${sy + (dy - sy)*0.25}em) scale(4)`
+			},
+			{
+				background: "hsl(40,100%,60%)",
+				transform: `translate(${sx + (dx - sx)*0.5}em,${sy + (dy - sy)*0.5}em) scale(7)`
+			},
+			{
+				background: "hsl(20,100%,40%)"
+			},
+			{
+				background: "hsl(0,0%,20%)",
+				transform: `translate(${dx}em,${dy}em) scale(0)`
+			}
+		],randomInt(duration/2,duration),easing);
+	}
+}
+function calcAngle(x1,y1,x2,y2) {
+	let opposite = y2 - y1,
+		adjacent = x2 - x1,
+		angle = Math.atan(opposite / adjacent);
+
+	if (adjacent < 0)
+		angle += Math.PI;
+
+	if (isNaN(angle))
+		angle = 0;
+
+	return angle;
+}
+function propertyUnitsStripped(el,property,unit) {
+	let cs = window.getComputedStyle(el),
+		valueRaw = cs.getPropertyValue(property),
+		value = +valueRaw.substr(0,valueRaw.indexOf(unit));
+
+	return value;
+}
+function pxToEm(px) {
+	let el = document.querySelector(":root");
+	return px / propertyUnitsStripped(el,"font-size","px");
+}
+function randomFloat(min,max) {
+	return Math.random() * (max - min) + min;
+}
+function randomInt(min,max) {
+	return Math.round(Math.random() * (max - min)) + min;
 }
 
 
