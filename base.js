@@ -112,7 +112,14 @@ var sitesList = [
 
 document.addEventListener('scroll', ScrollEvents)
 
-
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
 
 function MoveBackgroundSlowlyWithScroll() {
     const container = document.body;
@@ -146,12 +153,7 @@ setInterval(Move, 7);
 counter = 0;
 
 const interval = setInterval(() => {
-    window.scrollTo(75, scrollY);
-    counter++;
-
-    if (counter >= 5) {
-        clearInterval(interval);
-    }
+    window.scrollTo(0, scrollY);
 });
 
 const keyCombinationExecuted = new Event("key-combination");

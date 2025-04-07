@@ -7,6 +7,27 @@ body {
     overflow-x: hidden;
 }
 
+.topnav #myLinks {
+    display: none;
+    position: relative;
+    z-index: 100;
+    width: 60vw;
+}
+
+.topnav a {
+    display: none;
+    pointer-events: all;
+    border-radius: 0.5em 0.5em;
+    width: auto;
+    background-color: rgb(65, 65, 65);
+    color: white;
+    padding: 10px 12px;
+    text-decoration: none;
+    font-size: 17px;
+    position: absolute;
+}
+
+
 .top-menu {
     padding: 0.7vw;
     left: 0vw;
@@ -47,6 +68,7 @@ footer{
     background: none;
     border: none;
     cursor: pointer;
+    pointer-events: all;
 }
 
 .title-text {
@@ -348,25 +370,19 @@ hr {
 }
 
 
-
-
-@media (pointer:coarse) {
-    .video-contribution-holder {
+@media (max-width: 1000px), (pointer: coarse) {
+    .topnav a {
         display: block;
-        align-self: center;
-    }
-    .text-image-container-horiz {
-        flex-direction: column;
-    }
-    .contribution-text {
-        align-self: center;
-    }
-    .SpriteSheetImage {
-        align-self: center;
     }
 }
 
-@media (max-width: 1000px) {
+
+@media (pointer:coarse), (max-width: 1000px) {
+    .top-menu {
+        height: 18px;
+        display: none;
+    }
+
     .video-contribution-holder {
         display: block;
         align-self: center;

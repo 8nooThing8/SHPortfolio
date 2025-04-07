@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
 
 <head>
     <meta charset="utf-8">
@@ -9,9 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Simon Henriksson: Portfolio</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Engine &amp; Physics programmer">
     <meta name="twitter:site_name" content="Simon Henriksson Portfolio">
     <meta name="twitter:title" content="Simon Henriksson Portfolio">
@@ -34,32 +36,45 @@
   gtag('config', 'G-2KZW5MC8FQ');
 </script>
 
-<body style="margin-left: 10vw;">
+<body>
+    <div class="topnav">
+        <div id="myLinks">
+            <a href="./" style="top: 50px;">Home</a>
+            <a href="./#specialization-container-id'" style="top: 100px;">Specialization</a>
+            <a href="./#games-container-id" style="top: 150px;">Games</a>
+            <a href="AboutMe" style="top: 200px;">About Me</a>
+        </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
     <div class="top-menu">
-        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" 
-        onclick="window.location.href = './'">
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+             onclick="window.location.href = './'">
             Home
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = './#specialization-container-id'">
+             onclick="window.location.href = './#specialization-container-id'">
             Specialization
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = './#games-container-id'">
+             onclick="window.location.href = './#games-container-id'">
             Games
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'AboutMe'">
+             onclick="window.location.href = 'AboutMe'">
             About Me
         </div>
     </div>
 
-    <img src="SpamBreak.gif" class="spam-break">
-    <div class="intro"><b>HI!<br>I'M SIMON HENRIKSSON</b></div>
+    <div style="position: absolute; top: -10vw; left: 0.5vw;">
+        <img src="SpamBreak.gif" class="spam-break">
+        <hr class="intro-to-specialization" style="margin-top: -5px">
+    </div>
+    <div class="intro" style=" margin-top: 5vw"><b>HI!<br>I'M SIMON HENRIKSSON</b></div>
     <hr class="intro-spec-splitter">
     <div class="specs">Engine And Physics Programmer</div>
-
-    <hr class="intro-to-specialization">
 
     <div class="title-text" id="specialization-container-id">
         <b>Physics based mesh-breaking</b>
@@ -205,25 +220,25 @@
 
             <br>
             <br>
-            
+
             <div class="links">
                 <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
                     <img src="linkedin-logo.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="itch-io.1024x1024.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="Github.png" class="icon-link">
                 </a>
-    
+
                 <a href="C-V.pdf" target="_blank">
                     <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
                 </a>
             </div>
-            
+
             <br><br>
 
             I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The

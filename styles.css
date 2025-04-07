@@ -3,31 +3,27 @@ body {
     color: #AAAAAA;
     font-family: 'Quicksand';
     background-attachment: fixed;
-    overflow-x: hidden;
-    padding: 5vw;
+    pointer-events: none;
 }
 
 .intro {
     font-size: 4vw;
     text-align: center;
-    transform: translate(0, -20vw)
+   
 }
 
 .specs {
-    font-size: 1vw;
+    font-size: 1.5vw;
     text-align: center;
-    transform: translate(0, -20vw)
 }
 
 .intro-to-specialization {
-    width: 1000%;
-    margin-top: -18.55vw;
-    margin-left: -500%
+    width: 100%;
+    align-self: center;
 }
 
 .intro-spec-splitter {
     width: 58%;
-    transform: translate(0, -20.3vw)
 }
 
 .me-image {
@@ -73,6 +69,7 @@ body {
 }
 
 .all-games {
+    pointer-events: all;
     cursor: pointer;
     align-content: center;
     justify-content: center;
@@ -90,7 +87,19 @@ body {
     text-shadow: 0.04em 0.04em 0.1em rgb(100, 100, 100);
 }
 
-@media (min-width: 1250px){
+.spam-break {
+    position: relative;
+    pointer-events: none;
+    filter: blur(6px);
+    opacity: 0.15;
+    object-fit: cover;
+    height: 30vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+@media (min-width: 1250px) {
     .all-games {
         font-size: 2.6rem;
     }
@@ -130,21 +139,6 @@ body {
     align-content: center;
     justify-content: center;
     cursor: pointer;
-}
-
-.spam-break {
-    filter: blur(6px);
-    opacity: 0.15;
-    object-fit: cover;
-    width: 130vw;
-    height: 20vw;
-    display: flex;
-    position: relative;
-    pointer-events: none;
-    align-content: center;
-    justify-content: center;
-    cursor: pointer;
-    transform: translate(-30vw, -6vw)
 }
 
 .traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent, .nongine {
@@ -231,12 +225,13 @@ body {
     margin-bottom: 2vw;
 }
 
-@media (min-width: 1607px){
+@media (min-width: 1607px) {
     .game-text-behind {
         font-size: 1.8rem;
     }
 }
-@media (min-width: 1920px){
+
+@media (min-width: 1920px) {
     .title-text {
         font-size: 2.5vw;
     }
@@ -247,7 +242,7 @@ body {
     left: 0vw;
     background-color: rgba(0, 0, 0, 0.65);
     width: 100%;
-    height: 40px;
+    height: 30px;
     top: 0;
     position: fixed;
     z-index: 100;
@@ -259,12 +254,13 @@ body {
     color: rgb(204, 204, 204);
     position: relative;
     font-family: Arial;
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 0px;
     margin-right: 2vw;
     background: none;
     border: none;
     cursor: pointer;
+    pointer-events: all;
 }
 
 html {
@@ -279,12 +275,58 @@ footer {
 }
 
 .footer-text-holder {
-    width: 50vw;
     text-align: center;
     font-size: 1vw;
+    width: 50vw;
+}
+
+
+.topnav #myLinks {
+    display: none;
+    position: relative;
+    z-index: 100;
+    width: 60vw;
+}
+
+.topnav a {
+    display: none;
+    pointer-events: all;
+    border-radius: 0.5em 0.5em;
+    width: auto;
+    background-color: rgb(65, 65, 65);
+    color: white;
+    padding: 10px 12px;
+    text-decoration: none;
+    font-size: 17px;
+    position: absolute;
 }
 
 @media (max-width: 1000px), (pointer: coarse) {
+
+    .intro-spec-splitter {
+        margin-top: -0.5vw;
+    }
+
+    .specs {
+        margin-top: -1vw;
+    }
+
+    .spam-break {
+        margin-top: 0vw;
+    }
+
+    .topnav a {
+        display: block;
+    }
+
+    .top-menu {
+        height: 18px;
+        display: none;
+    }
+
+    .menu-item {
+        font-size: 15px;
+    }
 
     .traum, .golem-quest, .stella-orbit, .hole-e-mole, .grapple-ascent, .nongine {
         width: 60vw;
@@ -316,6 +358,7 @@ footer {
     .nongine {
         grid-column: 1;
     }
+
     .pitch-golem {
         margin-top: 4%;
     }
@@ -325,7 +368,7 @@ footer {
     }
 }
 
-button{
+button {
     position: absolute;
     transform: translate(40vw, 80vw);
 }
