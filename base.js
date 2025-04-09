@@ -152,10 +152,6 @@ setInterval(Move, 7);
 
 counter = 0;
 
-const interval = setInterval(() => {
-    window.scrollTo(0, scrollY);
-});
-
 const keyCombinationExecuted = new Event("key-combination");
 
 class keycombination{
