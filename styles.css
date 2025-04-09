@@ -303,6 +303,15 @@ footer {
 
 @media (max-width: 1000px), (pointer: coarse) {
 
+    .footer-text-holder {
+        width: 80vw;
+        font-size: 2.5vw;
+    }
+
+    .icon-link {
+        width: 8.5vw;
+    }
+
     .intro-spec-splitter {
         margin-top: -0.5vw;
     }

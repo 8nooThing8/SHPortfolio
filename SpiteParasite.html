@@ -17,10 +17,10 @@
 <body>
     <div class="topnav">
         <div id="myLinks">
-            <a href="./" style="top: 50px;">Home</a>
-            <a href="./#specialization-container-id'" style="top: 100px;">Specialization</a>
-            <a href="./#games-container-id" style="top: 150px;">Games</a>
-            <a href="AboutMe" style="top: 200px;">About Me</a>
+            <a href="./" style="top: 60px;">Home</a>
+            <a href="./#specialization-container-id'" style="top: 110px;">Specialization</a>
+            <a href="./#games-container-id" style="top: 160px;">Games</a>
+            <a href="AboutMe" style="top: 210px;">About Me</a>
         </div>
 
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -28,29 +28,29 @@
         </a>
     </div>
     <div class="top-menu">
-        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" 
-        onclick="window.location.href = './'">
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+             onclick="window.location.href = './'">
             Home
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = './#specialization-container-id'">
+             onclick="window.location.href = './#specialization-container-id'">
             Specialization
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = './#games-container-id'">
+             onclick="window.location.href = './#games-container-id'">
             Games
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'AboutMe'">
+             onclick="window.location.href = 'AboutMe'">
             About Me
         </div>
     </div>
-    
+
     <div class="item-container">
         <img class="nbfeImage" src="SpiteParasite.jpg">
 
         <div class="video-contribution-holder">
-            <iframe class="video-player" src="https://www.youtube.com/embed/bFjJ5Gmbzfo?si=2zYDNrnp5ZTl-mfe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="video-player" src="https://www.youtube.com/embed/bFjJ5Gmbzfo?si=2zYDNrnp5ZTl-mfe" title="YouTube video player" width="1920" height="1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="contibution">
                 <br><br>
                 <u><b>Contibution</b></u>
@@ -73,7 +73,7 @@
             <b>Unreal Scene To TRK Scene</b>
         </div>
 
-        <div class="contribution-text-moving-platform">
+        <div class="contribution-text">
             As per our specifications for this project we had to use unreal as our level editor and export them into our own engine TRK.
             At first only one person started working on the exporter but there was so much trubble, especially the rotations.
             The main problem was becaused of how unreal uses both a right hand coordinate system and use Z as up, compare that to our engine, we use a left hand coordinatesystem and Y is up so the completely oposite.
@@ -81,7 +81,8 @@
             We almost solved the rotations by instead of before we exported the transformation matrix directly from unreal now export all position, scale and rotation by themselfs.
             I decided to try to change the rotation order from ZYX to ZXY and that made things actually rotate corectly and after around a month we had the correct roations, it was such a relief.
         </div>
-        <img src="roationsWorking.png" class="tree-fall-editor">
+
+        <img src="roationsWorking.png" class="general-image">
 
         <div class="contribution-text-centered">
             <i>An image of the rotations in our engine working</i>
@@ -97,7 +98,7 @@
             <br>
         </div>
 
-        <img src="PhysicsWorking.gif" class="cracks-in-enemies">
+        <img src="PhysicsWorking.gif" class="general-image">
 
         <div class="contribution-text-centered">
             <i>first physx working prototype</i>
@@ -124,7 +125,7 @@
             <br>
         </div>
 
-        <img src="chracterControllergoingupthendownstairs.gif" class="cracks-in-enemies">
+        <img src="chracterControllergoingupthendownstairs.gif" class="general-image">
 
         <div class="contribution-text-centered">
             <i>This shows physx interacting with stairs and the pathfinding</i>
@@ -134,7 +135,7 @@
             <b>Player Attacks</b>
         </div>
 
-        <div class="contribution-text-moving-platform">
+        <div class="contribution-text">
             We had two different implementations of player attacks and this was first with the old physics system where we used colliders as attack radiuses as triggers and enable and disable them when you attack.
             This was not very stable and would only work half of the time, i then found out that physx only checks if obejct is inside a trigger if it was previously outside and the next frame is inside.
             The new way was the newest system which instead of using triggers and being janky we just use overlap geometry to directly check what is inside the shape instead of letting physx do it on the next frame.
@@ -142,7 +143,7 @@
             <br>
             <br>
         </div>
-        <img src="shapecast.png" class="shape-cast">
+        <img src="shapecast.png" class="general-image">
 
         <div class="contribution-text-centered">
             <i>The Better solution, Shape Casting</i>
@@ -157,6 +158,7 @@
             <br>our studio VRAK
         </div>
 
+        <!--
         <hr>
         <div class="Playable-game">
             This game does not have an official site but the game can be downloaded with the button below
@@ -165,38 +167,38 @@
             <div class="download-game" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'">
                 Download Game
             </div>
-        </a>
+        </a>-->
     </div>
 
     <hr style="margin-top: 5vw; margin-bottom: 5vw;">
 
     <footer style="flex-direction: column; margin-bottom: 5vw;">
         <div class="footer-text-holder">
-            <b style="font-size: 2vw;">Contact</b>
+            <b class="contact-title">Contact</b>
             <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
             <br>Location: Malmö, Västra Hamnen
 
             <br>
             <br>
-            
+
             <div class="links">
                 <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
                     <img src="linkedin-logo.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="itch-io.1024x1024.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="Github.png" class="icon-link">
                 </a>
-    
+
                 <a href="C-V.pdf" target="_blank">
                     <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
                 </a>
             </div>
-            
+
             <br><br>
 
             I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The

@@ -17,10 +17,10 @@
 <body>
     <div class="topnav">
         <div id="myLinks">
-            <a href="./" style="top: 50px;">Home</a>
-            <a href="./#specialization-container-id'" style="top: 100px;">Specialization</a>
-            <a href="./#games-container-id" style="top: 150px;">Games</a>
-            <a href="AboutMe" style="top: 200px;">About Me</a>
+            <a href="./" style="top: 60px;">Home</a>
+            <a href="./#specialization-container-id'" style="top: 110px;">Specialization</a>
+            <a href="./#games-container-id" style="top: 160px;">Games</a>
+            <a href="AboutMe" style="top: 210px;">About Me</a>
         </div>
 
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -28,29 +28,29 @@
         </a>
     </div>
     <div class="top-menu">
-        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" 
-        onclick="window.location.href = './'">
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+             onclick="window.location.href = './'">
             Home
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = './#specialization-container-id'">
+             onclick="window.location.href = './#specialization-container-id'">
             Specialization
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = './#games-container-id'">
+             onclick="window.location.href = './#games-container-id'">
             Games
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'AboutMe'">
+             onclick="window.location.href = 'AboutMe'">
             About Me
         </div>
     </div>
-    
+
     <div class="item-container">
         <img class="nbfeImage" src="GolemsQuest.jpg">
 
         <div class="video-contribution-holder">
-            <iframe class="video-player" src="https://www.youtube.com/embed/e0gUAcpYPoU?si=gF-1ym_GkwRlxHuf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="video-player" src="https://www.youtube.com/embed/e0gUAcpYPoU?si=gF-1ym_GkwRlxHuf" width="1920" height="1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="contibution">
                 <br><br>
                 <u><b>Contibution</b></u>
@@ -72,7 +72,7 @@
             <b>Shadow Mapping</b>
         </div>
 
-        <div class="contribution-text-moving-platform">
+        <div class="contribution-text">
             While making Golems Quest: Crystal Keep in around the middle of the project the world looked very wrong since we only had PBL lighting in the scene which only darkened the back of models.
             I then decided i had to research how to make shadow maps and make the scene look way better. The main problem was we had just started our game engine and had no direction to how we could do this.
             The saviour was <a href="https://Learnopengl.com">Learn OpenGL</a> and their great article about <a href="https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping">Shadow Mapping</a> where i could find the basics for the shadow mapping.
@@ -80,13 +80,13 @@
             <br>
         </div>
 
-        <img src="shadowsP4Wacky.png" class="tree-fall-editor" style=" margin-top: 3vw;">
+        <img src="shadowsP4Wacky.png" class="general-image" style=" margin-top: 3vw;">
 
         <div class="contribution-text-centered">
             <i>An image showing some wrongly projected shadows</i>
         </div>
 
-        <div class="contribution-text-moving-platform">
+        <div class="contribution-text">
             <br>
             The problem here was something to do with the camera projecting from the bottom of the world upwards and drawing shadows on the theoretical "backsides" since they are the forward for us but back for the shadow camera.
             When i figured that out and moved the camera so it pointed downwards towards the world instead of upwards, this looked correct and projects shadow but now the shadows are very pixelated.
@@ -94,29 +94,29 @@
             <br>
         </div>
 
-        <img src="PixelatedShadowMap.png" class="tree-fall-editor">
+        <img src="PixelatedShadowMap.png" class="general-image">
         <div class="contribution-text-centered">
             <i>Shadows pixelated</i>
         </div>
 
-        <img src="ShadowMappingPixelatedCode.png" class="tree-fall-editor" style="height: 3.8vw; margin-top: 3vw;">
+        <img src="ShadowMappingPixelatedCode.png" class="general-image" style="height: 3.8vw; margin-top: 3vw;">
         <div class="contribution-text-centered">
             <i>Direct shadow sampling</i>
         </div>
 
-        <div class="contribution-text-moving-platform" style=" margin-top: 3vw;">
+        <div class="contribution-text">
             I applied some Percent close filtering onto the shadows to blur out the edges to make them smoother and it looked much better
             <br>
             <br>
         </div>
 
-        <img src="shadowsP4.png" class="tree-fall-editor">
+        <img src="shadowsP4.png" class="general-image">
 
         <div class="contribution-text-centered">
             <i>An image showing correctly projected and smoothened shadows</i>
         </div>
 
-        <img src="ShadowMappingPCFCode.png" class="tree-fall-editor" style="height: 17vw; margin-top: 3vw;">
+        <img src="ShadowMappingPCFCode.png" class="general-image" style="height: 17vw; margin-top: 3vw;">
         <div class="contribution-text-centered">
             <i>PCF Shadow sampling code</i>
         </div>
@@ -133,7 +133,7 @@
             <br>
         </div>
 
-        <img src="CracksInEnemies.png" class="cracks-in-enemies">
+        <img src="CracksInEnemies.png" class="general-image">
 
         <div class="contribution-text-centered">
             <i>Enemies cracking PS shader</i>
@@ -146,13 +146,13 @@
             <br>
         </div>
 
-        <img src="shaderEnemy.png" class="cracks-in-enemies">
+        <img src="shaderEnemy.png" class="general-image">
 
         <div class="contribution-text-centered">
             <i>A representation of how an enemy who has 1/3 of health left looks like</i>
         </div>
 
-        <div class="closing-thoughts-title">
+        <div class="contribution-titletext">
             <b>Closing Thoughts</b>
         </div>
         <div class="closing-thoughts">
@@ -161,11 +161,11 @@
         </div>
 
         <hr>
-        <div class="Playable-game">
+        <div class="closing-thoughts-title">
             This game does not have an official site but the game can be downloaded with the button below
         </div>
         <a href="GolemsQuestCrystalKeep.zip" download="GolemsQuestCrystalKeep.zip" style="text-decoration:none;">
-            <div class="download-game" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'">
+            <div class="contribution-titletext" onMouseOver="this.style.transform='scale(1.018)'" onMouseOut="this.style.transform='scale(1)'">
                 Download Game
             </div>
         </a>
@@ -175,31 +175,31 @@
 
     <footer style="flex-direction: column; margin-bottom: 5vw;">
         <div class="footer-text-holder">
-            <b style="font-size: 2vw;">Contact</b>
+            <b class="contact-title">Contact</b>
             <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
             <br>Location: Malmö, Västra Hamnen
 
             <br>
             <br>
-            
+
             <div class="links">
                 <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
                     <img src="linkedin-logo.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="itch-io.1024x1024.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="Github.png" class="icon-link">
                 </a>
-    
+
                 <a href="C-V.pdf" target="_blank">
                     <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
                 </a>
             </div>
-            
+
             <br><br>
 
             I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The

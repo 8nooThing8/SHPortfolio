@@ -17,10 +17,10 @@
 <body>
     <div class="topnav">
         <div id="myLinks">
-            <a href="./" style="top: 50px;">Home</a>
-            <a href="./#specialization-container-id'" style="top: 100px;">Specialization</a>
-            <a href="./#games-container-id" style="top: 150px;">Games</a>
-            <a href="AboutMe" style="top: 200px;">About Me</a>
+            <a href="./" style="top: 60px;">Home</a>
+            <a href="./#specialization-container-id'" style="top: 110px;">Specialization</a>
+            <a href="./#games-container-id" style="top: 160px;">Games</a>
+            <a href="AboutMe" style="top: 210px;">About Me</a>
         </div>
 
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -28,24 +28,24 @@
         </a>
     </div>
     <div class="top-menu">
-        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'" 
-        onclick="window.location.href = './'">
+        <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
+             onclick="window.location.href = './'">
             Home
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = './#specialization-container-id'">
+             onclick="window.location.href = './#specialization-container-id'">
             Specialization
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = './#games-container-id'">
+             onclick="window.location.href = './#games-container-id'">
             Games
         </div>
         <div class="menu-item" onMouseOver="this.style.color='#545a91'" onMouseOut="this.style.color='#cccccc'"
-            onclick="window.location.href = 'AboutMe'">
+             onclick="window.location.href = 'AboutMe'">
             About Me
         </div>
     </div>
-    
+
     <div class="item-container">
         <img class="nbfeImage" src="HoleEMole.png">
 
@@ -54,8 +54,8 @@
             <img src="HighlyComendableRookies.png" class="Rawards">
         </div>
 
-        <div class="video-contribution-holder">
-            <iframe class="video-player" src="https://www.youtube.com/embed/K-PwLLgQEOc?si=ELK8GpPp27Qvwwhe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-contribution-holder" style="margin-top: 8vw">
+            <iframe class="video-player" src="https://www.youtube.com/embed/K-PwLLgQEOc?si=ELK8GpPp27Qvwwhe" width="1920" height="1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="contibution">
                 <br><br>
                 <u><b>Contibution</b></u>
@@ -78,7 +78,7 @@
             <b>Moving Platform</b>
         </div>
 
-        <div class="contribution-text-moving-platform">
+        <div class="contribution-text">
             Hole-é-mole was the second game project i participated in at The Game Assembly, it was a moblie game made in Unity. The main feature i created for Hole-é-mole was the moving platforms that moves creatures and the mole around.
             These platforms can be activated by going to a lever and interacting with it or walking onto a pressure plate. How i made it was when the platform is suppose to move it shoots a raycast upwards and check all objects on the current node to move.
             This works well and all but in heind sight i would instead just get what is standing on the platform since that is a function we had and could use easily. This could have improved performance and stability if the ray somehow misses.
@@ -86,7 +86,7 @@
             <br>
             <br>
         </div>
-        <img src="MovingPlatform.gif" class="tree-fall-editor">
+        <img src="MovingPlatform.gif" class="general-image">
 
         <div class="contribution-text-centered">
             <i>A working moving platform that goes up and down when presses a layer</i>
@@ -105,7 +105,7 @@
             <br>
         </div>
 
-        <img src="MainMenu.gif" class="main-menu">
+        <img src="MainMenu.gif" class="general-image">
 
         <div class="contribution-text-centered">
             <i>Main menu scrolling through options</i>
@@ -115,7 +115,7 @@
             <b>Level Select</b>
         </div>
 
-        <div class="contribution-text-bezier-lerp">
+        <div class="contribution-text">
             When it came to level select that needed to be implemented, i had a very good idea so i took the task.
             The idea was because we are going through a cave system and going further and further down, it will be a tressuremap kind of thing that goes deeper and deeper on your screen.
             It was easy to implement, all that was needed was tracking how much you scroll and move the backdrop with that amount.
@@ -124,7 +124,7 @@
             <br>
         </div>
 
-        <img src="LevelSelect.gif" class="level-select">
+        <img src="LevelSelect.gif" class="general-image">
 
         <div class="contribution-text-centered">
             <i>Scrolling in level select from hole-é-mole</i>
@@ -140,11 +140,11 @@
 
         <hr>
 
-        <div class="Playable-game">
+        <div class="closing-thoughts-title">
             If you want to learn more and play our game follow the Link below
         </div>
 
-        <a class="title-text" href="https://play.google.com/store/apps/details?id=com.OBLO.MoleGame&hl=en_ZA">
+        <a class="contribution-titletext" href="https://play.google.com/store/apps/details?id=com.OBLO.MoleGame&hl=en_ZA">
             Hole-É-Mole
         </a>
     </div>
@@ -153,31 +153,31 @@
 
     <footer style="flex-direction: column; margin-bottom: 5vw;">
         <div class="footer-text-holder">
-            <b style="font-size: 2vw;">Contact</b>
+            <b class="contact-title">Contact</b>
             <br>Email: <a href="mailto:simon@pixi.nu" style="text-decoration: none; color: rgb(90, 92, 228);">simon@pixi.nu</a>
             <br>Location: Malmö, Västra Hamnen
 
             <br>
             <br>
-            
+
             <div class="links">
                 <a href="https://www.linkedin.com/in/simon-henriksson-473612216/" target="_blank" style="text-decoration: none;">
                     <img src="linkedin-logo.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://noothing.itch.io/" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="itch-io.1024x1024.png" class="icon-link">
                 </a>
-    
+
                 <a href="https://github.com/8nooThing8" target="_blank" style="text-decoration: none; margin-left: 1vw;">
                     <img src="Github.png" class="icon-link">
                 </a>
-    
+
                 <a href="C-V.pdf" target="_blank">
                     <img src="Resume.png" class="icon-link" style="text-decoration: none; margin-left: 1vw;">
                 </a>
             </div>
-            
+
             <br><br>
 
             I am part of The Game Assembly’s internship program. As per the agreement between the Games Industry and The

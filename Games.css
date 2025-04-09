@@ -15,6 +15,7 @@ body {
 }
 
 .topnav a {
+    z-index: 5;
     display: none;
     pointer-events: all;
     border-radius: 0.5em 0.5em;
@@ -24,7 +25,7 @@ body {
     padding: 10px 12px;
     text-decoration: none;
     font-size: 17px;
-    position: absolute;
+    position: fixed;
 }
 
 
@@ -75,12 +76,6 @@ footer{
     font-size: 1vw;
 }
 
-.traum-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
 .HoleEMole {
     margin-top: 7vw;
     margin-bottom: 3vw;
@@ -168,30 +163,11 @@ footer{
     font-size: 1vw;
 }
 
-.contribution-text-moving-platform {
-    text-align: justify;
-    width: 100%;
-    font-size: 1vw;
-}
-
 .contribution-text-centered {
     padding-top: 0.5vw;
     text-align: center;
     width: 100%;
     font-size: 0.8vw;
-}
-
-.contribution-text-cascade {
-    padding-top: 0.3vw;
-    text-align: center;
-    width: 100%;
-    font-size: 0.8vw;
-}
-
-.contribution-text-transform-animator {
-    text-align: justify;
-    font-size: 1vw;
-    width: 100%;
 }
 
 .Engine {
@@ -237,11 +213,6 @@ footer{
 
 .traum-animation {
     width: 10vw;
-    height: auto;
-}
-
-.cracks-in-enemies {
-    width: 40vw;
     height: auto;
 }
 
@@ -293,14 +264,14 @@ hr {
     width: 100%;
 }
 
-.tree-fall-editor {
+.general-image {
     width: 35vw;
     height: 20vw;
 }
 
 .moon-timer {
     width: 40vw;
-    height: 25vw;
+    height: auto;
 }
 
 .main-menu {
@@ -308,17 +279,9 @@ hr {
     height: 19vw;
 }
 
-.bezier-curve {
-    width: 17vw;
-    height: 20vw;
-    flex: 1;
-    margin-right: 0.3vw;
-    border-radius: 0.3vw 0.3vw 0.3vw 0.3vw;
-}
-
 .bezier-curve-code {
-    width: 30vw;
-    height: 20vw;
+    width: 25vw;
+    height: auto;
     flex: 1;
     margin-left: 0.3vw;
     border-radius: 0.3vw 0.3vw 0.3vw 0.3vw;
@@ -369,15 +332,137 @@ hr {
     height: 6.5vw;
 }
 
-
-@media (max-width: 1000px), (pointer: coarse) {
-    .topnav a {
-        display: block;
-    }
+.contact-title {
+    font-size: 2vw;
 }
 
 
+@media (max-width: 1000px), (pointer: coarse) {
+
+    .bezier-curve-code {
+        width: 85vw;
+    }
+
+    .icon-link {
+        width: 8.5vw;
+    }
+
+    .Playable-game{
+        display: none;
+    }
+
+    .grapple-ascent-game {
+        display: none;
+    }
+
+    .footer-text-holder {
+        width: 80vw;
+        font-size: 2.5vw;
+    }
+
+    .contact-title {
+        font-size: 4vw;
+    }
+
+    .moon-timer {
+        width: 80vw;
+    }
+
+    .video-player {
+        width: 60vw;
+        height: 35vw;
+    }
+
+    .general-image {
+        width: 80vw;
+        height: auto;
+    }
+
+    .topnav a {
+        display: block;
+    }
+
+    .nbfeImage {
+        width: 100%;
+    }
+
+    .contribution-titletext {
+        font-size: 5vw;
+    }
+
+    .closing-thoughts-title {
+        margin-top: 7vw;
+        font-size: 3vw;
+    }
+
+    .closing-thoughts {
+        font-size: 3vw;
+    }
+
+    .item-container {
+        width: 80vw;
+    }
+
+    .SpriteSheetImage{
+        height: 30vw;
+    }
+
+    .code-snippet {
+        font-size: 2.5vw;
+    }
+
+    .Engine {
+        margin-top: 9vw;
+        font-size: 3vw;
+    }
+
+    .contibution {
+        font-size: 3vw;
+    }
+
+    .contibutions {
+        font-size: 3vw;
+    }
+
+    .awards {
+        height: 18vw;
+        transform: translate(0, -12vw);
+    }
+
+    .Rawards {
+        height: 18vw;
+    }
+
+    .awards-GOTY {
+        height: 30vw;
+        transform: translate(0, -13.75vw);
+    }
+
+    .contribution-text {
+        font-size: 3vw;
+    }
+
+    .contribution-text-moving-platform {
+        font-size: 1vw;
+    }
+
+    .contribution-text-centered {
+        font-size: 2.5vw;
+    }
+
+    .contribution-text-cascade {
+        font-size: 1vw;
+    }
+
+    .contribution-text-transform-animator {
+        text-align: justify;
+        font-size: 1vw;
+        width: 100%;
+    }
+}
+
 @media (pointer:coarse), (max-width: 1000px) {
+
     .top-menu {
         height: 18px;
         display: none;
