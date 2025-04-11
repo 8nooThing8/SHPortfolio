@@ -33,6 +33,7 @@ body {
 
 .icon-link {
     width: 3vw;
+    pointer-events: all;
 }
 
 .above-me-container {

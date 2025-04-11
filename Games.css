@@ -57,6 +57,7 @@ footer{
 
 .icon-link{
     width: 3vw;
+    pointer-events: all;
 }
 
 .menu-item {
